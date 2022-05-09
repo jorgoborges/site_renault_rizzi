@@ -30,85 +30,102 @@ class PlutoGridExamplePage extends StatefulWidget {
   State<PlutoGridExamplePage> createState() => _PlutoGridExamplePageState();
 }
 
+
 class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
   final List<PlutoColumn> columns = <PlutoColumn>[
     PlutoColumn(
-      title: 'Id',
-      field: 'id',
+      title: 'Mês',
+      field: 'mês',
       type: PlutoColumnType.text(),
+      titleTextAlign: PlutoColumnTextAlign.center,
+      backgroundColor: Colors.amber,
     ),
     PlutoColumn(
-      title: 'Autor',
-      field: 'nome',
+      title: 'N.ºOS',
+      field: 'N.ºOS',
       type: PlutoColumnType.text(),
+      titleTextAlign: PlutoColumnTextAlign.center,
+      backgroundColor: Colors.amber,
     ),
     PlutoColumn(
-      title: 'BIR',
-      field: 'bir',
-      type: PlutoColumnType.number(),
+      title: 'N.ºFatura',
+      field: 'n.ºfatura',
+      type: PlutoColumnType.text(),
+      titleTextAlign: PlutoColumnTextAlign.center,
+      backgroundColor: Colors.amber,
     ),
     PlutoColumn(
-      title: 'Nivel',
-      field: 'Nivel',
-      type: PlutoColumnType.select(<String>[
-        'Vendas',
-        'Pós Vendas',
-        'Master',
-      ]),
+      title: 'Inter.',
+      field: 'Inter.',
+      type: PlutoColumnType.text(),
+      titleTextAlign: PlutoColumnTextAlign.center,
+      backgroundColor: Colors.amber,
     ),
     PlutoColumn(
-      title: 'Data',
-      field: 'Data',
-      type: PlutoColumnType.date(),
+      title: 'VIN',
+      field: 'VIN',
+      type: PlutoColumnType.text(),
+      titleTextAlign: PlutoColumnTextAlign.center,
+      backgroundColor: Colors.amber,
     ),
     PlutoColumn(
-      title: 'Hora',
-      field: 'Hora',
-      type: PlutoColumnType.time(),
+      title: 'Nat.',
+      field: 'Nat.',
+      type: PlutoColumnType.text(),
+      titleTextAlign: PlutoColumnTextAlign.center,
+      backgroundColor: Colors.amber,
     ),
+    PlutoColumn(
+      title: 'Valor',
+      field: 'Valor',
+      type: PlutoColumnType.text(),
+      titleTextAlign: PlutoColumnTextAlign.center,
+      backgroundColor: Colors.amber,
+    ),
+
   ];
 
   final List<PlutoRow> rows = [
     PlutoRow(
       cells: {
-        'id': PlutoCell(value: 'user1'),
-        'bir': PlutoCell(value: '795'),
-        'nome': PlutoCell(value: 'Altair'),
-        'Nivel': PlutoCell(value: 'Master'),
-        'Data': PlutoCell(value: '2021-01-01'),
-        'Hora': PlutoCell(value: '09:00'),
+        'mês': PlutoCell(value: '202111'),
+        'n.ºfatura': PlutoCell(value: '25642'),
+        'N.ºOS': PlutoCell(value: '5486'),
+        'Inter.': PlutoCell(value: 'A'),
+        'VIN': PlutoCell(value: '93YRBB001LJ082736'),
+        'Nat.': PlutoCell(value: 'G36'),
+        'Valor': PlutoCell(value: '254,00')
+
       },
     ),
     PlutoRow(
       cells: {
-        'id': PlutoCell(value: 'user2'),
-        'nome': PlutoCell(value: 'Victor'),
-        'bir': PlutoCell(value: '897'),
-        'Nivel': PlutoCell(value: 'Vendas'),
-        'Data': PlutoCell(value: '2021-02-01'),
-        'Hora': PlutoCell(value: '10:00'),
+        'mês': PlutoCell(value: '254211'),
+        'N.ºOS': PlutoCell(value: '7748'),
+        'n.ºfatura': PlutoCell(value: '2351'),
+        'Inter.': PlutoCell(value: 'B'),
+        'VIN': PlutoCell(value: '93YRBB004LJ865467'),
+        'Nat.': PlutoCell(value: 'G36'),
+        'Valor': PlutoCell(value: '2554,00')
       },
     ),
     PlutoRow(
       cells: {
-        'id': PlutoCell(value: 'user3'),
-        'nome': PlutoCell(value: 'Jorge'),
-        'bir': PlutoCell(value: '687'),
-        'Nivel': PlutoCell(value: 'Pós Vendas'),
-        'Data': PlutoCell(value: '2021-03-01'),
-        'Hora': PlutoCell(value: '11:00'),
+        'mês': PlutoCell(value: '25143'),
+        'N.ºOS': PlutoCell(value: '89745'),
+        'n.ºfatura': PlutoCell(value: '687'),
+        'Inter.': PlutoCell(value: 'D'),
+        'VIN': PlutoCell(value: '93YRBB002KJ555350'),
+        'Nat.': PlutoCell(value: 'G11'),
+        'Valor': PlutoCell(value: '4581,00')
       },
     ),
   ];
 
   /// columnGroups that can group columns can be omitted.
   final List<PlutoColumnGroup> columnGroups = [
-    PlutoColumnGroup(title: 'BackOffice', fields: ['Autor', 'nome']),
-    PlutoColumnGroup(title: 'Id', fields: ['id'], expandedColumn: true),
-    PlutoColumnGroup(title: 'Status', children: [
-      PlutoColumnGroup(title: 'A', fields: ['Nivel'], expandedColumn: true),
-      PlutoColumnGroup(title: 'Carimbo.', fields: ['Data', 'Hora']),
-    ]),
+    PlutoColumnGroup(title: 'Mês', fields: ['mês'], expandedColumn: true),
+    PlutoColumnGroup(title: 'A', fields: ['Inter.'], expandedColumn: true),
   ];
 
   /// [PlutoGridStateManager] has many methods and properties to dynamically manipulate the grid.

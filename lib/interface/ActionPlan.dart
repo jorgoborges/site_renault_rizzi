@@ -4,9 +4,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
-import 'package:site_renault_rizzi/interface/2Menu.dart';
+import 'package:site_renault_rizzi/interface/MenuList.dart';
 import 'package:site_renault_rizzi/interface/action_plan2.dart';
-import 'package:site_renault_rizzi/interface/3AuditorPanel.dart';
+import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
 
 /// Provides a UI to select a authentication type page
 class ActionPlan extends StatefulWidget {

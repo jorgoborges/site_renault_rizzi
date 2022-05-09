@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
+import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
+import 'package:site_renault_rizzi/interface/ActionPlan.dart';
+import 'package:site_renault_rizzi/interface/model_filter.dart';
 
 void main() {
-  runApp(BackOfficePanel());
+  runApp(PosVendasRdb());
 }
 
-class BackOfficePanel extends StatelessWidget {
+class PosVendasRdb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BackOffice',
+      title: 'Pós Vendas RDB',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'BackOffice'),
+      home: MyHomePage(title: 'Pós Vendas RDB'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -46,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
             controller: page,
             style: SideMenuStyle(
               displayMode: SideMenuDisplayMode.auto,
-              hoverColor: Colors.redAccent,
-              selectedColor: Colors.red,
+              hoverColor: Colors.greenAccent,
+              selectedColor: Colors.green,
               selectedTitleTextStyle: TextStyle(color: Colors.white),
               selectedIconColor: Colors.white,
               // backgroundColor: Colors.amber
@@ -80,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             items: [
               SideMenuItem(
                 priority: 0,
-                title: 'Cadastrar Atualizar Concessão',
+                title: 'Garantia',
                 onTap: () {
                   page.jumpToPage(0);
                 },
@@ -88,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Cadastro User',
+                title: 'Calibração',
                 onTap: () {
                   page.jumpToPage(1);
                 },
@@ -96,48 +99,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SideMenuItem(
                 priority: 2,
-                title: 'Cadastrar Liberação User',
-                onTap: () {
-                  page.jumpToPage(2);
-                },
-                icon: Icons.content_paste,
-              ),
-              SideMenuItem(
-                priority: 3,
-                title: 'Cadastro Situação',
-                onTap: () {
-                  page.jumpToPage(3);
-                },
-                icon: Icons.timeline_sharp,
-              ),
-              SideMenuItem(
-                priority: 4,
-                title: 'Cadastro Função',
-                onTap: () {
-                  page.jumpToPage(4);
-                },
-                icon: Icons.attach_money_sharp,
-              ),
-              SideMenuItem(
-                priority: 6,
-                title: 'Cadastro Pessoa',
-                onTap: () async {},
-                icon: Icons.help,
-              ),
-              SideMenuItem(
-                priority: 7,
-                title: 'Cadastro Bandeira',
-                onTap: () async {},
-                icon: Icons.bookmark_added_outlined,
-              ),
-              SideMenuItem(
-                priority: 8,
-                title: 'Cadastro Local',
-                onTap: () async {},
-                icon: Icons.bookmark_added_sharp,
-              ),
-              SideMenuItem(
-                priority: 9,
                 title: ''
                     'Sair',
                 onTap: () {
@@ -155,10 +116,78 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   color: Colors.white,
                   child: Center(
-                    child: Text(
-                      'Page\n   1',
-                      style: TextStyle(fontSize: 35),
-                    ),
+                    child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ModelFilter()));
+                                },
+                                child: Text('Base',
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.black)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              height: 25,
+                              width: 5,
+                              alignment: Alignment.center,
+                              child: ElevatedButton(
+                                onPressed:
+                                    () {}, // falta direcionar para tela xpto
+                                child: Text('Analise',
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.black)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ActionPlan()));
+                                },
+                                child: Text('Pré Ata',
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.black)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Text('Resumo Final',
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.black)),
+                              ),
+                            ),
+                          ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center),
                   ),
                 ),
                 Container(

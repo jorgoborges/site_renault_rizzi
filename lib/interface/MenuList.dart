@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_menu/flutter_menu.dart';
-import 'package:site_renault_rizzi/interface/1TelaInicialLogin.dart';
-import 'package:site_renault_rizzi/interface/3AuditorPanel.dart';
+import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
+import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/5ResultGarRdb.dart';
+import 'package:site_renault_rizzi/interface/2PosVendasRdb.dart';
 import 'package:site_renault_rizzi/interface/6RelGarRdbPanel.dart';
 
 
@@ -169,7 +169,7 @@ class _ScreenState extends State<Screen> {
               title: 'Result Audit GarRdb',// Acessar Resultado Auditoria Panel
               shortcut: MenuShortcut(key: LogicalKeyboardKey.keyR, alt: true),
               onPressed: () {   Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ResultGarRdbPanel()));
+                  context, MaterialPageRoute(builder: (context) => PosVendasRdb()));
               _showMessage('Entrar');
               },
             ),

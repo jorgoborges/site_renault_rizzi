@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
-import 'package:site_renault_rizzi/interface/2Menu.dart';
+import 'package:site_renault_rizzi/interface/1Menu.dart';
+
 
 void main() {
   runApp(const TelaInicialLogin());
@@ -126,7 +127,7 @@ class HomePage extends StatelessWidget {
                   ),
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => MyHome())),
+                        MaterialPageRoute(builder: (_) => Menu())),
                     icon: const Icon(Icons.key),
                     label: const Text('Entrar'),
                   ),

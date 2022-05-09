@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
+import 'package:site_renault_rizzi/interface/1Menu.dart';
 
 void main() {
-  runApp(ResultGarRdbPanel());
+  runApp(VendasRdb());
 }
 
-class ResultGarRdbPanel extends StatelessWidget {
+class VendasRdb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ResultGarRdbPanel',
+      title: 'Vendas RDB',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
-      home: MyHomePage(title: 'ResultGarRdbPanel'),
+      home: MyHomePage(title: 'Vendas RDB'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -45,8 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
             controller: page,
             style: SideMenuStyle(
               displayMode: SideMenuDisplayMode.auto,
-              hoverColor: Colors.blue[100],
-              selectedColor: Colors.lightBlue,
+              hoverColor: Colors.amber[100],
+              selectedColor: Colors.amber,
               selectedTitleTextStyle: TextStyle(color: Colors.white),
               selectedIconColor: Colors.white,
               // backgroundColor: Colors.amber
@@ -79,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
             items: [
               SideMenuItem(
                 priority: 0,
-                title: 'Definir Concessão',
+                title: 'Auto Avaliação',
                 onTap: () {
                   page.jumpToPage(0);
                 },
@@ -87,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Ver Base Carregada',
+                title: 'Calibração',
                 onTap: () {
                   page.jumpToPage(1);
                 },
@@ -95,50 +96,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SideMenuItem(
                 priority: 2,
-                title: 'Analise',
-                onTap: () {
-                  page.jumpToPage(2);
-                },
-                icon: Icons.content_paste,
-              ),
-              SideMenuItem(
-                priority: 3,
-                title: 'Progresso',
-                onTap: () {
-                  page.jumpToPage(3);
-                },
-                icon: Icons.timeline_sharp,
-              ),
-
-              SideMenuItem(
-                priority: 4,
-                title: 'Lista Itens',
-                onTap: () async {},
-                icon: Icons.help,
-              ),
-              SideMenuItem(
-                priority: 5,
-                title: 'Pré Ata',
-                onTap: () async {},
-                icon: Icons.bookmark_added_outlined,
-              ),
-              SideMenuItem(
-                priority: 6,
-                title: 'Resumo Final',
-                onTap: () async {},
-                icon: Icons.bookmark_added_sharp,
-              ),
-              SideMenuItem(
-                priority: 7,
-                title: 'Resumo Valores',
-                onTap: () async {},
-                icon: Icons.bookmark_added_sharp,
-              ),
-              SideMenuItem(
-                priority: 8,
                 title: ''
                     'Sair',
-                onTap: () async {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Menu()));
+                },
                 icon: Icons.exit_to_app,
               ),
             ],
