@@ -38,7 +38,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
       field: 'mês',
       type: PlutoColumnType.text(),
       titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.red,
     ),
     PlutoColumn(
       title: 'N.ºOS',
