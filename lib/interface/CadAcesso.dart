@@ -274,13 +274,13 @@ class SuccessScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Icon(Icons.tag_faces, size: 100),
-            const SizedBox(height: 10),
+            const SizedBox(height: 11),
             const Text(
               'Sucesso',
               style: TextStyle(fontSize: 11, color: Colors.green),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 11),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,

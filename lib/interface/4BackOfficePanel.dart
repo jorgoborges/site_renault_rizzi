@@ -3,6 +3,7 @@ import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
 import 'package:site_renault_rizzi/interface/ActionPlan.dart';
 import 'package:site_renault_rizzi/interface/CadAcesso.dart';
+import 'package:site_renault_rizzi/interface/CadBir.dart';
 
 void main() {
   runApp(BackOficcepanel());
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 'borgesconsulting(®)2019-2022',
-                style: TextStyle(fontSize:9),
+                style: TextStyle(fontSize: 9),
               ),
             ),
             items: [
@@ -90,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Texto',
+                title: 'Cad-ICB',
                 onTap: () {
                   page.jumpToPage(1);
                 },
@@ -128,8 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              CadAcesso()));
+                                          builder: (context) => CadAcesso()));
                                 },
                                 child: Text('Cad-Acesso',
                                     style: TextStyle(
@@ -144,9 +144,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 5,
                               alignment: Alignment.center,
                               child: ElevatedButton(
-                                onPressed:
-                                    () {}, // falta direcionar para tela xpto
-                                child: Text('Texto',
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => CadastroBir()));
+                                }, // falta direcionar para tela xpto
+                                child: Text('Texto**',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),
