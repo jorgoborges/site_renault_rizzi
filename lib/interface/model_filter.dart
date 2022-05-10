@@ -30,7 +30,6 @@ class PlutoGridExamplePage extends StatefulWidget {
   State<PlutoGridExamplePage> createState() => _PlutoGridExamplePageState();
 }
 
-
 class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
   final List<PlutoColumn> columns = <PlutoColumn>[
     PlutoColumn(
@@ -38,7 +37,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
       field: 'mês',
       type: PlutoColumnType.text(),
       titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.amber,
     ),
     PlutoColumn(
       title: 'N.ºOS',
@@ -82,7 +81,6 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
       titleTextAlign: PlutoColumnTextAlign.center,
       backgroundColor: Colors.amber,
     ),
-
   ];
 
   final List<PlutoRow> rows = [
@@ -95,37 +93,14 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
         'VIN': PlutoCell(value: '93YRBB001LJ082736'),
         'Nat.': PlutoCell(value: 'G36'),
         'Valor': PlutoCell(value: '254,00')
-
-      },
-    ),
-    PlutoRow(
-      cells: {
-        'mês': PlutoCell(value: '254211'),
-        'N.ºOS': PlutoCell(value: '7748'),
-        'n.ºfatura': PlutoCell(value: '2351'),
-        'Inter.': PlutoCell(value: 'B'),
-        'VIN': PlutoCell(value: '93YRBB004LJ865467'),
-        'Nat.': PlutoCell(value: 'G36'),
-        'Valor': PlutoCell(value: '2554,00')
-      },
-    ),
-    PlutoRow(
-      cells: {
-        'mês': PlutoCell(value: '25143'),
-        'N.ºOS': PlutoCell(value: '89745'),
-        'n.ºfatura': PlutoCell(value: '687'),
-        'Inter.': PlutoCell(value: 'D'),
-        'VIN': PlutoCell(value: '93YRBB002KJ555350'),
-        'Nat.': PlutoCell(value: 'G11'),
-        'Valor': PlutoCell(value: '4581,00')
       },
     ),
   ];
 
   /// columnGroups that can group columns can be omitted.
   final List<PlutoColumnGroup> columnGroups = [
-    PlutoColumnGroup(title: 'Mês', fields: ['mês'], expandedColumn: true),
-    PlutoColumnGroup(title: 'A', fields: ['Inter.'], expandedColumn: true),
+
+
   ];
 
   /// [PlutoGridStateManager] has many methods and properties to dynamically manipulate the grid.
@@ -149,6 +124,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
           },
           configuration: const PlutoGridConfiguration(
             enableColumnBorder: true,
+            enterKeyAction: PlutoGridEnterKeyAction.editingAndMoveDown,
           ),
         ),
       ),

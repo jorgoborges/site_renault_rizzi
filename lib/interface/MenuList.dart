@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_menu/flutter_menu.dart';
 import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
-import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/2PosVendasRdb.dart';
-import 'package:site_renault_rizzi/interface/6RelGarRdbPanel.dart';
 
 
 const Map kColorMap = {
@@ -29,12 +25,13 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Em Criação',
+      title: 'Portal cara Renault',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            overlayColor: MaterialStateProperty.all(Colors.blueGrey[600]), // Set Button hover color
+            overlayColor: MaterialStateProperty.all(
+                Colors.blueGrey[600]), // Set Button hover color
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -42,7 +39,8 @@ class MyHome extends StatelessWidget {
             foregroundColor: MaterialStateProperty.all(Colors.black),
 
             backgroundColor: MaterialStateProperty.all(Colors.white),
-            overlayColor: MaterialStateProperty.all(Colors.blueGrey[600]), // Set Button hover color
+            overlayColor: MaterialStateProperty.all(
+                Colors.blueGrey[600]), // Set Button hover color
           ),
         ),
       ),
@@ -94,7 +92,7 @@ class _ScreenState extends State<Screen> {
           width: 150,
           height: 250,
           child: ContextMenuSliver(
-            title: 'Master',
+            title: 'Vendas',
             children: [
               masterContextMenuItem(color: 'Red'),
               masterContextMenuItem(color: 'Blue'),
@@ -108,7 +106,7 @@ class _ScreenState extends State<Screen> {
           width: 300,
           height: 150,
           child: ContextMenuSliver(
-            title: 'Detail',
+            title: 'Pós Vendas',
             children: [
               detailContextMenuItem(color: 'Yellow'),
               detailContextMenuItem(color: 'Orange'),
@@ -148,40 +146,6 @@ class _ScreenState extends State<Screen> {
               },
             ),
           ]),
-          MenuItem(title: 'Visualizar', isActive: true, menuListItems: [
-            MenuListItem(
-              title: 'Audit Garantia',// Acessar Analise Garantia Renault
-              shortcut: MenuShortcut(key: LogicalKeyboardKey.keyA, alt: true),
-              onPressed: () {   Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => AuditorPanel()));
-              _showMessage('Entrar');
-              },
-            ),
-            MenuListItem(
-              title: 'BackOffice',// Acessar BackOffice Panel
-              shortcut: MenuShortcut(key: LogicalKeyboardKey.keyB, alt: true),
-              onPressed: () {   Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => BackOfficePanel()));
-              _showMessage('Entrar');
-              },
-            ),
-            MenuListItem(
-              title: 'Result Audit GarRdb',// Acessar Resultado Auditoria Panel
-              shortcut: MenuShortcut(key: LogicalKeyboardKey.keyR, alt: true),
-              onPressed: () {   Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => PosVendasRdb()));
-              _showMessage('Entrar');
-              },
-            ),
-            MenuListItem(
-              title: 'Rel GarRdb',// Acessar Resultado Auditoria Relatório
-              shortcut: MenuShortcut(key: LogicalKeyboardKey.keyG, alt: true),
-              onPressed: () {   Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RelGarRdbpanel()));
-              _showMessage('Entrar');
-              },
-            ),
-          ]),
           MenuItem(title: 'Help', isActive: true, menuListItems: [
             MenuListItem(title: 'Help'),
             MenuListItem(title: 'About'),
@@ -190,18 +154,21 @@ class _ScreenState extends State<Screen> {
             MenuListItem(
               title: 'Sair',
               shortcut: MenuShortcut(key: LogicalKeyboardKey.keyS, alt: true),
-              onPressed: () {   Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => TelaInicialLogin()));
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TelaInicialLogin()));
                 _showMessage('Sair');
               },
             ),
           ]),
         ],
-        masterPane: masterPane(),
-        detailPane: detailPane(),
+        masterPane: masterPane(), //Será o portal de Vendas
+        detailPane: detailPane(), //Será o portal de Pos Vendas
         drawer: AppDrawer(
           defaultSmall: false,
-          largeDrawerWidth: 200,
+          largeDrawerWidth: 235,
           largeDrawer: drawer(small: false),
           smallDrawerWidth: 60,
           smallDrawer: drawer(small: true),
@@ -211,7 +178,9 @@ class _ScreenState extends State<Screen> {
             print('Breakpoint change');
           });
         },
-        resizeBar: ResizeBar(leftColor: masterBackgroundColor, rightColor: detailBackgroundColor),
+        resizeBar: ResizeBar(
+            leftColor: masterBackgroundColor,
+            rightColor: detailBackgroundColor),
       ),
     );
   }
@@ -221,25 +190,33 @@ class _ScreenState extends State<Screen> {
         color: Colors.amber,
         child: ListView(
           children: [
-            drawerButton(title: 'User', icon: Icons.account_circle, small: small),
-            drawerButton(title: 'Inbox', icon: Icons.inbox, small: small),
-            drawerButton(title: 'Files', icon: Icons.save, small: small),
             drawerButton(
-              title: 'Clients',
-              icon: Icons.supervised_user_circle,
+                title: 'Dashboard Autoavaliação',
+                icon: Icons.widgets,
+                small: small),
+            drawerButton(
+                title: 'Calibrações', icon: Icons.widgets, small: small),
+            drawerButton(
+                title: 'Contestação', icon: Icons.widgets, small: small),
+            drawerButton(
+              title: 'Autoavaliação',
+              icon: Icons.widgets,
               small: small,
             ),
             drawerButton(
-              title: 'Settings',
-              icon: Icons.settings,
+              title: 'Meu Perfil',
+              icon: Icons.widgets,
               small: small,
             ),
           ],
         ));
   }
 
-  Widget drawerButton({required String title, required IconData icon, required bool small}) {
-    return small ? drawerSmallButton(icon: icon, title: title) : drawerLargeButton(icon: icon, title: title);
+  Widget drawerButton(
+      {required String title, required IconData icon, required bool small}) {
+    return small
+        ? drawerSmallButton(icon: icon, title: title)
+        : drawerLargeButton(icon: icon, title: title);
   }
 
   Widget drawerLargeButton({required String title, required IconData icon}) {
@@ -280,7 +257,7 @@ class _ScreenState extends State<Screen> {
   }
 
   Builder detailPane() {
-    print('BUILD: detailPane');
+    print('BUILD: detailPane'); //Será o portal de Pos Vendas
     return Builder(
       builder: (BuildContext context) {
         return Container(
@@ -297,7 +274,9 @@ class _ScreenState extends State<Screen> {
                     height: 50,
                     child: Container(
                       color: Colors.amber,
-                      child: Center(child: Text('DETAIL', style: TextStyle(fontSize: 20))),
+                      child: Center(
+                          child: Text('Pós Vendas',
+                              style: TextStyle(fontSize: 20))),
                     ),
                   ),
                 ),
@@ -338,7 +317,10 @@ class _ScreenState extends State<Screen> {
                   height: 300,
                   child: Container(
                     color: Colors.blueGrey,
-                    child: Center(child: Text(_message, textAlign: TextAlign.center, style: TextStyle(fontSize: 40))),
+                    child: Center(
+                        child: Text(_message,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 40))),
                   ),
                 ),
                 SizedBox(height: 20),
@@ -348,7 +330,9 @@ class _ScreenState extends State<Screen> {
                     width: 300,
                     height: 50,
                     child: Center(
-                      child: Text('Pane height: ${context.appScreen.detailPaneDetails.height.toStringAsFixed(1)} width: ${context.appScreen.detailPaneDetails.width.toStringAsFixed(1)}', style: TextStyle(fontSize: 20)),
+                      child: Text(
+                          'Pane height: ${context.appScreen.detailPaneDetails.height.toStringAsFixed(1)} width: ${context.appScreen.detailPaneDetails.width.toStringAsFixed(1)}',
+                          style: TextStyle(fontSize: 20)),
                     ),
                   ),
                 ),
@@ -358,7 +342,7 @@ class _ScreenState extends State<Screen> {
                     onPressed: () {
                       context.appScreen.showOnlyMaster();
                     },
-                    child: Text('Show master'),
+                    child: Text('Show master'), // Será o portal de Vendas
                   ),
               ],
             ),
@@ -369,11 +353,11 @@ class _ScreenState extends State<Screen> {
   }
 
   Builder masterPane() {
-    print('BUILD: masterPane');
+    print('BUILD: masterPane'); //Será o portal de Vendas
     return Builder(
       builder: (BuildContext context) {
         return Container(
-          color: masterBackgroundColor,
+          color: masterBackgroundColor, //Será o portal de Vendas
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -386,13 +370,16 @@ class _ScreenState extends State<Screen> {
                     height: 50,
                     child: Container(
                       color: Colors.amber,
-                      child: Center(child: Text('MASTER', style: TextStyle(fontSize: 20))),
+                      child: Center(
+                          child: Text('Vendas',
+                              style: TextStyle(
+                                  fontSize: 20))), //Será o portal de Vendas
                     ),
                   ),
                 ),
-                SizedBox(height: 80),
+                SizedBox(height: 80),// icon abaixo de vendas
                 SizedBox(
-                    width: 140,
+                    width: 155,
                     height: 110,
                     child: Card(
                         elevation: 8,
@@ -400,7 +387,8 @@ class _ScreenState extends State<Screen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(_drawerIcon, size: 50, color: Colors.black54),
-                            Text(_drawerTitle, style: TextStyle(color: Colors.black54)),
+                            Text(_drawerTitle,
+                                style: TextStyle(color: Colors.black54)),
                           ],
                         ))),
                 SizedBox(height: 80),
@@ -416,7 +404,10 @@ class _ScreenState extends State<Screen> {
                     child: Container(
                       color: Colors.blueGrey,
                       child: Center(
-                        child: Text('Right click or longpress me', textAlign: TextAlign.center, softWrap: true, style: TextStyle(fontSize: 30)),
+                        child: Text('Right click or longpress me',
+                            textAlign: TextAlign.center,
+                            softWrap: true,
+                            style: TextStyle(fontSize: 30)),
                       ),
                     ),
                   ),
@@ -454,6 +445,7 @@ class _ScreenState extends State<Screen> {
   }
 
   Widget masterContextMenuItem({required String color}) {
+    //Será o portal de Vendas
     return ContextMenuItem(
       onTap: () {
         _masterSetBackgroundColor(color);

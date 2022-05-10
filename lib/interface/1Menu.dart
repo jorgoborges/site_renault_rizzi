@@ -64,7 +64,7 @@ class MyHomePage extends StatelessWidget {
               title: const Text('BackOffice'),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BackOfficePanel()));
+                    MaterialPageRoute(builder: (context) => BackOficcepanel()));
               },
             ),
           ],

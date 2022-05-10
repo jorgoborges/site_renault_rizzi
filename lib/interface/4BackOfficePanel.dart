@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
+import 'package:site_renault_rizzi/interface/ActionPlan.dart';
+import 'package:site_renault_rizzi/interface/CadAcesso.dart';
 
 void main() {
-  runApp(BackOfficePanel());
+  runApp(BackOficcepanel());
 }
 
-class BackOfficePanel extends StatelessWidget {
+class BackOficcepanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BackOffice',
+      title: 'BackOfficePanel',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blueGrey,
       ),
       home: MyHomePage(title: 'BackOffice'),
       debugShowCheckedModeBanner: false,
@@ -46,8 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
             controller: page,
             style: SideMenuStyle(
               displayMode: SideMenuDisplayMode.auto,
-              hoverColor: Colors.redAccent,
-              selectedColor: Colors.red,
+              hoverColor: Colors.blueAccent,
+              selectedColor: Colors.green,
               selectedTitleTextStyle: TextStyle(color: Colors.white),
               selectedIconColor: Colors.white,
               // backgroundColor: Colors.amber
@@ -74,77 +76,35 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 'borgesconsulting(®)2019-2022',
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize:9),
               ),
             ),
             items: [
               SideMenuItem(
                 priority: 0,
-                title: 'Cadastrar Atualizar Concessão',
+                title: 'Cad-Acesso',
                 onTap: () {
                   page.jumpToPage(0);
                 },
-                icon: Icons.home,
+                icon: Icons.fiber_manual_record_rounded,
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Cadastro User',
+                title: 'Texto',
                 onTap: () {
                   page.jumpToPage(1);
                 },
-                icon: Icons.file_open_rounded,
+                icon: Icons.fiber_manual_record_rounded,
               ),
               SideMenuItem(
                 priority: 2,
-                title: 'Cadastrar Liberação User',
-                onTap: () {
-                  page.jumpToPage(2);
-                },
-                icon: Icons.content_paste,
-              ),
-              SideMenuItem(
-                priority: 3,
-                title: 'Cadastro Situação',
-                onTap: () {
-                  page.jumpToPage(3);
-                },
-                icon: Icons.timeline_sharp,
-              ),
-              SideMenuItem(
-                priority: 4,
-                title: 'Cadastro Função',
-                onTap: () {
-                  page.jumpToPage(4);
-                },
-                icon: Icons.attach_money_sharp,
-              ),
-              SideMenuItem(
-                priority: 6,
-                title: 'Cadastro Pessoa',
-                onTap: () async {},
-                icon: Icons.help,
-              ),
-              SideMenuItem(
-                priority: 7,
-                title: 'Cadastro Bandeira',
-                onTap: () async {},
-                icon: Icons.bookmark_added_outlined,
-              ),
-              SideMenuItem(
-                priority: 8,
-                title: 'Cadastro Local',
-                onTap: () async {},
-                icon: Icons.bookmark_added_sharp,
-              ),
-              SideMenuItem(
-                priority: 9,
                 title: ''
                     'Sair',
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Menu()));
                 },
-                icon: Icons.exit_to_app,
+                icon: Icons.fiber_manual_record_rounded,
               ),
             ],
           ),
@@ -155,10 +115,79 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   color: Colors.white,
                   child: Center(
-                    child: Text(
-                      'Page\n   1',
-                      style: TextStyle(fontSize: 35),
-                    ),
+                    child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              CadAcesso()));
+                                },
+                                child: Text('Cad-Acesso',
+                                    style: TextStyle(
+                                        fontSize: 11, color: Colors.white)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              height: 25,
+                              width: 5,
+                              alignment: Alignment.center,
+                              child: ElevatedButton(
+                                onPressed:
+                                    () {}, // falta direcionar para tela xpto
+                                child: Text('Texto',
+                                    style: TextStyle(
+                                        fontSize: 11, color: Colors.white)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ActionPlan()));
+                                },
+                                child: Text('Texto',
+                                    style: TextStyle(
+                                        fontSize: 11, color: Colors.white)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Text('Texto',
+                                    style: TextStyle(
+                                        fontSize: 11, color: Colors.white)),
+                              ),
+                            ),
+                          ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start),
                   ),
                 ),
                 Container(

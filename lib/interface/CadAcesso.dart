@@ -1,18 +1,14 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
-
-
 void main() {
-  runApp(const ModelCadastro());
+  runApp(const CadAcesso());
 }
 
-class ModelCadastro extends StatelessWidget {
-  const ModelCadastro({Key? key}) : super(key: key);
+class CadAcesso extends StatelessWidget {
+  const CadAcesso({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -107,17 +103,21 @@ class AllFieldsForm extends StatelessWidget {
               ),
             ),
             child: Scaffold(
-              appBar: AppBar(title: const Text('Cadastro Portal')),
+              appBar: AppBar(
+                  title: const Text(
+                      'Cad-Acesso: Cadastro de Acesso aos "User" Portal')),
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 5, width: 50),
                   FloatingActionButton.extended(
                     heroTag: null,
                     onPressed: formBloc.submit,
                     icon: const Icon(Icons.send),
-                    label: const Text('Enviar'),
+                    label: const Text(
+                      'Enviar',
+                      style: TextStyle(fontSize: 11, color: Colors.white),
+                    ),
                   ),
                 ],
               ),
@@ -191,7 +191,7 @@ class AllFieldsForm extends StatelessWidget {
                           decoration: const InputDecoration(
                             labelText: 'Confirme a Senha!',
                             prefixIcon:
-                            Icon(Icons.confirmation_number_outlined),
+                                Icon(Icons.confirmation_number_outlined),
                           ),
                         ),
                         TextFieldBlocBuilder(
@@ -215,7 +215,7 @@ class AllFieldsForm extends StatelessWidget {
                           ),
                         ),
                         BlocBuilder<InputFieldBloc<File?, String>,
-                            InputFieldBlocState<File?, String>>(
+                                InputFieldBlocState<File?, String>>(
                             bloc: formBloc.file,
                             builder: (context, state) {
                               return Container();
@@ -235,11 +235,11 @@ class AllFieldsForm extends StatelessWidget {
 
 class LoadingDialog extends StatelessWidget {
   static void show(BuildContext context, {Key? key}) => showDialog<void>(
-    context: context,
-    useRootNavigator: false,
-    barrierDismissible: false,
-    builder: (_) => LoadingDialog(key: key),
-  ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
+        context: context,
+        useRootNavigator: false,
+        barrierDismissible: false,
+        builder: (_) => LoadingDialog(key: key),
+      ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
 
   static void hide(BuildContext context) => Navigator.pop(context);
 
@@ -277,18 +277,18 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 10),
             const Text(
               'Sucesso',
-              style: TextStyle(fontSize: 30, color: Colors.green),
+              style: TextStyle(fontSize: 11, color: Colors.green),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BackOfficePanel()));
+                    MaterialPageRoute(builder: (context) => BackOficcepanel()));
               },
               child: Text(
                 'Voltar',
-                style: TextStyle(fontSize: 30, color: Colors.white),
+                style: TextStyle(fontSize: 11, color: Colors.white),
                 textAlign: TextAlign.center,
               ),
             ),

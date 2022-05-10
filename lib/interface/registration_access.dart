@@ -288,7 +288,7 @@ class SuccessScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BackOfficePanel()));
+                    MaterialPageRoute(builder: (context) => BackOficcepanel()));
               },
               child: Text(
                 'Voltar',
