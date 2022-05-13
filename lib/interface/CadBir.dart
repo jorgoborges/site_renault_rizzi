@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
+import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
 void main() {
@@ -45,6 +46,7 @@ class AllFieldsForm4Bloc extends FormBloc<String, String> {
   final text23 = TextFieldBloc();
   final text24 = TextFieldBloc();
   final text25 = TextFieldBloc();
+
 
   final file = InputFieldBloc<File?, String>(initialValue: null);
 
@@ -161,175 +163,169 @@ class AllFieldsForm4 extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text1,
                           decoration: const InputDecoration(
-                            labelText: 'QTD',
+                            labelText: 'QTD',//ok
                             prefixIcon: Icon(Icons.man),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
-                            labelText: 'N.ºBIR',
+                            labelText: 'N.ºBIR',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text3,
                           decoration: const InputDecoration(
-                            labelText: 'RAZÃO SOCIAL',
+                            labelText: 'RAZÃO SOCIAL',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
+
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text4,
                           decoration: const InputDecoration(
-                            labelText: 'RAZÃO SOCIAL',
+                            labelText: 'NOME_COMERCIAL',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text5,
                           decoration: const InputDecoration(
-                            labelText: 'NOME_COMERCIAL',
+                            labelText: 'COD',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text6,
                           decoration: const InputDecoration(
-                            labelText: 'COD',
+                            labelText: 'FONE',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text7,
                           decoration: const InputDecoration(
-                            labelText: 'FONE',
+                            labelText: 'FAX',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text8,
                           decoration: const InputDecoration(
-                            labelText: 'FAX',
+                            labelText: 'ENDEREÇO',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text9,
                           decoration: const InputDecoration(
-                            labelText: 'ENDEREÇO',
+                            labelText: 'BAIRRO',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text10,
                           decoration: const InputDecoration(
-                            labelText: 'BAIRRO',
+                            labelText: 'CIDADE',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text11,
                           decoration: const InputDecoration(
-                            labelText: 'CIDADE',
+                            labelText: 'ES',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text12,
                           decoration: const InputDecoration(
-                            labelText: 'ES',
+                            labelText: 'CEP',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text13,
                           decoration: const InputDecoration(
-                            labelText: 'CEP',
+                            labelText: 'CNPJ',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text14,
                           decoration: const InputDecoration(
-                            labelText: 'CNPJ',
+                            labelText: 'IE',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text15,
                           decoration: const InputDecoration(
-                            labelText: 'IE',
+                            labelText: 'TITULAR',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text16,
                           decoration: const InputDecoration(
-                            labelText: 'TITULAR',
+                            labelText: 'TAM_SHOWROOM',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text17,
                           decoration: const InputDecoration(
-                            labelText: 'TAM_SHOWROOM',
+                            labelText: 'CAT',//ok
+                            prefixIcon: Icon(Icons.text_fields),
+                          ),
+                        ),
+                        TextFieldBlocBuilder(
+                          textFieldBloc: formBloc.text18,
+                          decoration: const InputDecoration(
+                            labelText: 'REGIÃO',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text19,
                           decoration: const InputDecoration(
-                            labelText: 'CAT',
-                            prefixIcon: Icon(Icons.text_fields),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text19,
-                          decoration: const InputDecoration(
-                            labelText: 'REGIÃO',
+                            labelText: 'SETOR',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text20,
                           decoration: const InputDecoration(
-                            labelText: 'SETOR',
+                            labelText: 'REGIÃO_SETOR',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text21,
                           decoration: const InputDecoration(
-                            labelText: 'REGIÃO_SETOR',
+                            labelText: 'Nº_BIR_MATRIZ',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text22,
                           decoration: const InputDecoration(
-                            labelText: 'Nº_BIR_MATRIZ',
+                            labelText: 'GRUPO',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text23,
                           decoration: const InputDecoration(
-                            labelText: 'GRUPO',
+                            labelText: 'CONSULTOR_360',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text24,
                           decoration: const InputDecoration(
-                            labelText: 'CONSULTOR_360',
-                            prefixIcon: Icon(Icons.text_fields),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text25,
-                          decoration: const InputDecoration(
-                            labelText: 'BIR_GRUPO',
+                            labelText: 'BIR_GRUPO',//ok
                             prefixIcon: Icon(Icons.text_fields),
                           ),
                         ),
@@ -415,23 +411,23 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const AllFieldsForm4())),
-              icon: const Icon(Icons.replay),
+                  MaterialPageRoute(builder: (_) => const CadastroBir())),
+              icon: const Icon(Icons.bento_outlined),
               label: const Text('Novo Cadastro'),
             ),
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (_) => BackOficcepanel())),
-              icon: const Icon(Icons.settings_accessibility),
-              label: const Text('texto'),
+              icon: const Icon(Icons.change_circle_sharp),
+              label: const Text('Voltar'),
             ),
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => BackOficcepanel())),
-              icon: const Icon(Icons.inventory_2_outlined),
-              label: const Text('Texto'),
+                  MaterialPageRoute(builder: (_) => TelaInicialLogin())),
+              icon: const Icon(Icons.exit_to_app),
+              label: const Text('Sair Portal'),
             ),
           ],
         ),

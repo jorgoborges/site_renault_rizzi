@@ -1,20 +1,21 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
-import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
+import 'package:site_renault_rizzi/interface/6RelGarRdbPanel.dart';
 
 void main() {
-  runApp(const CadAcesso());
+  runApp(const GerarSenha());
 }
 
-class CadAcesso extends StatelessWidget {
-  const CadAcesso({Key? key}) : super(key: key);
+class GerarSenha extends StatelessWidget {
+  const GerarSenha({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+
+
       debugShowCheckedModeBanner: false,
       home: AllFieldsForm(),
     );
@@ -25,51 +26,14 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
   final text1 = TextFieldBloc();
   final text2 = TextFieldBloc();
   final text3 = TextFieldBloc();
-  final text4 = TextFieldBloc();
-  final text5 = TextFieldBloc();
-  final text6 = TextFieldBloc();
-  final text7 = TextFieldBloc();
 
-  final boolean1 = BooleanFieldBloc();
-
-  final boolean2 = BooleanFieldBloc();
-
-  final multiSelect1 = MultiSelectFieldBloc<String, dynamic>(
-    items: [
-      'Venda',
-      'Pós Venda',
-      'Patrocinador',
-      'Interno',
-    ],
-  );
   final file = InputFieldBloc<File?, String>(initialValue: null);
-
-  final date1 = InputFieldBloc<DateTime?, Object>(initialValue: null);
-
-  final dateAndTime1 = InputFieldBloc<DateTime?, Object>(initialValue: null);
-
-  final time1 = InputFieldBloc<TimeOfDay?, Object>(initialValue: null);
-
-  final double1 = InputFieldBloc<double, dynamic>(
-    initialValue: 0.5,
-  );
 
   AllFieldsFormBloc() {
     addFieldBlocs(fieldBlocs: [
       text1,
       text2,
       text3,
-      text4,
-      text5,
-      text6,
-      text7,
-      boolean1,
-      boolean2,
-      multiSelect1,
-      date1,
-      dateAndTime1,
-      time1,
-      double1,
     ]);
   }
 
@@ -100,14 +64,12 @@ class AllFieldsForm extends StatelessWidget {
             data: Theme.of(context).copyWith(
               inputDecorationTheme: InputDecorationTheme(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(40),
                 ),
               ),
             ),
             child: Scaffold(
-              appBar: AppBar(
-                  title: const Text(
-                      'Cad-Acesso: Cadastro de Acesso aos "User" Portal')),
+              appBar: AppBar(title: const Text('Gerar Senha')),
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -117,7 +79,7 @@ class AllFieldsForm extends StatelessWidget {
                     onPressed: formBloc.submit,
                     icon: const Icon(Icons.send),
                     label: const Text(
-                      'Enviar',
+                      'Acessar',
                       style: TextStyle(fontSize: 11, color: Colors.white),
                     ),
                   ),
@@ -147,73 +109,22 @@ class AllFieldsForm extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text1,
                           decoration: const InputDecoration(
-                            labelText: 'Autor',
+                            labelText: 'SobreNome',
                             prefixIcon: Icon(Icons.man),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
-                            labelText: 'Nome',
-                            prefixIcon: Icon(Icons.text_fields),
+                            labelText: 'Email!',
+                            prefixIcon: Icon(Icons.email),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text3,
                           decoration: const InputDecoration(
-                            labelText: 'SobreNome',
-                            prefixIcon: Icon(Icons.text_fields),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text4,
-                          decoration: const InputDecoration(
-                            labelText: 'Digite a BIR!',
-                            prefixIcon: Icon(Icons.work_outline_outlined),
-                          ),
-                        ),
-                        CheckboxGroupFieldBlocBuilder<String>(
-                          multiSelectFieldBloc: formBloc.multiSelect1,
-                          decoration: const InputDecoration(
-                            labelText: 'Define os acessos!',
-                          ),
-                          itemBuilder: (context, item) => FieldItem(
-                            child: Text(item),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text5,
-                          decoration: const InputDecoration(
-                            labelText: 'Crie uma senha padrão!',
+                            labelText: 'Senha!',
                             prefixIcon: Icon(Icons.key),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text6,
-                          decoration: const InputDecoration(
-                            labelText: 'Confirme a Senha!',
-                            prefixIcon:
-                                Icon(Icons.confirmation_number_outlined),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text7,
-                          decoration: const InputDecoration(
-                            labelText: 'Email que será enviado a senha.',
-                            prefixIcon: Icon(Icons.email),
-                          ),
-                        ),
-                        DateTimeFieldBlocBuilder(
-                          dateTimeFieldBloc: formBloc.dateAndTime1,
-                          canSelectTime: true,
-                          format: DateFormat('dd-MM-yyyy  hh:mm'),
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime(1900),
-                          lastDate: DateTime(2100),
-                          decoration: const InputDecoration(
-                            labelText: 'Carimbo',
-                            prefixIcon: Icon(Icons.date_range),
-                            helperText: 'Data e Hora',
                           ),
                         ),
                         BlocBuilder<InputFieldBloc<File?, String>,
@@ -278,30 +189,21 @@ class SuccessScreen extends StatelessWidget {
             const Icon(Icons.tag_faces, size: 100),
             const SizedBox(height: 11),
             const Text(
-              'Successo',
+              'Sucesso',
               style: TextStyle(fontSize: 11, color: Colors.green),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 11),
-            ElevatedButton.icon(
-              onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const CadAcesso())),
-              icon: const Icon(Icons.bento_outlined),
-              label: const Text('Novo Cadastro'),
-            ),
-            SizedBox(height: 11),
-            ElevatedButton.icon(
-              onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => BackOficcepanel())),
-              icon: const Icon(Icons.change_circle_sharp),
-              label: const Text('Voltar'),
-            ),
-            SizedBox(height: 11),
-            ElevatedButton.icon(
-              onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => TelaInicialLogin())),
-              icon: const Icon(Icons.exit_to_app),
-              label: const Text('Sair Portal'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Menu()));
+              },
+              child: Text(
+                'Entrar',
+                style: TextStyle(fontSize: 11, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
             ),
           ],
         ),

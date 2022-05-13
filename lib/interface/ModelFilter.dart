@@ -11,7 +11,7 @@ class ModelFilter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Definir',
+      title: 'Filtro Base',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -33,8 +33,8 @@ class PlutoGridExamplePage extends StatefulWidget {
 class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
   final List<PlutoColumn> columns = <PlutoColumn>[
     PlutoColumn(
-      title: 'Mês',
-      field: 'mês',
+      title: 'Aponte',
+      field: 'aponte',
       type: PlutoColumnType.text(),
       titleTextAlign: PlutoColumnTextAlign.center,
       backgroundColor: Colors.amber,
@@ -86,7 +86,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
   final List<PlutoRow> rows = [
     PlutoRow(
       cells: {
-        'mês': PlutoCell(value: '202111'),
+        'aponte': PlutoCell(value: '202111'),
         'n.ºfatura': PlutoCell(value: '25642'),
         'N.ºOS': PlutoCell(value: '5486'),
         'Inter.': PlutoCell(value: 'A'),
@@ -98,10 +98,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
   ];
 
   /// columnGroups that can group columns can be omitted.
-  final List<PlutoColumnGroup> columnGroups = [
-
-
-  ];
+  final List<PlutoColumnGroup> columnGroups = [];
 
   /// [PlutoGridStateManager] has many methods and properties to dynamically manipulate the grid.
   /// You can manipulate the grid dynamically at runtime by passing this through the [onLoaded] callback.
@@ -111,20 +108,22 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.all(15),
-        child: PlutoGrid(
-          columns: columns,
-          rows: rows,
-          columnGroups: columnGroups,
-          onLoaded: (PlutoGridOnLoadedEvent event) {
-            stateManager = event.stateManager;
-          },
-          onChanged: (PlutoGridOnChangedEvent event) {
-            print(event);
-          },
-          configuration: const PlutoGridConfiguration(
-            enableColumnBorder: true,
-            enterKeyAction: PlutoGridEnterKeyAction.editingAndMoveDown,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(15),
+          child: PlutoGrid(
+            columns: columns,
+            rows: rows,
+            columnGroups: columnGroups,
+            onLoaded: (PlutoGridOnLoadedEvent event) {
+              stateManager = event.stateManager;
+            },
+            onChanged: (PlutoGridOnChangedEvent event) {
+              print(event);
+            },
+            configuration: const PlutoGridConfiguration(
+              enableColumnBorder: true,
+              enterKeyAction: PlutoGridEnterKeyAction.editingAndMoveDown,
+            ),
           ),
         ),
       ),

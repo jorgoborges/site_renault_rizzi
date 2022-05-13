@@ -2,15 +2,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
-import 'package:site_renault_rizzi/interface/1Menu.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
 void main() {
-  runApp(const CadAcesso());
+  runApp(const CadNivel());
 }
 
-class CadAcesso extends StatelessWidget {
-  const CadAcesso({Key? key}) : super(key: key);
+class CadNivel extends StatelessWidget {
+  const CadNivel({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,23 +24,11 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
   final text1 = TextFieldBloc();
   final text2 = TextFieldBloc();
   final text3 = TextFieldBloc();
-  final text4 = TextFieldBloc();
-  final text5 = TextFieldBloc();
-  final text6 = TextFieldBloc();
-  final text7 = TextFieldBloc();
 
   final boolean1 = BooleanFieldBloc();
 
   final boolean2 = BooleanFieldBloc();
 
-  final multiSelect1 = MultiSelectFieldBloc<String, dynamic>(
-    items: [
-      'Venda',
-      'Pós Venda',
-      'Patrocinador',
-      'Interno',
-    ],
-  );
   final file = InputFieldBloc<File?, String>(initialValue: null);
 
   final date1 = InputFieldBloc<DateTime?, Object>(initialValue: null);
@@ -50,26 +37,16 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
 
   final time1 = InputFieldBloc<TimeOfDay?, Object>(initialValue: null);
 
-  final double1 = InputFieldBloc<double, dynamic>(
-    initialValue: 0.5,
-  );
-
   AllFieldsFormBloc() {
     addFieldBlocs(fieldBlocs: [
       text1,
       text2,
       text3,
-      text4,
-      text5,
-      text6,
-      text7,
       boolean1,
       boolean2,
-      multiSelect1,
       date1,
       dateAndTime1,
       time1,
-      double1,
     ]);
   }
 
@@ -106,8 +83,8 @@ class AllFieldsForm extends StatelessWidget {
             ),
             child: Scaffold(
               appBar: AppBar(
-                  title: const Text(
-                      'Cad-Acesso: Cadastro de Acesso aos "User" Portal')),
+                  title:
+                      const Text('Cad-Nivel: Cadastro de informação adcional')),
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -154,53 +131,8 @@ class AllFieldsForm extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
-                            labelText: 'Nome',
-                            prefixIcon: Icon(Icons.text_fields),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text3,
-                          decoration: const InputDecoration(
-                            labelText: 'SobreNome',
-                            prefixIcon: Icon(Icons.text_fields),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text4,
-                          decoration: const InputDecoration(
-                            labelText: 'Digite a BIR!',
-                            prefixIcon: Icon(Icons.work_outline_outlined),
-                          ),
-                        ),
-                        CheckboxGroupFieldBlocBuilder<String>(
-                          multiSelectFieldBloc: formBloc.multiSelect1,
-                          decoration: const InputDecoration(
-                            labelText: 'Define os acessos!',
-                          ),
-                          itemBuilder: (context, item) => FieldItem(
-                            child: Text(item),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text5,
-                          decoration: const InputDecoration(
-                            labelText: 'Crie uma senha padrão!',
-                            prefixIcon: Icon(Icons.key),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text6,
-                          decoration: const InputDecoration(
-                            labelText: 'Confirme a Senha!',
-                            prefixIcon:
-                                Icon(Icons.confirmation_number_outlined),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text7,
-                          decoration: const InputDecoration(
-                            labelText: 'Email que será enviado a senha.',
-                            prefixIcon: Icon(Icons.email),
+                            labelText: 'Definição acesso',
+                            prefixIcon: Icon(Icons.engineering),
                           ),
                         ),
                         DateTimeFieldBlocBuilder(
@@ -285,7 +217,7 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const CadAcesso())),
+                  MaterialPageRoute(builder: (_) => const CadNivel())),
               icon: const Icon(Icons.bento_outlined),
               label: const Text('Novo Cadastro'),
             ),

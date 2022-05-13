@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
-import 'package:site_renault_rizzi/interface/ActionPlan.dart';
 import 'package:site_renault_rizzi/interface/CadAcesso.dart';
 import 'package:site_renault_rizzi/interface/CadBir.dart';
+import 'package:site_renault_rizzi/interface/CadNivel.dart';
+import 'package:site_renault_rizzi/interface/CarregarBaseGar.dart';
 
 void main() {
   runApp(BackOficcepanel());
@@ -150,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       MaterialPageRoute(
                                           builder: (context) => CadastroBir()));
                                 }, // falta direcionar para tela xpto
-                                child: Text('Texto**',
+                                child: Text('Cad-ICB',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),
@@ -167,9 +168,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => ActionPlan()));
+                                          builder: (context) => CadNivel()));
                                 },
-                                child: Text('Texto',
+                                child: Text('Cad-Nivel',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),
@@ -182,8 +183,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 25,
                               width: 5,
                               child: ElevatedButton(
-                                onPressed: () {},
-                                child: Text('Texto',
+                                onPressed: () {
+
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => CarregarBaseGar()));
+                                },
+                                child: Text('Carregar Base Garantia',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
-
+import 'package:site_renault_rizzi/interface/GerarSenha.dart';
 
 void main() {
   runApp(const TelaInicialLogin());
@@ -15,9 +15,7 @@ class TelaInicialLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Login',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: const HomePage(),
     );
   }
@@ -30,7 +28,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Formas de Login"),
         centerTitle: true,
       ),
       body: Center(
@@ -40,57 +37,23 @@ class HomePage extends StatelessWidget {
             children: [
               //For default Button
               FlutterSocialButton(
-                onTap: () {},
-              ),
-              const SizedBox(
-                height: 2,
-              ),
-
-              //For default Button
-              FlutterSocialButton(
-                onTap: () {},
-                buttonType: ButtonType.yahoo,
-              ),
-              const SizedBox(
-                height: 2,
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => GerarSenha()));
+                },
               ),
 
-              //For facebook Button
-              FlutterSocialButton(
-                onTap: () {},
-                buttonType: ButtonType.facebook,
-              ),
-              const SizedBox(
-                height: 2,
-              ),
-
-              //For google Button
-              FlutterSocialButton(
-                onTap: () {},
-                buttonType: ButtonType.google,
-                iconColor: Colors.black,
-              ),
               const SizedBox(
                 height: 2,
               ),
 
               //For phone Button
               FlutterSocialButton(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => GerarSenha()));
+                },
                 buttonType: ButtonType.phone,
-              ),
-
-              const SizedBox(
-                height: 2,
-              ),
-
-              //For Whatsapp Button
-              FlutterSocialButton(
-                onTap: () {},
-                buttonType: ButtonType.whatsapp,
-              ),
-              const SizedBox(
-                height: 2,
               ),
 
               const Divider(
@@ -102,34 +65,19 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FlutterSocialButton(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Menu()));
+                    },
                     mini: true,
                   ),
                   FlutterSocialButton(
-                    onTap: () {},
-                    mini: true,
-                    buttonType: ButtonType.facebook,
-                  ),
-                  FlutterSocialButton(
-                    onTap: () {},
-                    mini: true,
-                    buttonType: ButtonType.google,
-                  ),
-                  FlutterSocialButton(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Menu()));
+                    },
                     mini: true,
                     buttonType: ButtonType.phone,
-                  ),
-                  FlutterSocialButton(
-                    onTap: () {},
-                    mini: true,
-                    buttonType: ButtonType.yahoo,
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => Menu())),
-                    icon: const Icon(Icons.key),
-                    label: const Text('Entrar'),
                   ),
                 ],
               )
