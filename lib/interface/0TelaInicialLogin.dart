@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
-import 'package:site_renault_rizzi/interface/1Menu.dart';
 import 'package:site_renault_rizzi/interface/GerarSenha.dart';
 
 void main() {
@@ -67,14 +66,14 @@ class HomePage extends StatelessWidget {
                   FlutterSocialButton(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Menu()));
+                          MaterialPageRoute(builder: (context) => GerarSenha()));
                     },
                     mini: true,
                   ),
                   FlutterSocialButton(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Menu()));
+                          MaterialPageRoute(builder: (context) => GerarSenha()));
                     },
                     mini: true,
                     buttonType: ButtonType.phone,

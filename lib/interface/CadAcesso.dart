@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
-import 'package:site_renault_rizzi/interface/1Menu.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
 void main() {
@@ -29,6 +28,7 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
   final text5 = TextFieldBloc();
   final text6 = TextFieldBloc();
   final text7 = TextFieldBloc();
+  final text8 = TextFieldBloc();
 
   final boolean1 = BooleanFieldBloc();
 
@@ -63,6 +63,7 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
       text5,
       text6,
       text7,
+      text8,
       boolean1,
       boolean2,
       multiSelect1,
@@ -172,6 +173,13 @@ class AllFieldsForm extends StatelessWidget {
                             prefixIcon: Icon(Icons.work_outline_outlined),
                           ),
                         ),
+                        TextFieldBlocBuilder(
+                          textFieldBloc: formBloc.text5,
+                          decoration: const InputDecoration(
+                            labelText: 'Função',
+                            prefixIcon: Icon(Icons.engineering),
+                          ),
+                        ),
                         CheckboxGroupFieldBlocBuilder<String>(
                           multiSelectFieldBloc: formBloc.multiSelect1,
                           decoration: const InputDecoration(
@@ -182,14 +190,14 @@ class AllFieldsForm extends StatelessWidget {
                           ),
                         ),
                         TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text5,
+                          textFieldBloc: formBloc.text6,
                           decoration: const InputDecoration(
                             labelText: 'Crie uma senha padrão!',
                             prefixIcon: Icon(Icons.key),
                           ),
                         ),
                         TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text6,
+                          textFieldBloc: formBloc.text7,
                           decoration: const InputDecoration(
                             labelText: 'Confirme a Senha!',
                             prefixIcon:
@@ -197,7 +205,7 @@ class AllFieldsForm extends StatelessWidget {
                           ),
                         ),
                         TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text7,
+                          textFieldBloc: formBloc.text8,
                           decoration: const InputDecoration(
                             labelText: 'Email que será enviado a senha.',
                             prefixIcon: Icon(Icons.email),

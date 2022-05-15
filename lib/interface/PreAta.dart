@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/ActionPlan.dart';
+import 'package:site_renault_rizzi/interface/Grafico1.dart';
+import 'package:site_renault_rizzi/interface/Grafico2.dart';
 import 'package:site_renault_rizzi/interface/ModelDownload.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-
 import 'package:pluto_grid/pluto_grid.dart';
+import 'package:site_renault_rizzi/interface/ResumoFinal.dart';
 
 /// Provides a UI to select a authentication type page
-class ExecutarAnaliseGar extends StatefulWidget {
-  _ExecutarAnaliseGar createState() => _ExecutarAnaliseGar();
+class PreAta extends StatefulWidget {
+  _PreAta createState() => _PreAta();
 }
 
 class LabeledCheckbox extends StatelessWidget {
@@ -53,7 +52,7 @@ class LabeledCheckbox extends StatelessWidget {
   }
 }
 
-class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
+class _PreAta extends State<PreAta> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,9 +93,9 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => BackOficcepanel())),
-                  icon: const Icon(Icons.assignment_return_outlined),
-                  label: const Text('Carregar base'),
+                      MaterialPageRoute(builder: (_) => MyChart())),
+                  icon: const Icon(Icons.data_exploration_sharp),
+                  label: const Text('Andamento'),
                 ),
               ],
             ),
@@ -106,13 +105,25 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 height: 10,
               ),
             )),
+            ElevatedButton.icon(
+              onPressed: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => MyChart2())),
+              icon: const Icon(Icons.dashboard),
+              label: const Text('Dashboard'),
+            ),
+            Expanded(
+                child: Container(
+                  child: SizedBox(
+                    height: 10,
+                  ),
+                )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ExecutarAnaliseGar())),
+                      MaterialPageRoute(builder: (_) => ResumoFinal())),
                   icon: const Icon(Icons.preview),
                   label: const Text('Resumo Final'),
                 ),
@@ -149,7 +160,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.blueGrey,
@@ -161,7 +172,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
-                    'Fechamento Inicial Pré ATA',
+                    'Pré ATA',
                     style: TextStyle(fontSize: 20),
                   ),
                 )),
@@ -173,7 +184,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                     flex: 4,
                     child: Container(
                       margin: EdgeInsets.all(5),
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(5),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: Colors.amberAccent,
@@ -192,7 +203,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.amberAccent,
@@ -211,7 +222,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.amberAccent,
@@ -230,7 +241,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                   child: Container(
                       margin: EdgeInsets.all(5),
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(5),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: Colors.amberAccent,
@@ -254,7 +265,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.black12,
@@ -273,7 +284,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.black12,
@@ -292,7 +303,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.black12,
@@ -311,7 +322,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.black12,
@@ -336,7 +347,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.blueGrey,
@@ -354,6 +365,31 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 )),
               ],
               crossAxisAlignment: CrossAxisAlignment.center),
+          Row(
+              children: [
+                Expanded(
+                    flex: 3,
+                    child: Container(
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.lightBlueAccent,
+                        border: Border.all(
+                            color: Colors.black, // Set border color
+                            width: 1.0), // Set border width
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(8.0)), // Set rounded corner radius
+                        // Make rounded corner of border
+                      ),
+                      child: AutoSizeText(
+                        'Apontamento primeiro dia ',
+                        style: TextStyle(fontSize: 11),
+                      ),
+                    )),
+              ],
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center),
           Row(children: [
             Expanded(
                 child: Container(
@@ -361,7 +397,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
               padding: EdgeInsets.all(5),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.black12,
+                color: Colors.lightBlueAccent,
                 border: Border.all(
                     color: Colors.white70, // Set border color
                     width: 3.0), // Set border width
@@ -380,7 +416,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
               alignment: Alignment.center,
               width: 150,
               decoration: BoxDecoration(
-                color: Colors.black12,
+                color: Colors.lightBlueAccent,
                 border: Border.all(
                     color: Colors.white70, // Set border color
                     width: 3.0), // Set border width
@@ -399,7 +435,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
               width: 300,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.black12,
+                color: Colors.lightBlueAccent,
                 border: Border.all(
                     color: Colors.white70, // Set border color
                     width: 3.0), // Set border width
@@ -892,6 +928,24 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                       'Comentário',
                       style: TextStyle(fontSize: 11),
                     ))),
+            Expanded(
+                child: Container(
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.green,
+                border: Border.all(
+                    color: Colors.green, // Set border color
+                    width: 3.0), // Set border width
+                // Set rounded corner radius
+                // Make rounded corner of border
+              ),
+              child: AutoSizeText(
+                'Dia',
+                style: TextStyle(fontSize: 11),
+              ),
+            )),
           ], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
             Expanded(
@@ -1107,6 +1161,102 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 ),
               ),
             ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.centerLeft,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.green)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: const SizedBox(
+                  height: 30,
+                  width: 80,
+                  child: AutoSizeText(
+                    'dia-1',
+                    style: TextStyle(fontSize: 10.0),
+                  ),
+                ),
+              ),
+            ),
+          ], mainAxisAlignment: MainAxisAlignment.center),
+          Row(children: [
+            Expanded(
+              flex: 7,
+              child: Container(
+                alignment: Alignment.center,
+                height: 45,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  'Cobranças em duplicidade e/ou a mais que o preconizado ( Dialogys, NF terceiro e etc):',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 25,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  'Valor =00000',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 7,
+              child: Container(
+                alignment: Alignment.center,
+                height: 45,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  'Total de Apontamentos  à serem estornados ',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 25,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '52.000,54 ',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 40,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '40% ',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
           ], mainAxisAlignment: MainAxisAlignment.center),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -1114,7 +1264,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 Expanded(
                     child: Container(
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.blueGrey,
@@ -1156,7 +1306,7 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.all(5),
               alignment: Alignment.center,
-              width: 150,
+              width: 40,
               decoration: BoxDecoration(
                 color: Colors.black12,
                 border: Border.all(
@@ -1266,83 +1416,6 @@ class _ExecutarAnaliseGar extends State<ExecutarAnaliseGar> {
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
                   'xxxxxxxxxx',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-          ], mainAxisAlignment: MainAxisAlignment.center),
-          Row(children: [
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 60,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Cobranças em duplicidade e/ou a mais que o preconizado ( Dialogys, NF terceiro e etc):',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 60,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Valor =00000',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 60,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Total de Apontamentos  à serem estornados ',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 60,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Valores 52.000,54 ',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 60,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '25% ',
                   style: TextStyle(fontSize: 10),
                 ),
               ),

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
-import 'package:site_renault_rizzi/interface/6RelGarRdbPanel.dart';
+
 
 void main() {
   runApp(const GerarSenha());
@@ -69,7 +69,7 @@ class AllFieldsForm extends StatelessWidget {
               ),
             ),
             child: Scaffold(
-              appBar: AppBar(title: const Text('Gerar Senha')),
+              appBar: AppBar(title: const Text('Digite seu acesso')),
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[

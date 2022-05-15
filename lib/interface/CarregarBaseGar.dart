@@ -6,7 +6,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 import 'package:site_renault_rizzi/interface/ActionPlan.dart';
 import 'package:site_renault_rizzi/interface/ModelDownload.dart';
-import 'package:site_renault_rizzi/interface/FechamentoAnaliseGar.dart';
+import 'package:site_renault_rizzi/interface/PreAta.dart';
+import 'package:site_renault_rizzi/interface/ResumoFinal.dart';
 
 /// Provides a UI to select a authentication type page
 class CarregarBaseGar extends StatefulWidget {
@@ -57,6 +58,7 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
     return Scaffold(
         body: Container(
       height: double.infinity,
+      width: double.infinity,
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(border: Border.all(color: Colors.white)),
       child: SingleChildScrollView(
@@ -110,9 +112,27 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ExecutarAnaliseGar())),
+                      MaterialPageRoute(builder: (_) => PreAta())),
                   icon: const Icon(Icons.preview),
                   label: const Text('Pré Ata'),
+                ),
+              ],
+            ),
+            Expanded(
+                child: Container(
+              child: SizedBox(
+                height: 10,
+              ),
+            )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => ResumoFinal())),
+                  icon: const Icon(Icons.preview),
+                  label: const Text('Resumo Final'),
                 ),
               ],
             ),
@@ -413,7 +433,6 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
                     ))),
           ], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
-
             Expanded(
               child: Container(
                 alignment: Alignment.center,

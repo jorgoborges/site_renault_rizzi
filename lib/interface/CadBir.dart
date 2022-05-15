@@ -164,7 +164,7 @@ class AllFieldsForm4 extends StatelessWidget {
                           textFieldBloc: formBloc.text1,
                           decoration: const InputDecoration(
                             labelText: 'QTD',//ok
-                            prefixIcon: Icon(Icons.man),
+                            prefixIcon: Icon(Icons.format_list_bulleted),
                           ),
                         ),
                         TextFieldBlocBuilder(

@@ -3,7 +3,7 @@ import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
 import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
 import 'package:site_renault_rizzi/interface/ActionPlan.dart';
-import 'package:site_renault_rizzi/interface/FechamentoAnaliseGar.dart';
+import 'package:site_renault_rizzi/interface/PreAta.dart';
 
 void main() {
   runApp(PosVendasRdb());
@@ -129,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => ExecutarAnaliseGar()));
+                                          builder: (context) => PreAta()));
                                 },
                                 child: Text('Base',
                                     style: TextStyle(

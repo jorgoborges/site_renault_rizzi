@@ -5,6 +5,8 @@ import 'package:site_renault_rizzi/interface/CadAcesso.dart';
 import 'package:site_renault_rizzi/interface/CadBir.dart';
 import 'package:site_renault_rizzi/interface/CadNivel.dart';
 import 'package:site_renault_rizzi/interface/CarregarBaseGar.dart';
+import 'package:site_renault_rizzi/interface/Grafico1.dart';
+import 'package:site_renault_rizzi/interface/Grafico3.dart';
 
 void main() {
   runApp(BackOficcepanel());
@@ -14,7 +16,7 @@ class BackOficcepanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BackOfficePanel',
+      title: 'BackOffice',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
@@ -84,19 +86,19 @@ class _MyHomePageState extends State<MyHomePage> {
             items: [
               SideMenuItem(
                 priority: 0,
-                title: 'Cad-Acesso',
+                title: 'Cadastros',
                 onTap: () {
                   page.jumpToPage(0);
                 },
-                icon: Icons.fiber_manual_record_rounded,
+                icon: Icons.newspaper,
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Cad-ICB',
+                title: 'Dashboard',
                 onTap: () {
                   page.jumpToPage(1);
                 },
-                icon: Icons.fiber_manual_record_rounded,
+                icon: Icons.tablet_android,
               ),
               SideMenuItem(
                 priority: 2,
@@ -106,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Menu()));
                 },
-                icon: Icons.fiber_manual_record_rounded,
+                icon: Icons.exit_to_app,
               ),
             ],
           ),
@@ -132,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       MaterialPageRoute(
                                           builder: (context) => CadAcesso()));
                                 },
-                                child: Text('Cad-Acesso',
+                                child: Text('Acesso',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),
@@ -150,8 +152,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => CadastroBir()));
-                                }, // falta direcionar para tela xpto
-                                child: Text('Cad-ICB',
+                                },
+                                child: Text('ICB',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),
@@ -170,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       MaterialPageRoute(
                                           builder: (context) => CadNivel()));
                                 },
-                                child: Text('Cad-Nivel',
+                                child: Text('Nivel',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),
@@ -184,13 +186,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 5,
                               child: ElevatedButton(
                                 onPressed: () {
-
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => CarregarBaseGar()));
+                                          builder: (context) =>
+                                              CarregarBaseGar()));
                                 },
-                                child: Text('Carregar Base Garantia',
+                                child: Text('Garantia',
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.white)),
                               ),
@@ -204,10 +206,49 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   color: Colors.white,
                   child: Center(
-                    child: Text(
-                      'Page\n   2',
-                      style: TextStyle(fontSize: 35),
-                    ),
+                    child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MyChart()));
+                                },
+                                child: Text('Andamento',
+                                    style: TextStyle(
+                                        fontSize: 11, color: Colors.white)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MyChart3()));
+                                },
+                                child: Text('Dashboard',
+                                    style: TextStyle(
+                                        fontSize: 11, color: Colors.white)),
+                              ),
+                            ),
+                          ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start),
                   ),
                 ),
                 Container(

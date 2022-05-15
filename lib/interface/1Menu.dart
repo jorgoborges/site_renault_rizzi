@@ -4,12 +4,12 @@ import 'package:site_renault_rizzi/interface/3VendasRdb.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
 
-void main() => runApp(const Menu());
+void main() => runApp(const Menu());//Chama a tela menu após tela GerarSenha
 
 class Menu extends StatelessWidget {
   const Menu({Key? key}) : super(key: key);
 
-  static const appTitle = 'MENU';
+  static const appTitle = 'Bem Vindo';
 
   @override
   Widget build(BuildContext context) {

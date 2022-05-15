@@ -135,6 +135,13 @@ class AllFieldsForm extends StatelessWidget {
                             prefixIcon: Icon(Icons.engineering),
                           ),
                         ),
+                        TextFieldBlocBuilder(
+                          textFieldBloc: formBloc.text3,
+                          decoration: const InputDecoration(
+                            labelText: 'Função',
+                            prefixIcon: Icon(Icons.soap_outlined),
+                          ),
+                        ),
                         DateTimeFieldBlocBuilder(
                           dateTimeFieldBloc: formBloc.dateAndTime1,
                           canSelectTime: true,

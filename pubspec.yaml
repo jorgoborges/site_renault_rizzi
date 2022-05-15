@@ -48,8 +48,9 @@ dependencies:
   dropdown_menu: ^1.1.1
   shrink_sidemenu: ^2.0.0+2-null-safety
   flutter_admin_scaffold: ^1.1.0
-  dependencies:
   syncfusion_flutter_xlsio: ^20.1.52-beta
+  pie_chart: ^5.3.0
+  d_chart: ^0.0.4
 
 
 
