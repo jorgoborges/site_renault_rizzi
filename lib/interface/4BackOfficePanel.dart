@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
+import 'package:site_renault_rizzi/interface/Agenda.dart';
 import 'package:site_renault_rizzi/interface/CadAcesso.dart';
 import 'package:site_renault_rizzi/interface/CadBir.dart';
+import 'package:site_renault_rizzi/interface/CadColaborador.dart';
 import 'package:site_renault_rizzi/interface/CadNivel.dart';
 import 'package:site_renault_rizzi/interface/CarregarBaseGar.dart';
+import 'package:site_renault_rizzi/interface/Grafico4.dart';
 import 'package:site_renault_rizzi/interface/Grafico1.dart';
-import 'package:site_renault_rizzi/interface/Grafico3.dart';
 
 void main() {
   runApp(BackOficcepanel());
@@ -127,35 +129,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               alignment: Alignment.center,
                               height: 25,
                               width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => CadAcesso()));
-                                },
-                                child: Text('Acesso',
-                                    style: TextStyle(
-                                        fontSize: 11, color: Colors.white)),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(8),
-                              height: 25,
-                              width: 5,
-                              alignment: Alignment.center,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => CadastroBir()));
-                                },
-                                child: Text('ICB',
-                                    style: TextStyle(
-                                        fontSize: 11, color: Colors.white)),
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => CadAcesso()));
+                                  },
+                                  child: Text('Acesso',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
                               ),
                             ),
                           ),
@@ -165,16 +151,43 @@ class _MyHomePageState extends State<MyHomePage> {
                               alignment: Alignment.center,
                               height: 25,
                               width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => CadNivel()));
-                                },
-                                child: Text('Nivel',
-                                    style: TextStyle(
-                                        fontSize: 11, color: Colors.white)),
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CadColaborador()));
+                                  },
+                                  child: Text('Colaborador',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              height: 25,
+                              width: 5,
+                              alignment: Alignment.center,
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CadastroBir()));
+                                  },
+                                  child: Text('ICB',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
                               ),
                             ),
                           ),
@@ -184,17 +197,42 @@ class _MyHomePageState extends State<MyHomePage> {
                               alignment: Alignment.center,
                               height: 25,
                               width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              CarregarBaseGar()));
-                                },
-                                child: Text('Garantia',
-                                    style: TextStyle(
-                                        fontSize: 11, color: Colors.white)),
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => CadNivel()));
+                                  },
+                                  child: Text('Nivel',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CarregarBaseGar()));
+                                  },
+                                  child: Text('Garantia',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
                               ),
                             ),
                           ),
@@ -214,16 +252,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               alignment: Alignment.center,
                               height: 25,
                               width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => MyChart()));
-                                },
-                                child: Text('Andamento',
-                                    style: TextStyle(
-                                        fontSize: 11, color: Colors.white)),
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => MyChart4()));
+                                  },
+                                  child: Text('Andamento',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
                               ),
                             ),
                           ),
@@ -233,16 +274,42 @@ class _MyHomePageState extends State<MyHomePage> {
                               alignment: Alignment.center,
                               height: 25,
                               width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => MyChart3()));
-                                },
-                                child: Text('Dashboard',
-                                    style: TextStyle(
-                                        fontSize: 11, color: Colors.white)),
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => MyChart1()));
+                                  },
+                                  child: Text('Dashboard',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 5,
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CalendarScreen()));
+                                  },
+                                  child: Text('Agenda',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.white)),
+                                ),
                               ),
                             ),
                           ),

@@ -4,8 +4,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
+import 'package:site_renault_rizzi/interface/Grafico4.dart';
 import 'package:site_renault_rizzi/interface/Grafico1.dart';
-import 'package:site_renault_rizzi/interface/Grafico3.dart';
 import 'package:site_renault_rizzi/interface/ModelDownload.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 import 'package:site_renault_rizzi/interface/PreAta.dart';
@@ -95,7 +95,7 @@ class _ResumoFinal extends State<ResumoFinal> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => MyChart())),
+                      MaterialPageRoute(builder: (_) => MyChart4())),
                   icon: const Icon(Icons.add_chart),
                   label: const Text('Andamento'),
                 ),
@@ -128,7 +128,7 @@ class _ResumoFinal extends State<ResumoFinal> {
             )),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => MyChart3())),
+                  MaterialPageRoute(builder: (_) => MyChart1())),
               icon: const Icon(Icons.dashboard),
               label: const Text('Dashboard'),
             ),

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:site_renault_rizzi/interface/Grafico1.dart';
+import 'package:site_renault_rizzi/interface/Grafico4.dart';
+import 'package:site_renault_rizzi/interface/Grafico00000000000.dart';
 import 'package:site_renault_rizzi/interface/Grafico2.dart';
 import 'package:site_renault_rizzi/interface/ModelDownload.dart';
 import 'package:pluto_grid/pluto_grid.dart';
@@ -93,7 +94,7 @@ class _PreAta extends State<PreAta> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => MyChart())),
+                      MaterialPageRoute(builder: (_) => MyChart4())),
                   icon: const Icon(Icons.data_exploration_sharp),
                   label: const Text('Andamento'),
                 ),

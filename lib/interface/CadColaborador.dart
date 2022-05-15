@@ -5,11 +5,11 @@ import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
 void main() {
-  runApp(const CadAcesso());
+  runApp(const CadColaborador());
 }
 
-class CadAcesso extends StatelessWidget {
-  const CadAcesso({Key? key}) : super(key: key);
+class CadColaborador extends StatelessWidget {
+  const CadColaborador({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +36,11 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
 
   final multiSelect1 = MultiSelectFieldBloc<String, dynamic>(
     items: [
-      'Venda',
-      'Pós Venda',
-      'Patrocinador',
-      'Interno',
+      'Analista',
+      'Consultor',
+      'Professor',
+      'Auditor',
+      'Escritório',
     ],
   );
   final file = InputFieldBloc<File?, String>(initialValue: null);
@@ -108,7 +109,7 @@ class AllFieldsForm extends StatelessWidget {
             child: Scaffold(
               appBar: AppBar(
                   title: const Text(
-                      'Cad-Acesso: Cadastro de Acesso aos "User" Portal')),
+                      'Cad-Colaboradores')),
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -149,35 +150,35 @@ class AllFieldsForm extends StatelessWidget {
                           textFieldBloc: formBloc.text1,
                           decoration: const InputDecoration(
                             labelText: 'Autor',
-                            prefixIcon: Icon(Icons.man),
+                            prefixIcon: Icon(Icons.person),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
                             labelText: 'Nome',
-                            prefixIcon: Icon(Icons.text_fields),
+                            prefixIcon: Icon(Icons.edit),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text3,
                           decoration: const InputDecoration(
                             labelText: 'SobreNome',
-                            prefixIcon: Icon(Icons.text_fields),
+                            prefixIcon: Icon(Icons.edit),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text4,
                           decoration: const InputDecoration(
-                            labelText: 'Digite a BIR!',
-                            prefixIcon: Icon(Icons.work_outline_outlined),
+                            labelText: 'Cinco primeiros digitos CPF!',
+                            prefixIcon: Icon(Icons.numbers),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text5,
                           decoration: const InputDecoration(
-                            labelText: 'Função',
-                            prefixIcon: Icon(Icons.engineering),
+                            labelText: 'Email',
+                            prefixIcon: Icon(Icons.email),
                           ),
                         ),
                         CheckboxGroupFieldBlocBuilder<String>(
@@ -192,22 +193,14 @@ class AllFieldsForm extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text6,
                           decoration: const InputDecoration(
-                            labelText: 'Crie uma senha padrão!',
-                            prefixIcon: Icon(Icons.key),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text7,
-                          decoration: const InputDecoration(
-                            labelText: 'Confirme a Senha!',
-                            prefixIcon:
-                            Icon(Icons.confirmation_number_outlined),
+                            labelText: 'WhatsApp',
+                            prefixIcon: Icon(Icons.whatsapp),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text8,
                           decoration: const InputDecoration(
-                            labelText: 'Email que será enviado a senha.',
+                            labelText: 'Email para recebimento de acesso',
                             prefixIcon: Icon(Icons.email),
                           ),
                         ),
@@ -225,7 +218,7 @@ class AllFieldsForm extends StatelessWidget {
                           ),
                         ),
                         BlocBuilder<InputFieldBloc<File?, String>,
-                            InputFieldBlocState<File?, String>>(
+                                InputFieldBlocState<File?, String>>(
                             bloc: formBloc.file,
                             builder: (context, state) {
                               return Container();
@@ -245,11 +238,11 @@ class AllFieldsForm extends StatelessWidget {
 
 class LoadingDialog extends StatelessWidget {
   static void show(BuildContext context, {Key? key}) => showDialog<void>(
-    context: context,
-    useRootNavigator: false,
-    barrierDismissible: false,
-    builder: (_) => LoadingDialog(key: key),
-  ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
+        context: context,
+        useRootNavigator: false,
+        barrierDismissible: false,
+        builder: (_) => LoadingDialog(key: key),
+      ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
 
   static void hide(BuildContext context) => Navigator.pop(context);
 
@@ -293,15 +286,15 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const CadAcesso())),
-              icon: const Icon(Icons.app_registration),
+                  MaterialPageRoute(builder: (_) => const CadColaborador())),
+              icon: const Icon(Icons.bento_outlined),
               label: const Text('Novo Cadastro'),
             ),
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (_) => BackOficcepanel())),
-              icon: const Icon(Icons.keyboard_return),
+              icon: const Icon(Icons.change_circle_sharp),
               label: const Text('Voltar'),
             ),
             SizedBox(height: 11),
