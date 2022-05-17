@@ -1,7 +1,6 @@
 import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-
 import 'package:site_renault_rizzi/interface/Grafico2.dart';
 
 
@@ -28,7 +27,7 @@ class Home extends StatelessWidget {
         actions: [
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => BackOficcepanel())),
+                MaterialPageRoute(builder: (_) => BackOfficePanel())),
             icon: const Icon(Icons.arrow_circle_left_outlined),
             label: const Text('Voltar'),
           ),

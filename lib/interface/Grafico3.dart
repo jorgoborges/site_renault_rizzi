@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
           ),
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => BackOficcepanel())),
+                MaterialPageRoute(builder: (_) => BackOfficePanel())),
             icon: const Icon(Icons.menu_open),
             label: const Text('Menu'),
           ),

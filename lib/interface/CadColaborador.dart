@@ -1,7 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
-import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
+import 'package:site_renault_rizzi/interface/1Menu.dart';
+import 'package:site_renault_rizzi/interface/Tela_Login.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
 void main() {
@@ -108,20 +109,12 @@ class AllFieldsForm extends StatelessWidget {
             ),
             child: Scaffold(
               appBar: AppBar(
-                  title: const Text(
-                      'Cad-Colaboradores')),
-              floatingActionButton: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const SizedBox(height: 5, width: 50),
-                  FloatingActionButton.extended(
-                    heroTag: null,
-                    onPressed: formBloc.submit,
-                    icon: const Icon(Icons.send),
-                    label: const Text(
-                      'Enviar',
-                      style: TextStyle(fontSize: 11, color: Colors.white),
-                    ),
+                actions: [
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                    icon: const Icon(Icons.logout),
+                    label: const Text('Sair'),
                   ),
                 ],
               ),
@@ -293,7 +286,7 @@ class SuccessScreen extends StatelessWidget {
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => BackOficcepanel())),
+                  MaterialPageRoute(builder: (_) => BackOfficePanel())),
               icon: const Icon(Icons.change_circle_sharp),
               label: const Text('Voltar'),
             ),

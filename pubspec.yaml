@@ -53,6 +53,9 @@ dependencies:
   d_chart: ^0.0.4
   flutter_clean_calendar: ^1.1.0
   time_planner: ^0.0.4
+  simple_grid: ^0.1.1
+  boardview: ^0.2.2
+
 
 
 

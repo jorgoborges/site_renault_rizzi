@@ -95,7 +95,7 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
 
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => BackOficcepanel())),
+                      MaterialPageRoute(builder: (_) => BackOfficePanel())),
                   icon: const Icon(Icons.assignment_return_outlined),
                   label: const Text('Carregar base'),
                 ),

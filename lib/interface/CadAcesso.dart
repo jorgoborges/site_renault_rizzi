@@ -1,8 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
-import 'package:site_renault_rizzi/interface/0TelaInicialLogin.dart';
+import 'package:site_renault_rizzi/interface/Tela_Login.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
+
 
 void main() {
   runApp(const CadAcesso());
@@ -107,8 +108,15 @@ class AllFieldsForm extends StatelessWidget {
             ),
             child: Scaffold(
               appBar: AppBar(
-                  title: const Text(
-                      'Cad-Acesso: Cadastro de Acesso aos "User" Portal')),
+                actions: [
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                    icon: const Icon(Icons.logout),
+                    label: const Text('Sair'),
+                  ),
+                ],
+              ),
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -300,7 +308,7 @@ class SuccessScreen extends StatelessWidget {
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => BackOficcepanel())),
+                  MaterialPageRoute(builder: (_) => BackOfficePanel())),
               icon: const Icon(Icons.keyboard_return),
               label: const Text('Voltar'),
             ),

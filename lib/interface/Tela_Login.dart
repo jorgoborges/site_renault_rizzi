@@ -9,11 +9,9 @@ void main() {
 class TelaInicialLogin extends StatelessWidget {
   const TelaInicialLogin({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login',
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: const HomePage(),
     );
@@ -65,15 +63,19 @@ class HomePage extends StatelessWidget {
                 children: [
                   FlutterSocialButton(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => GerarSenha()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GerarSenha()));
                     },
                     mini: true,
                   ),
                   FlutterSocialButton(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => GerarSenha()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GerarSenha()));
                     },
                     mini: true,
                     buttonType: ButtonType.phone,

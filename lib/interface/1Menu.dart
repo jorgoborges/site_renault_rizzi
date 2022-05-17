@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/2PosVendasRdb.dart';
 import 'package:site_renault_rizzi/interface/3VendasRdb.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
+import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
 
-
-void main() => runApp(const Menu());//Chama a tela menu após tela GerarSenha
+void main() => runApp(const Menu());
 
 class Menu extends StatelessWidget {
   const Menu({Key? key}) : super(key: key);
 
-  static const appTitle = 'Bem Vindo';
+  static const appTitle = 'PORTAL';
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +29,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: const Center(
-        child: Text('My Page!'),
-      ),
+      body: const Center(),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -42,7 +40,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.green,
+                color: Colors.blueGrey,
               ),
               child: Text('Portal'),
             ),
@@ -64,7 +62,14 @@ class MyHomePage extends StatelessWidget {
               title: const Text('BackOffice'),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BackOficcepanel()));
+                    MaterialPageRoute(builder: (context) => BackOfficePanel()));
+              },
+            ),
+            ListTile(
+              title: const Text('Auditor'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AuditorPanel()));
               },
             ),
           ],

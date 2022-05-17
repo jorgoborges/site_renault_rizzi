@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
+import 'package:simple_grid/simple_grid.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
-import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
-import 'package:site_renault_rizzi/interface/ActionPlan.dart';
-import 'package:site_renault_rizzi/interface/PreAta.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(PosVendasRdb());
@@ -13,11 +12,11 @@ class PosVendasRdb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pós Vendas RDB',
+      title: 'Pós Vendas',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: MyHomePage(title: 'Pós Vendas RDB'),
+      home: MyHomePage(title: 'Pós Vendas'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -39,8 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
+        actions: [
+          ElevatedButton.icon(
+            onPressed: () => Navigator.of(context)
+                .pushReplacement(MaterialPageRoute(builder: (_) => Menu())),
+            icon: const Icon(Icons.logout),
+            label: const Text('Sair'),
+          ),
+        ],
       ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -48,23 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
           SideMenu(
             controller: page,
             style: SideMenuStyle(
-              displayMode: SideMenuDisplayMode.auto,
-              hoverColor: Colors.greenAccent,
-              selectedColor: Colors.green,
-              selectedTitleTextStyle: TextStyle(color: Colors.white),
-              selectedIconColor: Colors.white,
-              // backgroundColor: Colors.amber
-              // openSideMenuWidth: 200
-            ),
+                displayMode: SideMenuDisplayMode.auto,
+                hoverColor: Colors.greenAccent,
+                selectedColor: Colors.blueGrey,
+                selectedTitleTextStyle: TextStyle(color: Colors.white),
+                selectedIconColor: Colors.redAccent,
+                backgroundColor: Colors.amberAccent
+                // openSideMenuWidth: 200
+                ),
             title: Column(
               children: [
                 ConstrainedBox(
                   constraints: BoxConstraints(
                     maxHeight: 150,
                     maxWidth: 150,
-                  ),
-                  child: Image.asset(
-                    'assets/images/easy_sidemenu.png',
                   ),
                 ),
                 Divider(
@@ -75,37 +77,31 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             footer: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'borgesconsulting(®)2019-2022',
-                style: TextStyle(fontSize: 15),
-              ),
             ),
             items: [
               SideMenuItem(
                 priority: 0,
-                title: 'Garantia',
+                title: 'Calibração',
                 onTap: () {
                   page.jumpToPage(0);
                 },
-                icon: Icons.home,
+                icon: Icons.linear_scale,
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Calibração',
+                title: 'Cliente Mistério',
                 onTap: () {
                   page.jumpToPage(1);
                 },
-                icon: Icons.file_open_rounded,
+                icon: Icons.visibility,
               ),
               SideMenuItem(
                 priority: 2,
-                title: ''
-                    'Sair',
+                title: 'Garantia',
                 onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Menu()));
+                  page.jumpToPage(2);
                 },
-                icon: Icons.exit_to_app,
+                icon: Icons.hardware,
               ),
             ],
           ),
@@ -116,95 +112,750 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   color: Colors.white,
                   child: Center(
-                    child: Row(
-                        children: [
-                          Expanded(
+                    child: Container(
+                      color: Colors.white,
+                      child: Center(
+                        child: Container(
+                          color: Colors.white,
+                          child: Center(
                             child: Container(
-                              margin: const EdgeInsets.all(8),
-                              alignment: Alignment.center,
-                              height: 25,
-                              width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => PreAta()));
-                                },
-                                child: Text('Base',
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.black)),
+                              color: Colors.white,
+                              child: SpGrid(
+                                width: MediaQuery.of(context).size.width,
+                                children: [
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .school), //icon data for elevated button
+                                                      label: Text(
+                                                          "Autoavaliação"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .pie_chart), //icon data for elevated button
+                                                      label: Text(
+                                                          "Dashboard Autoavaliação"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .tune), //icon data for elevated button
+                                                      label: Text(
+                                                          "Calibrações"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .pending_actions), //icon data for elevated button
+                                                      label: Text(
+                                                          "Contestações"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(8),
-                              height: 25,
-                              width: 5,
-                              alignment: Alignment.center,
-                              child: ElevatedButton(
-                                onPressed:
-                                    () {}, // falta direcionar para tela xpto
-                                child: Text('Analise',
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(8),
-                              alignment: Alignment.center,
-                              height: 25,
-                              width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => ActionPlan()));
-                                },
-                                child: Text('Pré Ata',
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(8),
-                              alignment: Alignment.center,
-                              height: 25,
-                              width: 5,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: Text('Resumo Final',
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                        ],
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center),
-                  ),
-                ),
-                Container(
-                  color: Colors.white,
-                  child: Center(
-                    child: Text(
-                      'Page\n   2',
-                      style: TextStyle(fontSize: 35),
+                        ),
+                      ),
                     ),
                   ),
                 ),
                 Container(
                   color: Colors.white,
                   child: Center(
-                    child: Text(
-                      'Page\n   3',
-                      style: TextStyle(fontSize: 35),
+                    child: Container(
+                      color: Colors.white,
+                      child: Center(
+                        child: Container(
+                          color: Colors.white,
+                          child: Center(
+                            child: Container(
+                              color: Colors.white,
+                              child: SpGrid(
+                                width: MediaQuery.of(context).size.width,
+                                children: [
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "01"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "02"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "03"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "04"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "05"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "06"), //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  child: Container(
+                    color: Colors.white,
+                    child: Center(
+                      child: Container(
+                        color: Colors.white,
+                        child: Center(
+                          child: Container(
+                            color: Colors.white,
+                            child: SpGrid(
+                              width: MediaQuery.of(context).size.width,
+                              children: [
+                                SpGridItem(
+                                  xs: 12,
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  child: Container(
+                                    color: Colors.blueGrey,
+                                    height: 50,
+                                    child: Center(
+                                      child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                margin: const EdgeInsets.all(8),
+                                                alignment: Alignment.center,
+                                                child: SizedBox(
+                                                  width: double.infinity,
+                                                  child: ElevatedButton.icon(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons
+                                                        .schema), //icon data for elevated button
+                                                    label: Text(
+                                                        "Base"), //label text
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors
+                                                            .blueAccent //elevated btton background color
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start),
+                                    ),
+                                  ),
+                                ),
+                                SpGridItem(
+                                  xs: 12,
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  child: Container(
+                                    color: Colors.blueGrey,
+                                    height: 50,
+                                    child: Center(
+                                      child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                margin: const EdgeInsets.all(8),
+                                                alignment: Alignment.center,
+                                                child: SizedBox(
+                                                  width: double.infinity,
+                                                  child: ElevatedButton.icon(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons
+                                                        .nature_people), //icon data for elevated button
+                                                    label: Text(
+                                                        "Participantes"), //label text
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors
+                                                            .blueAccent //elevated btton background color
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start),
+                                    ),
+                                  ),
+                                ),
+                                SpGridItem(
+                                  xs: 12,
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  child: Container(
+                                    color: Colors.blueGrey,
+                                    height: 50,
+                                    child: Center(
+                                      child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                margin: const EdgeInsets.all(8),
+                                                alignment: Alignment.center,
+                                                child: SizedBox(
+                                                  width: double.infinity,
+                                                  child: ElevatedButton.icon(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons.manage_search
+                                                        ), //icon data for elevated button
+                                                    label: Text(
+                                                        "Analise"), //label text
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors
+                                                            .blueAccent //elevated btton background color
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start),
+                                    ),
+                                  ),
+                                ),
+                                SpGridItem(
+                                  xs: 12,
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  child: Container(
+                                    color: Colors.blueGrey,
+                                    height: 50,
+                                    child: Center(
+                                      child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                margin: const EdgeInsets.all(8),
+                                                alignment: Alignment.center,
+                                                child: SizedBox(
+                                                  width: double.infinity,
+                                                  child: ElevatedButton.icon(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons
+                                                        .task), //icon data for elevated button
+                                                    label: Text(
+                                                        "Pré Ata"), //label text
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors
+                                                            .blueAccent //elevated btton background color
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start),
+                                    ),
+                                  ),
+                                ),
+                                SpGridItem(
+                                  xs: 12,
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  child: Container(
+                                    color: Colors.blueGrey,
+                                    height: 50,
+                                    child: Center(
+                                      child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                margin: const EdgeInsets.all(8),
+                                                alignment: Alignment.center,
+                                                child: SizedBox(
+                                                  width: double.infinity,
+                                                  child: ElevatedButton.icon(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons
+                                                        .list_alt), //icon data for elevated button
+                                                    label: Text(
+                                                        "Resumo Final"), //label text
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors
+                                                            .blueAccent //elevated btton background color
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start),
+                                    ),
+                                  ),
+                                ),
+                                SpGridItem(
+                                  xs: 12,
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  child: Container(
+                                    color: Colors.blueGrey,
+                                    height: 50,
+                                    child: Center(
+                                      child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                margin: const EdgeInsets.all(8),
+                                                alignment: Alignment.center,
+                                                child: SizedBox(
+                                                  width: double.infinity,
+                                                  child: ElevatedButton.icon(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons
+                                                        .bar_chart), //icon data for elevated button
+                                                    label: Text(
+                                                        "Dashboard"), //label text
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors
+                                                            .blueAccent //elevated btton background color
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start),
+                                    ),
+                                  ),
+                                ),
+                                SpGridItem(
+                                  xs: 12,
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  child: Container(
+                                    color: Colors.blueGrey,
+                                    height: 50,
+                                    child: Center(
+                                      child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                margin: const EdgeInsets.all(8),
+                                                alignment: Alignment.center,
+                                                child: SizedBox(
+                                                  width: double.infinity,
+                                                  child: ElevatedButton.icon(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons
+                                                        .cloud_upload), //icon data for elevated button
+                                                    label: Text(
+                                                        "Arquivos"), //label text
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors
+                                                            .blueAccent //elevated btton background color
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
