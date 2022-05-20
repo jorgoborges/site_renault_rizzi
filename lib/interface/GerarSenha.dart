@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
+import 'package:flutter/rendering.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
-
 
 void main() {
   runApp(const GerarSenha());
@@ -14,8 +14,6 @@ class GerarSenha extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-
-
       debugShowCheckedModeBanner: false,
       home: AllFieldsForm(),
     );
@@ -69,19 +67,19 @@ class AllFieldsForm extends StatelessWidget {
               ),
             ),
             child: Scaffold(
-              appBar: AppBar(title: const Text('Digite seu acesso')),
+
+              appBar: AppBar(backgroundColor: const Color(0xff1b5e20)),
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const SizedBox(height: 5, width: 50),
                   FloatingActionButton.extended(
+                    backgroundColor: Colors.green[800],
                     heroTag: null,
-                    onPressed: formBloc.submit,
-                    icon: const Icon(Icons.send),
-                    label: const Text(
-                      'Acessar',
-                      style: TextStyle(fontSize: 11, color: Colors.white),
-                    ),
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => Menu())),
+                    icon: const Icon(Icons.logout),
+                    label: const Text('Acessar'),
                   ),
                 ],
               ),
@@ -102,9 +100,11 @@ class AllFieldsForm extends StatelessWidget {
                 },
                 child: SingleChildScrollView(
                   physics: const ClampingScrollPhysics(),
-                  child: Padding(
+                  child: Container(
+                    color: Colors.white60,
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text1,
@@ -196,8 +196,8 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 11),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Menu()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Menu()));
               },
               child: Text(
                 'Entrar',

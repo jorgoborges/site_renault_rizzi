@@ -3,11 +3,11 @@ import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:simple_grid/simple_grid.dart';
 import 'package:site_renault_rizzi/interface/1Menu.dart';
 import 'package:flutter/rendering.dart';
-import 'package:site_renault_rizzi/interface/CadAcesso.dart';
+import 'package:site_renault_rizzi/interface/T_Empresa.dart';
 import 'package:site_renault_rizzi/interface/CadBir.dart';
-import 'package:site_renault_rizzi/interface/CadColaborador.dart';
+import 'package:site_renault_rizzi/interface/T_Pessoa.dart';
 import 'package:site_renault_rizzi/interface/CadNivel.dart';
-import 'package:site_renault_rizzi/interface/ModelFilter.dart';
+import 'package:site_renault_rizzi/interface/ListAudit.dart';
 
 void main() {
   runApp(BackOfficePanel());
@@ -153,12 +153,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                             MaterialPageRoute(
                                                                 builder:
                                                                     (context) =>
-                                                                        CadColaborador()));
+                                                                        T_Pessoa()));
                                                       },
                                                       icon: Icon(Icons
                                                           .people), //icon data for elevated button
                                                       label: Text(
-                                                          "Colaborador"), //l //label text
+                                                          "0-T_Pessoa"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -201,12 +201,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                             MaterialPageRoute(
                                                                 builder:
                                                                     (context) =>
-                                                                        CadAcesso()));
+                                                                        T_Empresa()));
                                                       },
                                                       icon: Icon(Icons
                                                           .key), //icon data for elevated button
                                                       label: Text(
-                                                          "Acesso"), //l //label text
+                                                          "1-T_Empresa"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -254,7 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       icon: Icon(Icons
                                                           .report_problem), //icon data for elevated button
                                                       label: Text(
-                                                          "Nivel"), //l //label text
+                                                          "2-T_Função"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -302,7 +302,55 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       icon: Icon(Icons
                                                           .local_offer), //icon data for elevated button
                                                       label: Text(
-                                                          "ICB"), //l //label text
+                                                          "3-T_Cargo"), //l //label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        ListAudit()));
+                                                      },
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "4-T_Lista_Sugestão"), //l/label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -343,7 +391,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       icon: Icon(Icons
                                                           .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "Cadastras list Audit"), //l/label text
+                                                          "5-T_ICB"), //l//label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -384,7 +432,130 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       icon: Icon(Icons
                                                           .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "6"), //l//label text
+                                                          "6-T_Area"), //l//label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "7-T_Departamento"), //l//label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "8-T_Classe"), //l//label text
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start),
+                                      ),
+                                    ),
+                                  ),
+                                  SpGridItem(
+                                    xs: 12,
+                                    sm: 6,
+                                    md: 4,
+                                    lg: 3,
+                                    child: Container(
+                                      color: Colors.blueGrey,
+                                      height: 50,
+                                      child: Center(
+                                        child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin:
+                                                      const EdgeInsets.all(8),
+                                                  alignment: Alignment.center,
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: ElevatedButton.icon(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .check_box), //icon data for elevated button
+                                                      label: Text(
+                                                          "9-T_Projeto"), //l//label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors

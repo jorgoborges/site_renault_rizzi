@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/2PosVendasRdb.dart';
 import 'package:site_renault_rizzi/interface/3VendasRdb.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
+import 'package:site_renault_rizzi/interface/GerarSenha.dart';
+import 'package:site_renault_rizzi/interface/PlataformaGarantia.dart';
 
 void main() => runApp(const Menu());
 
@@ -28,49 +31,96 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: const Center(),
+      appBar: AppBar(backgroundColor: const Color(0xff1b5e20)),//041e42 007a33
       drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
         child: ListView(
-          // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blueGrey,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountEmail: Text("user@mail.com"),
+              accountName: Text("Jorge Borges"),
+              currentAccountPicture: CircleAvatar(
+                child: Text("JB"),
               ),
-              child: Text('Portal'),
             ),
             ListTile(
-              title: const Text('Pós Vendas'),
+              leading: Icon(Icons.person),
+              title: Text("Minha conta"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PosVendasRdb()));
+                    MaterialPageRoute(builder: (context) => GerarSenha()));
               },
             ),
             ListTile(
-              title: const Text('Vendas'),
+              leading: Icon(Icons.privacy_tip_outlined),
+              title: Text("Restrito"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => BackOfficePanel()));
+              },
+            ),
+    ListTile(
+    leading: Icon(Icons.supervised_user_circle),
+    title: Text("Auditor"),
+    onTap: () {
+    Navigator.push(context,
+    MaterialPageRoute(builder: (context) => AuditorPanel()));
+    },
+    ),
+            ListTile(
+              leading: Icon(Icons.folder_open),
+              title: Text("Plataforma"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PlataformaGarantia()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.directions_car),
+              title: Text("Vendas"),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => VendasRdb()));
               },
             ),
             ListTile(
-              title: const Text('BackOffice'),
+              leading: Icon(Icons.construction),
+              title: Text("Pós Vendas"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BackOfficePanel()));
+                    MaterialPageRoute(builder: (context) => PosVendasRdb()));
               },
             ),
             ListTile(
-              title: const Text('Auditor'),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AuditorPanel()));
-              },
+              leading: Icon(Icons.transit_enterexit_sharp),
+              title: Text("Sair"),
+              onTap: () {},
+            ),
+            SizedBox(
+              height: 120,
+              width: 100,
+            ),
+            SizedBox(
+              height: 150,
+              width: 60,
+              child: FittedBox(
+                fit: BoxFit.fill,
+                child: Image.network(
+                  'https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761__340.jpg',
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+              width: 10,
+              child: FittedBox(
+                  fit: BoxFit.cover,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                        'Rizzi Consulting ® 2000│2022 - Todos Direitos Reservados.',
+                        style: TextStyle(fontSize: 9, color: Colors.black87)),
+                  )),
             ),
           ],
         ),

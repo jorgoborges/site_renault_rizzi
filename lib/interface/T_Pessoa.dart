@@ -4,13 +4,12 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/Tela_Login.dart';
 import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
 
-
 void main() {
-  runApp(const CadAcesso());
+  runApp(const T_Pessoa());
 }
 
-class CadAcesso extends StatelessWidget {
-  const CadAcesso({Key? key}) : super(key: key);
+class T_Pessoa extends StatelessWidget {
+  const T_Pessoa({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +25,6 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
   final text2 = TextFieldBloc();
   final text3 = TextFieldBloc();
   final text4 = TextFieldBloc();
-  final text5 = TextFieldBloc();
-  final text6 = TextFieldBloc();
-  final text7 = TextFieldBloc();
-  final text8 = TextFieldBloc();
 
   final boolean1 = BooleanFieldBloc();
 
@@ -37,12 +32,43 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
 
   final multiSelect1 = MultiSelectFieldBloc<String, dynamic>(
     items: [
-      'Venda',
-      'Pós Venda',
-      'Patrocinador',
+      'Analista',
+      'Consultor',
+      'Professor',
+      'Auditor',
+      'Escritório',
+    ],
+  );
+  final multiSelect2 = MultiSelectFieldBloc<String, dynamic>(
+    items: [
+      'Gerente',
+      'Supervisor',
+    ],
+  );
+  final multiSelect3 = MultiSelectFieldBloc<String, dynamic>(
+    items: [
+      'Vendas',
+      'Pós Vendas',
+      'Pós Interno',
+    ],
+  );
+  final multiSelect4 = MultiSelectFieldBloc<String, dynamic>(
+    items: [
+      'Garantia',
+      'Calibração',
+      'Cliente Mistério',
       'Interno',
     ],
   );
+  final select5 = SelectFieldBloc<String, dynamic>(
+    items: [
+      'CPF',
+      'CNPJ',
+      'BIR',
+      'CONTA',
+    ],
+  );
+
   final file = InputFieldBloc<File?, String>(initialValue: null);
 
   final date1 = InputFieldBloc<DateTime?, Object>(initialValue: null);
@@ -61,13 +87,13 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
       text2,
       text3,
       text4,
-      text5,
-      text6,
-      text7,
-      text8,
       boolean1,
       boolean2,
       multiSelect1,
+      multiSelect2,
+      multiSelect3,
+      multiSelect4,
+      select5,
       date1,
       dateAndTime1,
       time1,
@@ -113,7 +139,7 @@ class AllFieldsForm extends StatelessWidget {
                     onPressed: () => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (_) => BackOfficePanel())),
                     icon: const Icon(Icons.logout),
-                    label: const Text('Sair'),
+                    label: const Text('Voltar'),
                   ),
                 ],
               ),
@@ -156,69 +182,77 @@ class AllFieldsForm extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text1,
                           decoration: const InputDecoration(
-                            labelText: 'Autor',
-                            prefixIcon: Icon(Icons.man),
+                            labelText: 'Autor da edição', //1
+                            prefixIcon: Icon(Icons.person),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
-                            labelText: 'Nome',
-                            prefixIcon: Icon(Icons.text_fields),
+                            labelText: 'Nome', //2
+                            prefixIcon: Icon(Icons.edit),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text3,
                           decoration: const InputDecoration(
                             labelText: 'SobreNome',
-                            prefixIcon: Icon(Icons.text_fields),
+                            prefixIcon: Icon(Icons.edit),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text4,
                           decoration: const InputDecoration(
-                            labelText: 'Digite a BIR!',
-                            prefixIcon: Icon(Icons.work_outline_outlined),
+                            labelText: 'Identificação', //3
+                            prefixIcon: Icon(Icons.how_to_reg),
                           ),
                         ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text5,
+                        RadioButtonGroupFieldBlocBuilder<String>(
+                          selectFieldBloc: formBloc.select5,
                           decoration: const InputDecoration(
-                            labelText: 'Função',
-                            prefixIcon: Icon(Icons.engineering),
-                          ),
-                        ),
-                        CheckboxGroupFieldBlocBuilder<String>(
-                          multiSelectFieldBloc: formBloc.multiSelect1,
-                          decoration: const InputDecoration(
-                            labelText: 'Define os acessos!',
+                            labelText: 'Classe',
                           ),
                           itemBuilder: (context, item) => FieldItem(
                             child: Text(item),
                           ),
                         ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text6,
+                        CheckboxGroupFieldBlocBuilder<String>(
+                          multiSelectFieldBloc: formBloc.multiSelect1,
                           decoration: const InputDecoration(
-                            labelText: 'Crie uma senha padrão!',
-                            prefixIcon: Icon(Icons.key),
+                            labelText: 'Cargo',
+                          ),
+                          itemBuilder: (context, item) => FieldItem(
+                            child: Text(item),
                           ),
                         ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text7,
+                        CheckboxGroupFieldBlocBuilder<String>(
+                          multiSelectFieldBloc: formBloc.multiSelect2,
                           decoration: const InputDecoration(
-                            labelText: 'Confirme a Senha!',
-                            prefixIcon:
-                            Icon(Icons.confirmation_number_outlined),
+                            labelText: 'Função',
+                          ),
+                          itemBuilder: (context, item) => FieldItem(
+                            child: Text(item),
                           ),
                         ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text8,
+                        CheckboxGroupFieldBlocBuilder<String>(
+                          multiSelectFieldBloc: formBloc.multiSelect3,
                           decoration: const InputDecoration(
-                            labelText: 'Email que será enviado a senha.',
-                            prefixIcon: Icon(Icons.email),
+                            labelText: 'Departamento',
+                          ),
+                          itemBuilder: (context, item) => FieldItem(
+                            child: Text(item),
                           ),
                         ),
+                        CheckboxGroupFieldBlocBuilder<String>(
+                          multiSelectFieldBloc: formBloc.multiSelect4,
+                          decoration: const InputDecoration(
+                            labelText: 'Projeto',
+                          ),
+                          itemBuilder: (context, item) => FieldItem(
+                            child: Text(item),
+                          ),
+                        ),
+
                         DateTimeFieldBlocBuilder(
                           dateTimeFieldBloc: formBloc.dateAndTime1,
                           canSelectTime: true,
@@ -233,7 +267,7 @@ class AllFieldsForm extends StatelessWidget {
                           ),
                         ),
                         BlocBuilder<InputFieldBloc<File?, String>,
-                            InputFieldBlocState<File?, String>>(
+                                InputFieldBlocState<File?, String>>(
                             bloc: formBloc.file,
                             builder: (context, state) {
                               return Container();
@@ -253,11 +287,11 @@ class AllFieldsForm extends StatelessWidget {
 
 class LoadingDialog extends StatelessWidget {
   static void show(BuildContext context, {Key? key}) => showDialog<void>(
-    context: context,
-    useRootNavigator: false,
-    barrierDismissible: false,
-    builder: (_) => LoadingDialog(key: key),
-  ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
+        context: context,
+        useRootNavigator: false,
+        barrierDismissible: false,
+        builder: (_) => LoadingDialog(key: key),
+      ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
 
   static void hide(BuildContext context) => Navigator.pop(context);
 
@@ -298,18 +332,19 @@ class SuccessScreen extends StatelessWidget {
               style: TextStyle(fontSize: 11, color: Colors.green),
               textAlign: TextAlign.center,
             ),
+
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const CadAcesso())),
-              icon: const Icon(Icons.app_registration),
+                  MaterialPageRoute(builder: (_) => const T_Pessoa())),
+              icon: const Icon(Icons.bento_outlined),
               label: const Text('Novo Cadastro'),
             ),
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (_) => BackOfficePanel())),
-              icon: const Icon(Icons.keyboard_return),
+              icon: const Icon(Icons.change_circle_sharp),
               label: const Text('Voltar'),
             ),
             SizedBox(height: 11),

@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xff1b5e20),
         actions: [
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
@@ -598,8 +599,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     onPressed: () {},
                                                     icon: Icon(Icons
                                                         .check_box), //icon data for elevated button
-                                                    label: Text(
-                                                        "1"), //label text
+                                                    label:
+                                                        Text("1"), //label text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -637,8 +638,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     onPressed: () {},
                                                     icon: Icon(Icons
                                                         .check_box), //icon data for elevated button
-                                                    label: Text(
-                                                        "2"), //llabel text
+                                                    label:
+                                                        Text("2"), //llabel text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -676,8 +677,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     onPressed: () {},
                                                     icon: Icon(Icons
                                                         .check_box), //icon data for elevated button
-                                                    label: Text(
-                                                        "3"), //l text
+                                                    label: Text("3"), //l text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -715,8 +715,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     onPressed: () {},
                                                     icon: Icon(Icons
                                                         .check_box), //icon data for elevated button
-                                                    label: Text(
-                                                        "4"), //lxt
+                                                    label: Text("4"), //lxt
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:site_renault_rizzi/interface/Tela_Login.dart';
-
+import 'package:site_renault_rizzi/interface/1Menu.dart';
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -14,9 +12,9 @@ void main() async {
 class Initial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return new MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark(),
-        home: TelaInicialLogin());
+        theme: ThemeData(primarySwatch: Colors.green),
+        home: Menu());
   }
 }
