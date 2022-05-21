@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:simple_grid/simple_grid.dart';
-import 'package:site_renault_rizzi/interface/1Menu.dart';
+import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(ModelMenu());
+  runApp(Tel_Venda());
 }
 
-class ModelMenu extends StatelessWidget {
+class Tel_Venda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Colocar Titulo',
+      title: 'Vendas',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: MyHomePage(title: 'Colocar Titulo'),
+      home: MyHomePage(title: 'Vendas'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -38,14 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xff1b5e20),
         actions: [
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (_) => Menu())),
+                .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Menu())),
             icon: const Icon(Icons.logout),
             label: const Text('Sair'),
           ),
-
         ],
       ),
       body: Row(
@@ -82,28 +82,27 @@ class _MyHomePageState extends State<MyHomePage> {
             items: [
               SideMenuItem(
                 priority: 0,
-                title: 'T-1',
+                title: 'Calibração',
                 onTap: () {
                   page.jumpToPage(0);
                 },
-                icon: Icons.list_alt,
+                icon: Icons.linear_scale,
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'T-2',
+                title: 'Cliente Mistério',
                 onTap: () {
                   page.jumpToPage(1);
                 },
-                icon: Icons.content_paste,
+                icon: Icons.visibility,
               ),
               SideMenuItem(
-                priority: 2,
-                title: 'T-3',
-                onTap: () {
-                  page.jumpToPage(2);
-                },
-                icon: Icons.accessibility_outlined,
-              ),
+                  priority: 2,
+                  title: 'Inativo',
+                  onTap: () {
+                    page.jumpToPage(2);
+                  },
+                  icon: Icons.construction),
             ],
           ),
           Expanded(
@@ -111,7 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: page,
               children: [
                 Container(
-
                   color: Colors.white,
                   child: Center(
                     child: Container(
@@ -146,9 +144,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .school), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 1/1"), //label text
+                                                          "Autoavaliação"), //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -180,30 +178,30 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .pie_chart), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 1/2"), //label text
+                                                          "Dashboard Autoavaliação"), //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -221,70 +219,30 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .tune), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 1/3"), //label text
+                                                          "Calibrações"), //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
-                                      ),
-                                    ),
-                                  ),                       SpGridItem(
-                                    xs: 12,
-                                    sm: 6,
-                                    md: 4,
-                                    lg: 3,
-                                    child: Container(
-                                      color: Colors.blueGrey,
-                                      height: 50,
-                                      child: Center(
-                                        child: Row(
-                                            children: [
-                                              Expanded(
-                                                child: Container(
-                                                  margin:
-                                                  const EdgeInsets.all(8),
-                                                  alignment: Alignment.center,
-                                                  child: SizedBox(
-                                                    width: double.infinity,
-                                                    child: ElevatedButton.icon(
-                                                      onPressed: () {},
-                                                      icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
-                                                      label: Text(
-                                                          "Pag 1/4"), //label text
-                                                      style: ElevatedButton
-                                                          .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -302,76 +260,35 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .pending_actions), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 1/5"), //label text
+                                                          "Contestações"), //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
-                                      ),
-                                    ),
-                                  ),
-                                  SpGridItem(
-                                    xs: 12,
-                                    sm: 6,
-                                    md: 4,
-                                    lg: 3,
-                                    child: Container(
-                                      color: Colors.blueGrey,
-                                      height: 50,
-                                      child: Center(
-                                        child: Row(
-                                            children: [
-                                              Expanded(
-                                                child: Container(
-                                                  margin:
-                                                  const EdgeInsets.all(8),
-                                                  alignment: Alignment.center,
-                                                  child: SizedBox(
-                                                    width: double.infinity,
-                                                    child: ElevatedButton.icon(onPressed: () {},
-                                                      icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
-                                                      label: Text(
-                                                          "Pag 1/6"), //label text
-                                                      style: ElevatedButton
-                                                          .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-
                             ),
                           ),
                         ),
@@ -414,9 +331,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 1/2"), //label text
+                                                          "1"), //l/label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -455,9 +372,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 2/2"), //label text
+                                                          "2"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -496,9 +413,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 2/3"), //label text
+                                                          "3"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -537,9 +454,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag 2/4"), //label text
+                                                          "4"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -578,9 +495,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag2/5"), //label text
+                                                          "5"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -619,9 +536,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     child: ElevatedButton.icon(
                                                       onPressed: () {},
                                                       icon: Icon(Icons
-                                                          .contact_support), //icon data for elevated button
+                                                          .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "Pag2/6"), //label text
+                                                          "6"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               primary: Colors
@@ -681,9 +598,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   child: ElevatedButton.icon(
                                                     onPressed: () {},
                                                     icon: Icon(Icons
-                                                        .contact_support), //icon data for elevated button
-                                                    label: Text(
-                                                        "Pag 1/3"), //label text
+                                                        .check_box), //icon data for elevated button
+                                                    label:
+                                                        Text("1"), //label text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -720,9 +637,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   child: ElevatedButton.icon(
                                                     onPressed: () {},
                                                     icon: Icon(Icons
-                                                        .contact_support), //icon data for elevated button
-                                                    label: Text(
-                                                        "Pag 2/3"), //label text
+                                                        .check_box), //icon data for elevated button
+                                                    label:
+                                                        Text("2"), //llabel text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -759,9 +676,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   child: ElevatedButton.icon(
                                                     onPressed: () {},
                                                     icon: Icon(Icons
-                                                        .contact_support), //icon data for elevated button
-                                                    label: Text(
-                                                        "Pag 3/3"), //label text
+                                                        .check_box), //icon data for elevated button
+                                                    label: Text("3"), //l text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -798,9 +714,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   child: ElevatedButton.icon(
                                                     onPressed: () {},
                                                     icon: Icon(Icons
-                                                        .contact_support), //icon data for elevated button
-                                                    label: Text(
-                                                        "Pag 3/4"), //label text
+                                                        .check_box), //icon data for elevated button
+                                                    label: Text("4"), //lxt
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -837,9 +752,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   child: ElevatedButton.icon(
                                                     onPressed: () {},
                                                     icon: Icon(Icons
-                                                        .contact_support), //icon data for elevated button
+                                                        .check_box), //icon data for elevated button
                                                     label: Text(
-                                                        "Pag 3/5"), //label text
+                                                        "5"), //l//label text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -876,9 +791,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   child: ElevatedButton.icon(
                                                     onPressed: () {},
                                                     icon: Icon(Icons
-                                                        .contact_support), //icon data for elevated button
+                                                        .check_box), //icon data for elevated button
                                                     label: Text(
-                                                        "Pag 3/6"), //label text
+                                                        "6"), //l //label text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color

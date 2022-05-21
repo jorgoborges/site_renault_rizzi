@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
-import 'package:site_renault_rizzi/interface/Tela_Login.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
+import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
+import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
 void main() {
   runApp(const T_Pessoa());
@@ -14,7 +14,6 @@ class T_Pessoa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: AllFieldsForm(),
     );
   }
@@ -134,15 +133,19 @@ class AllFieldsForm extends StatelessWidget {
             ),
             child: Scaffold(
               appBar: AppBar(
+                backgroundColor: const Color(0xff1b5e20),
                 actions: [
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
                     icon: const Icon(Icons.logout),
-                    label: const Text('Voltar'),
+                    label: const Text('Voltar',
+                        style: TextStyle(fontSize: 14, color: Colors.black87)),
+                    style: ElevatedButton.styleFrom(primary: Colors.red),
                   ),
                 ],
               ),
+
               floatingActionButton: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -155,6 +158,7 @@ class AllFieldsForm extends StatelessWidget {
                       'Enviar',
                       style: TextStyle(fontSize: 11, color: Colors.white),
                     ),
+                    backgroundColor: Colors.red,
                   ),
                 ],
               ),
@@ -179,6 +183,9 @@ class AllFieldsForm extends StatelessWidget {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: <Widget>[
+                        Text('CADASTRO PESSOA.',
+                            style:
+                                TextStyle(fontSize: 14, color: Colors.black87)),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text1,
                           decoration: const InputDecoration(
@@ -252,7 +259,6 @@ class AllFieldsForm extends StatelessWidget {
                             child: Text(item),
                           ),
                         ),
-
                         DateTimeFieldBlocBuilder(
                           dateTimeFieldBloc: formBloc.dateAndTime1,
                           canSelectTime: true,
@@ -332,7 +338,6 @@ class SuccessScreen extends StatelessWidget {
               style: TextStyle(fontSize: 11, color: Colors.green),
               textAlign: TextAlign.center,
             ),
-
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
@@ -343,14 +348,14 @@ class SuccessScreen extends StatelessWidget {
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                  MaterialPageRoute(builder: (_) => Tel_BackOffice())),
               icon: const Icon(Icons.change_circle_sharp),
               label: const Text('Voltar'),
             ),
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => TelaInicialLogin())),
+                  MaterialPageRoute(builder: (_) => Tel_Senha())),
               icon: const Icon(Icons.exit_to_app),
               label: const Text('Sair Portal'),
             ),

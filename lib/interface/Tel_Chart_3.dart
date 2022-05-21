@@ -1,15 +1,15 @@
 import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/Grafico2.dart';
+import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
+import 'package:site_renault_rizzi/interface/Tel_Chart_1.dart';
 
 
 
 void main() {
-  runApp(MyChart1());
+  runApp(Tel_Chart_3());
 }
 
-class MyChart1 extends StatelessWidget {
+class Tel_Chart_3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,13 +27,13 @@ class Home extends StatelessWidget {
         actions: [
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                MaterialPageRoute(builder: (_) => Tel_BackOffice())),
             icon: const Icon(Icons.arrow_circle_left_outlined),
             label: const Text('Voltar'),
           ),
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (_) => MyChart2())),
+                .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Chart_1())),
             icon: const Icon(Icons.arrow_circle_right_outlined),
             label: const Text('Avançar'),
           ),

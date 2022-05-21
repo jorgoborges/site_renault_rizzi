@@ -6,11 +6,11 @@ import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
 
 void main() {
-  runApp(const T_Empresa());
+  runApp(const T_Departamento());
 }
 
-class T_Empresa extends StatelessWidget {
-  const T_Empresa({Key? key}) : super(key: key);
+class T_Departamento extends StatelessWidget {
+  const T_Departamento({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,14 +60,7 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
       'Interno',
     ],
   );
-  final select5 = SelectFieldBloc<String, dynamic>(
-    items: [
-      'CPF',
-      'CNPJ',
-      'BIR',
-      'CONTA',
-    ],
-  );
+
 
   final file = InputFieldBloc<File?, String>(initialValue: null);
 
@@ -93,7 +86,7 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
       select2,
       select3,
       select4,
-      select5,
+
       date1,
       dateAndTime1,
       time1,
@@ -183,16 +176,9 @@ class AllFieldsForm extends StatelessWidget {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: <Widget>[
-                        Text('CADASTRO EMPRESA.',
+                        Text('CADASTRO DEPARTAMENTO.',
                             style:
-                                TextStyle(fontSize: 14, color: Colors.black87)),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text1,
-                          decoration: const InputDecoration(
-                            labelText: 'Ordem de serviço', //1
-                            prefixIcon: Icon(Icons.description),
-                          ),
-                        ),
+                            TextStyle(fontSize: 14, color: Colors.black87)),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
@@ -203,42 +189,8 @@ class AllFieldsForm extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text3,
                           decoration: const InputDecoration(
-                            labelText: 'Nome Empresa', //2
+                            labelText: 'Nome Departamento',
                             prefixIcon: Icon(Icons.edit),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text4,
-                          decoration: const InputDecoration(
-                            labelText: 'Identificação', //3
-                            prefixIcon: Icon(Icons.how_to_reg),
-                          ),
-                        ),
-                        RadioButtonGroupFieldBlocBuilder<String>(
-                          selectFieldBloc: formBloc.select5,
-                          decoration: const InputDecoration(
-                            labelText: 'Classe',
-                          ),
-                          itemBuilder: (context, item) => FieldItem(
-                            child: Text(item),
-                          ),
-                        ),
-                        RadioButtonGroupFieldBlocBuilder<String>(
-                          selectFieldBloc: formBloc.select4,
-                          decoration: const InputDecoration(
-                            labelText: 'Projeto',
-                          ),
-                          itemBuilder: (context, item) => FieldItem(
-                            child: Text(item),
-                          ),
-                        ),
-                        RadioButtonGroupFieldBlocBuilder<String>(
-                          selectFieldBloc: formBloc.select3,
-                          decoration: const InputDecoration(
-                            labelText: 'Departamento',
-                          ),
-                          itemBuilder: (context, item) => FieldItem(
-                            child: Text(item),
                           ),
                         ),
                         DateTimeFieldBlocBuilder(
@@ -255,7 +207,7 @@ class AllFieldsForm extends StatelessWidget {
                           ),
                         ),
                         BlocBuilder<InputFieldBloc<File?, String>,
-                                InputFieldBlocState<File?, String>>(
+                            InputFieldBlocState<File?, String>>(
                             bloc: formBloc.file,
                             builder: (context, state) {
                               return Container();
@@ -275,11 +227,11 @@ class AllFieldsForm extends StatelessWidget {
 
 class LoadingDialog extends StatelessWidget {
   static void show(BuildContext context, {Key? key}) => showDialog<void>(
-        context: context,
-        useRootNavigator: false,
-        barrierDismissible: false,
-        builder: (_) => LoadingDialog(key: key),
-      ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
+    context: context,
+    useRootNavigator: false,
+    barrierDismissible: false,
+    builder: (_) => LoadingDialog(key: key),
+  ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
 
   static void hide(BuildContext context) => Navigator.pop(context);
 
@@ -323,7 +275,7 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const T_Empresa())),
+                  MaterialPageRoute(builder: (_) => const T_Departamento())),
               icon: const Icon(Icons.bento_outlined),
               label: const Text('Novo Cadastro'),
             ),

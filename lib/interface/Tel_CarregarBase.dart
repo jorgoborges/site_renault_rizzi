@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/ActionPlan.dart';
-import 'package:site_renault_rizzi/interface/ModelDownload.dart';
-import 'package:site_renault_rizzi/interface/PreAta.dart';
-import 'package:site_renault_rizzi/interface/ResumoFinal.dart';
+import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
+import 'package:site_renault_rizzi/interface/Tel_Ata.dart';
+import 'package:site_renault_rizzi/interface/Tel_Resumo.dart';
 
 /// Provides a UI to select a authentication type page
-class CarregarBaseGar extends StatefulWidget {
-  _CarregarBaseGar createState() => _CarregarBaseGar();
+class Tel_CarregarBase extends StatefulWidget {
+  _Tel_CarregarBase createState() => _Tel_CarregarBase();
 }
 
 class LabeledCheckbox extends StatelessWidget {
@@ -52,7 +50,7 @@ class LabeledCheckbox extends StatelessWidget {
   }
 }
 
-class _CarregarBaseGar extends State<CarregarBaseGar> {
+class _Tel_CarregarBase extends State<Tel_CarregarBase> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,14 +71,7 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => Creat_Download())),
-                  icon: const Icon(Icons.content_paste),
-                  label: const Text('Pesquisar Base'),
-                ),
-              ],
+              children: [],
             ),
             Expanded(
                 child: Container(
@@ -92,10 +83,9 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                      MaterialPageRoute(builder: (_) => Tel_BackOffice())),
                   icon: const Icon(Icons.assignment_return_outlined),
                   label: const Text('Carregar base'),
                 ),
@@ -113,7 +103,7 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => PreAta())),
+                      MaterialPageRoute(builder: (_) => Tel_Ata())),
                   icon: const Icon(Icons.preview),
                   label: const Text('Pré Ata'),
                 ),
@@ -131,7 +121,7 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ResumoFinal())),
+                      MaterialPageRoute(builder: (_) => Tel_Resumo())),
                   icon: const Icon(Icons.preview),
                   label: const Text('Resumo Final'),
                 ),
@@ -146,14 +136,7 @@ class _CarregarBaseGar extends State<CarregarBaseGar> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ActionPlan())),
-                  icon: const Icon(Icons.assignment_return_outlined),
-                  label: const Text('Voltar'),
-                ),
-              ],
+              children: [],
             ),
             Expanded(
                 child: Container(

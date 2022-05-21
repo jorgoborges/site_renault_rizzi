@@ -35,26 +35,15 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
   easy_sidemenu: ^0.1.1+1
   flutter_form_bloc: ^0.30.0
   auto_size_text: ^3.0.0
   pluto_grid: ^2.10.3
   flutter_menu: ^0.4.1
-  roundcheckbox: ^2.0.4+1
-  popover: ^0.2.6+3
   flutter_social_button: ^1.1.4
-  flutter_collapsing_toolbar: ^1.0.0
-  dropdown_menu: ^1.1.1
-  shrink_sidemenu: ^2.0.0+2-null-safety
-  flutter_admin_scaffold: ^1.1.0
-  syncfusion_flutter_xlsio: ^20.1.52-beta
   pie_chart: ^5.3.0
   d_chart: ^0.0.4
-  flutter_clean_calendar: ^1.1.0
-  time_planner: ^0.0.4
   simple_grid: ^0.1.1
-  boardview: ^0.2.2
 
 
 
@@ -82,7 +71,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  flutter_lints: ^1.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

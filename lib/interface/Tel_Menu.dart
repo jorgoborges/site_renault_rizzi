@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:site_renault_rizzi/interface/2PosVendasRdb.dart';
-import 'package:site_renault_rizzi/interface/3VendasRdb.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/5AuditorPanel.dart';
-import 'package:site_renault_rizzi/interface/GerarSenha.dart';
-import 'package:site_renault_rizzi/interface/PlataformaGarantia.dart';
+import 'package:site_renault_rizzi/interface/Tel_PosVenda.dart';
+import 'package:site_renault_rizzi/interface/Tel_Venda.dart';
+import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
+import 'package:site_renault_rizzi/interface/Tel_Auditor.dart';
+import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
+import 'package:site_renault_rizzi/interface/Tel_PG.dart';
 
-void main() => runApp(const Menu());
+void main() => runApp(const Tel_Menu());
 
-class Menu extends StatelessWidget {
-  const Menu({Key? key}) : super(key: key);
+class Tel_Menu extends StatelessWidget {
+  const Tel_Menu({Key? key}) : super(key: key);
 
   static const appTitle = 'PORTAL';
 
@@ -31,16 +31,16 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: const Color(0xff1b5e20)),//041e42 007a33
+      appBar: AppBar(backgroundColor: const Color(0xff1b5e20)),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountEmail: Text("user@mail.com"),
-              accountName: Text("Jorge Borges"),
+              accountName: Text("User"),
               currentAccountPicture: CircleAvatar(
-                child: Text("JB"),
+                child: Text("US"),
               ),
             ),
             ListTile(
@@ -48,7 +48,7 @@ class MyHomePage extends StatelessWidget {
               title: Text("Minha conta"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GerarSenha()));
+                    MaterialPageRoute(builder: (context) => Tel_Senha()));
               },
             ),
             ListTile(
@@ -56,23 +56,25 @@ class MyHomePage extends StatelessWidget {
               title: Text("Restrito"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BackOfficePanel()));
+                    MaterialPageRoute(builder: (context) => Tel_BackOffice()));
               },
             ),
-    ListTile(
-    leading: Icon(Icons.supervised_user_circle),
-    title: Text("Auditor"),
-    onTap: () {
-    Navigator.push(context,
-    MaterialPageRoute(builder: (context) => AuditorPanel()));
-    },
-    ),
+            ListTile(
+              leading: Icon(Icons.supervised_user_circle),
+              title: Text("Auditor"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Tel_Auditor()));
+              },
+            ),
             ListTile(
               leading: Icon(Icons.folder_open),
               title: Text("Plataforma"),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PlataformaGarantia()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Tel_PG()));
               },
             ),
             ListTile(
@@ -80,7 +82,7 @@ class MyHomePage extends StatelessWidget {
               title: Text("Vendas"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => VendasRdb()));
+                    MaterialPageRoute(builder: (context) => Tel_Venda()));
               },
             ),
             ListTile(
@@ -88,7 +90,7 @@ class MyHomePage extends StatelessWidget {
               title: Text("Pós Vendas"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PosVendasRdb()));
+                    MaterialPageRoute(builder: (context) => Tel_PosVenda()));
               },
             ),
             ListTile(
@@ -97,30 +99,16 @@ class MyHomePage extends StatelessWidget {
               onTap: () {},
             ),
             SizedBox(
-              height: 120,
-              width: 100,
+              height: 65,
             ),
             SizedBox(
-              height: 150,
-              width: 60,
+              height: 175,
               child: FittedBox(
                 fit: BoxFit.fill,
                 child: Image.network(
                   'https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761__340.jpg',
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-              width: 10,
-              child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                        'Rizzi Consulting ® 2000│2022 - Todos Direitos Reservados.',
-                        style: TextStyle(fontSize: 9, color: Colors.black87)),
-                  )),
             ),
           ],
         ),

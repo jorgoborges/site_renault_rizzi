@@ -4,13 +4,12 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
 import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
-
 void main() {
-  runApp(const T_Empresa());
+  runApp(const T_Sugestao());
 }
 
-class T_Empresa extends StatelessWidget {
-  const T_Empresa({Key? key}) : super(key: key);
+class T_Sugestao extends StatelessWidget {
+  const T_Sugestao({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,51 +31,27 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
 
   final select1 = SelectFieldBloc<String, dynamic>(
     items: [
-      'Analista',
-      'Consultor',
-      'Professor',
-      'Auditor',
-      'Escritório',
+      'Vendas',
+      'Pós Vendas',
     ],
   );
   final select2 = SelectFieldBloc<String, dynamic>(
     items: [
-      'Gerente',
-      'Supervisor',
-    ],
-  );
-  final select3 = SelectFieldBloc<String, dynamic>(
-    items: [
-      'Vendas',
-      'Pós Vendas',
-      'Pós Interno',
-    ],
-  );
-  final select4 = SelectFieldBloc<String, dynamic>(
-    items: [
       'Garantia',
       'Calibração',
       'Cliente Mistério',
-      'Interno',
-    ],
-  );
-  final select5 = SelectFieldBloc<String, dynamic>(
-    items: [
-      'CPF',
-      'CNPJ',
-      'BIR',
-      'CONTA',
     ],
   );
 
   final file = InputFieldBloc<File?, String>(initialValue: null);
 
-  final date1 = InputFieldBloc<DateTime?, Object>(initialValue: null);
-
   final dateAndTime1 = InputFieldBloc<DateTime?, Object>(initialValue: null);
+  final dateAndTime2 = InputFieldBloc<DateTime?, Object>(initialValue: null);
+  final dateAndTime3 = InputFieldBloc<DateTime?, Object>(initialValue: null);
 
   final time1 = InputFieldBloc<TimeOfDay?, Object>(initialValue: null);
-
+  final time2 = InputFieldBloc<TimeOfDay?, Object>(initialValue: null);
+  final time3 = InputFieldBloc<TimeOfDay?, Object>(initialValue: null);
   final double1 = InputFieldBloc<double, dynamic>(
     initialValue: 0.5,
   );
@@ -91,12 +66,12 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
       boolean2,
       select1,
       select2,
-      select3,
-      select4,
-      select5,
-      date1,
       dateAndTime1,
+      dateAndTime2,
+      dateAndTime3,
       time1,
+      time2,
+      time3,
       double1,
     ]);
   }
@@ -183,57 +158,39 @@ class AllFieldsForm extends StatelessWidget {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: <Widget>[
-                        Text('CADASTRO EMPRESA.',
+                        Text('CADASTRO SUGESTÃO AUDITORIA.',
                             style:
                                 TextStyle(fontSize: 14, color: Colors.black87)),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text1,
-                          decoration: const InputDecoration(
-                            labelText: 'Ordem de serviço', //1
-                            prefixIcon: Icon(Icons.description),
-                          ),
-                        ),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
                             labelText: 'Autor da edição', //1
                             prefixIcon: Icon(Icons.person),
                           ),
                         ),
                         TextFieldBlocBuilder(
+                          textFieldBloc: formBloc.text2,
+                          decoration: const InputDecoration(
+                            labelText: 'Concessionária',
+                            prefixIcon: Icon(Icons.edit),
+                          ),
+                        ),
+                        TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text3,
                           decoration: const InputDecoration(
-                            labelText: 'Nome Empresa', //2
+                            labelText: 'BIR',
                             prefixIcon: Icon(Icons.edit),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text4,
                           decoration: const InputDecoration(
-                            labelText: 'Identificação', //3
+                            labelText: 'Audidor', //3
                             prefixIcon: Icon(Icons.how_to_reg),
                           ),
                         ),
                         RadioButtonGroupFieldBlocBuilder<String>(
-                          selectFieldBloc: formBloc.select5,
-                          decoration: const InputDecoration(
-                            labelText: 'Classe',
-                          ),
-                          itemBuilder: (context, item) => FieldItem(
-                            child: Text(item),
-                          ),
-                        ),
-                        RadioButtonGroupFieldBlocBuilder<String>(
-                          selectFieldBloc: formBloc.select4,
-                          decoration: const InputDecoration(
-                            labelText: 'Projeto',
-                          ),
-                          itemBuilder: (context, item) => FieldItem(
-                            child: Text(item),
-                          ),
-                        ),
-                        RadioButtonGroupFieldBlocBuilder<String>(
-                          selectFieldBloc: formBloc.select3,
+                          selectFieldBloc: formBloc.select1,
                           decoration: const InputDecoration(
                             labelText: 'Departamento',
                           ),
@@ -241,8 +198,43 @@ class AllFieldsForm extends StatelessWidget {
                             child: Text(item),
                           ),
                         ),
+                        RadioButtonGroupFieldBlocBuilder<String>(
+                          selectFieldBloc: formBloc.select2,
+                          decoration: const InputDecoration(
+                            labelText: 'Projeto',
+                          ),
+                          itemBuilder: (context, item) => FieldItem(
+                            child: Text(item),
+                          ),
+                        ),
                         DateTimeFieldBlocBuilder(
                           dateTimeFieldBloc: formBloc.dateAndTime1,
+                          canSelectTime: true,
+                          format: DateFormat('dd-MM-yyyy  hh:mm'),
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(1900),
+                          lastDate: DateTime(2100),
+                          decoration: const InputDecoration(
+                            labelText: 'Início',
+                            prefixIcon: Icon(Icons.date_range),
+                            helperText: 'Data e Hora',
+                          ),
+                        ),
+                        DateTimeFieldBlocBuilder(
+                          dateTimeFieldBloc: formBloc.dateAndTime2,
+                          canSelectTime: true,
+                          format: DateFormat('dd-MM-yyyy  hh:mm'),
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(1900),
+                          lastDate: DateTime(2100),
+                          decoration: const InputDecoration(
+                            labelText: 'Fim',
+                            prefixIcon: Icon(Icons.date_range),
+                            helperText: 'Data e Hora',
+                          ),
+                        ),
+                        DateTimeFieldBlocBuilder(
+                          dateTimeFieldBloc: formBloc.dateAndTime3,
                           canSelectTime: true,
                           format: DateFormat('dd-MM-yyyy  hh:mm'),
                           initialDate: DateTime.now(),
@@ -323,7 +315,7 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const T_Empresa())),
+                  MaterialPageRoute(builder: (_) => const T_Sugestao())),
               icon: const Icon(Icons.bento_outlined),
               label: const Text('Novo Cadastro'),
             ),

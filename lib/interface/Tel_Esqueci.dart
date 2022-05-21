@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
-import 'package:site_renault_rizzi/interface/GerarSenha.dart';
+import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
 void main() {
-  runApp(const TelaInicialLogin());
+  runApp(const Tel_Esqueci());
 }
 
-class TelaInicialLogin extends StatelessWidget {
-  const TelaInicialLogin({Key? key}) : super(key: key);
+class Tel_Esqueci extends StatelessWidget {
+  const Tel_Esqueci({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: const HomePage(),
     );
@@ -25,6 +26,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
+        backgroundColor: const Color(0xff1b5e20),
         centerTitle: true,
       ),
       body: Center(
@@ -36,7 +39,7 @@ class HomePage extends StatelessWidget {
               FlutterSocialButton(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => GerarSenha()));
+                      MaterialPageRoute(builder: (context) => Tel_Senha()));
                 },
               ),
 
@@ -48,7 +51,7 @@ class HomePage extends StatelessWidget {
               FlutterSocialButton(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => GerarSenha()));
+                      MaterialPageRoute(builder: (context) => Tel_Senha()));
                 },
                 buttonType: ButtonType.phone,
               ),
@@ -66,7 +69,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => GerarSenha()));
+                              builder: (context) => Tel_Senha()));
                     },
                     mini: true,
                   ),
@@ -75,7 +78,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => GerarSenha()));
+                              builder: (context) => Tel_Senha()));
                     },
                     mini: true,
                     buttonType: ButtonType.phone,

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:simple_grid/simple_grid.dart';
-import 'package:site_renault_rizzi/interface/1Menu.dart';
+import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(PlataformaGarantia());
+  runApp(Tel_PG());
 }
 
-class PlataformaGarantia extends StatelessWidget {
+class Tel_PG extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (_) => Menu())),
+                .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Menu())),
             icon: const Icon(Icons.logout),
             label: const Text('Sair'),
           ),

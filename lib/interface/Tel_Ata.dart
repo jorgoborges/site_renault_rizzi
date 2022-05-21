@@ -3,16 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/Grafico4.dart';
-import 'package:site_renault_rizzi/interface/Grafico1.dart';
-import 'package:site_renault_rizzi/interface/ModelDownload.dart';
+import 'package:site_renault_rizzi/interface/Tel_ChartAjuda.dart';
+import 'package:site_renault_rizzi/interface/Tel_Chart_1.dart';
 import 'package:pluto_grid/pluto_grid.dart';
-import 'package:site_renault_rizzi/interface/PreAta.dart';
+import 'package:site_renault_rizzi/interface/Tel_Resumo.dart';
 
 /// Provides a UI to select a authentication type page
-class ResumoFinal extends StatefulWidget {
-  _ResumoFinal createState() => _ResumoFinal();
+class Tel_Ata extends StatefulWidget {
+  _Tel_Ata createState() => _Tel_Ata();
 }
 
 class LabeledCheckbox extends StatelessWidget {
@@ -53,7 +51,7 @@ class LabeledCheckbox extends StatelessWidget {
   }
 }
 
-class _ResumoFinal extends State<ResumoFinal> {
+class _Tel_Ata extends State<Tel_Ata> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,17 +68,11 @@ class _ResumoFinal extends State<ResumoFinal> {
                 height: 10,
               ),
             )),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ElevatedButton.icon(
-                  onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => Creat_Download())),
-                  icon: const Icon(Icons.content_paste),
-                  label: const Text('Pesquisar Base'),
-                ),
+
               ],
             ),
             Expanded(
@@ -95,8 +87,8 @@ class _ResumoFinal extends State<ResumoFinal> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => MyChart4())),
-                  icon: const Icon(Icons.add_chart),
+                      MaterialPageRoute(builder: (_) => Tel_ChartAjuda())),
+                  icon: const Icon(Icons.data_exploration_sharp),
                   label: const Text('Andamento'),
                 ),
               ],
@@ -107,28 +99,9 @@ class _ResumoFinal extends State<ResumoFinal> {
                 height: 10,
               ),
             )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => PreAta())),
-                  icon: const Icon(Icons.preview),
-                  label: const Text('Pré Ata'),
-                ),
-
-              ],
-            ),
-            Expanded(
-                child: Container(
-              child: SizedBox(
-                height: 10,
-              ),
-            )),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => MyChart1())),
+                  MaterialPageRoute(builder: (_) => Tel_Chart_1())),
               icon: const Icon(Icons.dashboard),
               label: const Text('Dashboard'),
             ),
@@ -144,7 +117,7 @@ class _ResumoFinal extends State<ResumoFinal> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ResumoFinal())),
+                      MaterialPageRoute(builder: (_) => Tel_Resumo())),
                   icon: const Icon(Icons.preview),
                   label: const Text('Resumo Final'),
                 ),
@@ -193,7 +166,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
-                    'Resumo Final',
+                    'Pré ATA',
                     style: TextStyle(fontSize: 20),
                   ),
                 )),
@@ -408,46 +381,6 @@ class _ResumoFinal extends State<ResumoFinal> {
                         style: TextStyle(fontSize: 11),
                       ),
                     )),
-                Expanded(
-                    flex: 3,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      padding: EdgeInsets.all(5),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.yellowAccent,
-                        border: Border.all(
-                            color: Colors.black, // Set border color
-                            width: 1.0), // Set border width
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(8.0)), // Set rounded corner radius
-                        // Make rounded corner of border
-                      ),
-                      child: AutoSizeText(
-                        'Apontamento segundo dia ',
-                        style: TextStyle(fontSize: 11),
-                      ),
-                    )),
-                Expanded(
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      padding: EdgeInsets.all(5),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.deepOrangeAccent,
-                        border: Border.all(
-                            color: Colors.black, // Set border color
-                            width: 1.0), // Set border width
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(8.0)), // Set rounded corner radius
-                        // Make rounded corner of border
-                      ),
-                      child: AutoSizeText(
-                        'Resultado ',
-                        style: TextStyle(fontSize: 11),
-                      ),
-                    )),
               ],
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center),
@@ -466,7 +399,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 // Make rounded corner of border
               ),
               child: AutoSizeText(
-                'Descritivo Inicial',
+                'Descritivo',
                 style: TextStyle(fontSize: 11),
               ),
             )),
@@ -475,66 +408,9 @@ class _ResumoFinal extends State<ResumoFinal> {
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.all(5),
               alignment: Alignment.center,
-              width: 70,
+              width: 150,
               decoration: BoxDecoration(
                 color: Colors.lightBlueAccent,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Valores 1',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
-            Expanded(
-                child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.lightBlueAccent,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Qtd OS(s) apontadas',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
-            Expanded(
-                child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.yellowAccent,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Descritivo Final',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
-            Expanded(
-                child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.yellowAccent,
                 border: Border.all(
                     color: Colors.white70, // Set border color
                     width: 3.0), // Set border width
@@ -553,7 +429,7 @@ class _ResumoFinal extends State<ResumoFinal> {
               width: 300,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.yellowAccent,
+                color: Colors.lightBlueAccent,
                 border: Border.all(
                     color: Colors.white70, // Set border color
                     width: 3.0), // Set border width
@@ -561,45 +437,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 // Make rounded corner of border
               ),
               child: AutoSizeText(
-                'Qtd OS(s) apontadas',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
-            Expanded(
-                child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.deepOrangeAccent,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Montante Geral Apont',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
-            Expanded(
-                child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.deepOrangeAccent,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Qtd OS(s) apontadas',
+                'Quantidade',
                 style: TextStyle(fontSize: 11),
               ),
             )),
@@ -630,7 +468,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '250.500,00',
+                  '250.502.52',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -645,82 +483,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '80',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Total Analisado Final',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '35.785,23',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '50',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '286.287,75',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '130',
+                  '150',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -752,7 +515,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '2780,35',
+                  '1585,45',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -768,81 +531,6 @@ class _ResumoFinal extends State<ResumoFinal> {
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
                   '52',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Grau 1 segundo dia:',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '5785,35',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '37',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '9854,45',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '151',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -894,81 +582,6 @@ class _ResumoFinal extends State<ResumoFinal> {
                 ),
               ),
             ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Grau 2 segundo dia:',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '333',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '999',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '777',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '1266',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
           ], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
             Expanded(
@@ -1016,6 +629,8 @@ class _ResumoFinal extends State<ResumoFinal> {
                 ),
               ),
             ),
+          ], mainAxisAlignment: MainAxisAlignment.center),
+          Row(children: [
             Expanded(
               child: Container(
                 alignment: Alignment.center,
@@ -1026,22 +641,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  'Grau 3 segundo dia:',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '12',
+                  'Resultado Primeiro dia:',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -1056,7 +656,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '1236',
+                  '2.629,35',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -1066,33 +666,17 @@ class _ResumoFinal extends State<ResumoFinal> {
                 alignment: Alignment.center,
                 height: 30,
                 width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '857',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepOrangeAccent)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '12356',
+                  '66',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
             ),
           ], mainAxisAlignment: MainAxisAlignment.center),
-          Row(children: [], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
             Expanded(
                 child: Container(
@@ -1117,7 +701,7 @@ class _ResumoFinal extends State<ResumoFinal> {
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.all(5),
               alignment: Alignment.center,
-              width: 100,
+              width: 150,
               decoration: BoxDecoration(
                 color: Colors.black12,
                 border: Border.all(
@@ -1662,7 +1246,7 @@ class _ResumoFinal extends State<ResumoFinal> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '25% ',
+                  '40% ',
                   style: TextStyle(fontSize: 10),
                 ),
               ),

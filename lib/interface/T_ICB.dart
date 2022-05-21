@@ -1,15 +1,15 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
-import 'package:site_renault_rizzi/interface/Tela_Login.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
+import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
+import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
 void main() {
-  runApp(const CadastroBir());
+  runApp(const T_ICB());
 }
 
-class CadastroBir extends StatelessWidget {
-  const CadastroBir({Key? key}) : super(key: key);
+class T_ICB extends StatelessWidget {
+  const T_ICB({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -125,12 +125,15 @@ class AllFieldsForm4 extends StatelessWidget {
             ),
             child: Scaffold(
               appBar: AppBar(
+                backgroundColor: const Color(0xff1b5e20),
                 actions: [
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
                     icon: const Icon(Icons.logout),
-                    label: const Text('Sair'),
+                    label: const Text('Voltar',
+                        style: TextStyle(fontSize: 14, color: Colors.black87)),
+                    style: ElevatedButton.styleFrom(primary: Colors.red),
                   ),
                 ],
               ),
@@ -142,7 +145,11 @@ class AllFieldsForm4 extends StatelessWidget {
                     heroTag: null,
                     onPressed: formBloc.submit,
                     icon: const Icon(Icons.send),
-                    label: const Text('Enviar'),
+                    label: const Text(
+                      'Enviar',
+                      style: TextStyle(fontSize: 11, color: Colors.white),
+                    ),
+                    backgroundColor: Colors.red,
                   ),
                 ],
               ),
@@ -167,6 +174,11 @@ class AllFieldsForm4 extends StatelessWidget {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: <Widget>[
+                        Text('CADASTRO ICB.',
+                            style:
+                            TextStyle(fontSize: 14, color: Colors.black87)),
+
+
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text1,
                           decoration: const InputDecoration(
@@ -417,21 +429,21 @@ class SuccessScreen extends StatelessWidget {
             const SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const CadastroBir())),
+                  MaterialPageRoute(builder: (_) => const T_ICB())),
               icon: const Icon(Icons.bento_outlined),
               label: const Text('Novo Cadastro'),
             ),
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                  MaterialPageRoute(builder: (_) => Tel_BackOffice())),
               icon: const Icon(Icons.change_circle_sharp),
               label: const Text('Voltar'),
             ),
             SizedBox(height: 11),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => TelaInicialLogin())),
+                  MaterialPageRoute(builder: (_) => Tel_Senha())),
               icon: const Icon(Icons.exit_to_app),
               label: const Text('Sair Portal'),
             ),

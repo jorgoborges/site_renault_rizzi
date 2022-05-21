@@ -3,16 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:site_renault_rizzi/interface/Grafico4.dart';
-import 'package:site_renault_rizzi/interface/Grafico00000000000.dart';
-import 'package:site_renault_rizzi/interface/Grafico2.dart';
-import 'package:site_renault_rizzi/interface/ModelDownload.dart';
+import 'package:site_renault_rizzi/interface/Tel_ChartAjuda.dart';
+import 'package:site_renault_rizzi/interface/Tel_Chart_3.dart';
 import 'package:pluto_grid/pluto_grid.dart';
-import 'package:site_renault_rizzi/interface/ResumoFinal.dart';
+import 'package:site_renault_rizzi/interface/Tel_Ata.dart';
 
 /// Provides a UI to select a authentication type page
-class PreAta extends StatefulWidget {
-  _PreAta createState() => _PreAta();
+class Tel_Resumo extends StatefulWidget {
+  _Tel_Resumo createState() => _Tel_Resumo();
 }
 
 class LabeledCheckbox extends StatelessWidget {
@@ -53,7 +51,7 @@ class LabeledCheckbox extends StatelessWidget {
   }
 }
 
-class _PreAta extends State<PreAta> {
+class _Tel_Resumo extends State<Tel_Resumo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,12 +71,23 @@ class _PreAta extends State<PreAta> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
+              children: [],
+            ),
+            Expanded(
+                child: Container(
+              child: SizedBox(
+                height: 10,
+              ),
+            )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => Creat_Download())),
-                  icon: const Icon(Icons.content_paste),
-                  label: const Text('Pesquisar Base'),
+                      MaterialPageRoute(builder: (_) => Tel_ChartAjuda())),
+                  icon: const Icon(Icons.add_chart),
+                  label: const Text('Andamento'),
                 ),
               ],
             ),
@@ -94,9 +103,9 @@ class _PreAta extends State<PreAta> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => MyChart4())),
-                  icon: const Icon(Icons.data_exploration_sharp),
-                  label: const Text('Andamento'),
+                      MaterialPageRoute(builder: (_) => Tel_Ata())),
+                  icon: const Icon(Icons.preview),
+                  label: const Text('Pré Ata'),
                 ),
               ],
             ),
@@ -108,23 +117,23 @@ class _PreAta extends State<PreAta> {
             )),
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => MyChart2())),
+                  MaterialPageRoute(builder: (_) => Tel_Chart_3())),
               icon: const Icon(Icons.dashboard),
               label: const Text('Dashboard'),
             ),
             Expanded(
                 child: Container(
-                  child: SizedBox(
-                    height: 10,
-                  ),
-                )),
+              child: SizedBox(
+                height: 10,
+              ),
+            )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ResumoFinal())),
+                      MaterialPageRoute(builder: (_) => Tel_Resumo())),
                   icon: const Icon(Icons.preview),
                   label: const Text('Resumo Final'),
                 ),
@@ -173,7 +182,7 @@ class _PreAta extends State<PreAta> {
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
-                    'Pré ATA',
+                    'Resumo Final',
                     style: TextStyle(fontSize: 20),
                   ),
                 )),
@@ -388,6 +397,46 @@ class _PreAta extends State<PreAta> {
                         style: TextStyle(fontSize: 11),
                       ),
                     )),
+                Expanded(
+                    flex: 3,
+                    child: Container(
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.yellowAccent,
+                        border: Border.all(
+                            color: Colors.black, // Set border color
+                            width: 1.0), // Set border width
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(8.0)), // Set rounded corner radius
+                        // Make rounded corner of border
+                      ),
+                      child: AutoSizeText(
+                        'Apontamento segundo dia ',
+                        style: TextStyle(fontSize: 11),
+                      ),
+                    )),
+                Expanded(
+                    flex: 2,
+                    child: Container(
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.deepOrangeAccent,
+                        border: Border.all(
+                            color: Colors.black, // Set border color
+                            width: 1.0), // Set border width
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(8.0)), // Set rounded corner radius
+                        // Make rounded corner of border
+                      ),
+                      child: AutoSizeText(
+                        'Resultado ',
+                        style: TextStyle(fontSize: 11),
+                      ),
+                    )),
               ],
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center),
@@ -406,7 +455,7 @@ class _PreAta extends State<PreAta> {
                 // Make rounded corner of border
               ),
               child: AutoSizeText(
-                'Descritivo',
+                'Descritivo Inicial',
                 style: TextStyle(fontSize: 11),
               ),
             )),
@@ -415,7 +464,7 @@ class _PreAta extends State<PreAta> {
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.all(5),
               alignment: Alignment.center,
-              width: 150,
+              width: 70,
               decoration: BoxDecoration(
                 color: Colors.lightBlueAccent,
                 border: Border.all(
@@ -425,7 +474,7 @@ class _PreAta extends State<PreAta> {
                 // Make rounded corner of border
               ),
               child: AutoSizeText(
-                'Valores',
+                'Valores 1',
                 style: TextStyle(fontSize: 11),
               ),
             )),
@@ -444,7 +493,102 @@ class _PreAta extends State<PreAta> {
                 // Make rounded corner of border
               ),
               child: AutoSizeText(
-                'Quantidade',
+                'Qtd OS(s) apontadas',
+                style: TextStyle(fontSize: 11),
+              ),
+            )),
+            Expanded(
+                child: Container(
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
+              width: 300,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.yellowAccent,
+                border: Border.all(
+                    color: Colors.white70, // Set border color
+                    width: 3.0), // Set border width
+                // Set rounded corner radius
+                // Make rounded corner of border
+              ),
+              child: AutoSizeText(
+                'Descritivo Final',
+                style: TextStyle(fontSize: 11),
+              ),
+            )),
+            Expanded(
+                child: Container(
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
+              width: 300,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.yellowAccent,
+                border: Border.all(
+                    color: Colors.white70, // Set border color
+                    width: 3.0), // Set border width
+                // Set rounded corner radius
+                // Make rounded corner of border
+              ),
+              child: AutoSizeText(
+                'Valores',
+                style: TextStyle(fontSize: 11),
+              ),
+            )),
+            Expanded(
+                child: Container(
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
+              width: 300,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.yellowAccent,
+                border: Border.all(
+                    color: Colors.white70, // Set border color
+                    width: 3.0), // Set border width
+                // Set rounded corner radius
+                // Make rounded corner of border
+              ),
+              child: AutoSizeText(
+                'Qtd OS(s) apontadas',
+                style: TextStyle(fontSize: 11),
+              ),
+            )),
+            Expanded(
+                child: Container(
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
+              width: 300,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.deepOrangeAccent,
+                border: Border.all(
+                    color: Colors.white70, // Set border color
+                    width: 3.0), // Set border width
+                // Set rounded corner radius
+                // Make rounded corner of border
+              ),
+              child: AutoSizeText(
+                'Montante Geral Apont',
+                style: TextStyle(fontSize: 11),
+              ),
+            )),
+            Expanded(
+                child: Container(
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
+              width: 300,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.deepOrangeAccent,
+                border: Border.all(
+                    color: Colors.white70, // Set border color
+                    width: 3.0), // Set border width
+                // Set rounded corner radius
+                // Make rounded corner of border
+              ),
+              child: AutoSizeText(
+                'Qtd OS(s) apontadas',
                 style: TextStyle(fontSize: 11),
               ),
             )),
@@ -475,7 +619,7 @@ class _PreAta extends State<PreAta> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '250.502.52',
+                  '250.500,00',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -490,7 +634,82 @@ class _PreAta extends State<PreAta> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '150',
+                  '80',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  'Total Analisado Final',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '35.785,23',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '50',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '286.287,75',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '130',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -522,7 +741,7 @@ class _PreAta extends State<PreAta> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '1585,45',
+                  '2780,35',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -538,6 +757,81 @@ class _PreAta extends State<PreAta> {
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
                   '52',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  'Grau 1 segundo dia:',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '5785,35',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '37',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '9854,45',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '151',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -589,6 +883,81 @@ class _PreAta extends State<PreAta> {
                 ),
               ),
             ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  'Grau 2 segundo dia:',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '333',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '999',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '777',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '1266',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
           ], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
             Expanded(
@@ -636,54 +1005,83 @@ class _PreAta extends State<PreAta> {
                 ),
               ),
             ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  'Grau 3 segundo dia:',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '12',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '1236',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '857',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrangeAccent)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '12356',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
           ], mainAxisAlignment: MainAxisAlignment.center),
-          Row(children: [
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Resultado Primeiro dia:',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '2.629,35',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  '66',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-          ], mainAxisAlignment: MainAxisAlignment.center),
+          Row(children: [], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
             Expanded(
                 child: Container(
@@ -708,7 +1106,7 @@ class _PreAta extends State<PreAta> {
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.all(5),
               alignment: Alignment.center,
-              width: 150,
+              width: 100,
               decoration: BoxDecoration(
                 color: Colors.black12,
                 border: Border.all(
@@ -1253,7 +1651,7 @@ class _PreAta extends State<PreAta> {
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '40% ',
+                  '25% ',
                   style: TextStyle(fontSize: 10),
                 ),
               ),

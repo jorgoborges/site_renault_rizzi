@@ -1,16 +1,16 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
-import 'package:site_renault_rizzi/interface/4BackOfficePanel.dart';
-import 'package:site_renault_rizzi/interface/Grafico1.dart';
-import 'package:site_renault_rizzi/interface/Grafico2.dart';
-import 'package:site_renault_rizzi/interface/Grafico3.dart';
+import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
+import 'package:site_renault_rizzi/interface/Tel_Chart_1.dart';
+import 'package:site_renault_rizzi/interface/Tel_Chart_2.dart';
+import 'package:site_renault_rizzi/interface/Tel_Chart_3.dart';
 
 void main() {
-  runApp(MyChart4());
+  runApp(Tel_ChartAjuda());
 }
 
-class MyChart4 extends StatelessWidget {
+class Tel_ChartAjuda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -399,25 +399,25 @@ class _HomePageState extends State<HomePage> {
         actions: [
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => BackOfficePanel())),
+                MaterialPageRoute(builder: (_) => Tel_BackOffice())),
             icon: const Icon(Icons.arrow_circle_left_outlined),
             label: const Text('Voltar'),
           ),
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (_) => MyChart1())),
+                .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Chart_3())),
             icon: const Icon(Icons.bar_chart),
             label: const Text('1'),
           ),
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (_) => MyChart2())),
+                .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Chart_1())),
             icon: const Icon(Icons.bar_chart),
             label: const Text('2'),
           ),
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (_) => MyChart3())),
+                .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Chart_2())),
             icon: const Icon(Icons.bar_chart),
             label: const Text('3'),
           ),

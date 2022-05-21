@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:simple_grid/simple_grid.dart';
-import 'package:site_renault_rizzi/interface/1Menu.dart';
+import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(AuditorPanel());
+  runApp(Tel_Auditor());
 }
 
-class AuditorPanel extends StatelessWidget {
+class Tel_Auditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,14 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xff1b5e20),
         actions: [
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (_) => Menu())),
+                .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Menu())),
             icon: const Icon(Icons.logout),
             label: const Text('Sair'),
           ),
-
         ],
       ),
       body: Row(
@@ -60,8 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 selectedTitleTextStyle: TextStyle(color: Colors.white),
                 selectedIconColor: Colors.redAccent,
                 backgroundColor: Colors.black38
-              // openSideMenuWidth: 200
-            ),
+                // openSideMenuWidth: 200
+                ),
             title: Column(
               children: [
                 ConstrainedBox(
@@ -111,7 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: page,
               children: [
                 Container(
-
                   color: Colors.white,
                   child: Center(
                     child: Container(
@@ -139,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -148,21 +147,21 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       icon: Icon(Icons
                                                           .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "1"), //llabel text
+                                                          "1/1"), //llabel text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -180,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -192,18 +191,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "2"), //l//label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -221,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -233,21 +232,22 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "3"), //llabel text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
-                                  ),                       SpGridItem(
+                                  ),
+                                  SpGridItem(
                                     xs: 12,
                                     sm: 6,
                                     md: 4,
@@ -261,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -273,18 +273,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "4"), //l, //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -302,7 +302,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -314,18 +314,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "5"), //llabel text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -343,7 +343,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -355,24 +355,23 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "6"), //l//label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-
                             ),
                           ),
                         ),
@@ -408,7 +407,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -417,21 +416,21 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       icon: Icon(Icons
                                                           .check_box), //icon data for elevated button
                                                       label: Text(
-                                                          "1"), //l/label text
+                                                          "2/1"), //l/label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -449,7 +448,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -461,18 +460,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "2"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -490,7 +489,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -502,18 +501,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "3"), //l/label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -531,7 +530,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -543,18 +542,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "4"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -572,7 +571,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -584,18 +583,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "5"), //l //label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -613,7 +612,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Expanded(
                                                 child: Container(
                                                   margin:
-                                                  const EdgeInsets.all(8),
+                                                      const EdgeInsets.all(8),
                                                   alignment: Alignment.center,
                                                   child: SizedBox(
                                                     width: double.infinity,
@@ -625,18 +624,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           "6"), //l//label text
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                          primary: Colors
-                                                              .blueAccent //elevated btton background color
-                                                      ),
+                                                              primary: Colors
+                                                                  .blueAccent //elevated btton background color
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start),
+                                                CrossAxisAlignment.start),
                                       ),
                                     ),
                                   ),
@@ -684,20 +683,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     icon: Icon(Icons
                                                         .check_box), //icon data for elevated button
                                                     label: Text(
-                                                        "1"), //l //label text
+                                                        "3/1"), //l //label text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
-                                                    ),
+                                                        ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ],
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start),
+                                              CrossAxisAlignment.start),
                                     ),
                                   ),
                                 ),
@@ -727,16 +726,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
-                                                    ),
+                                                        ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ],
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start),
+                                              CrossAxisAlignment.start),
                                     ),
                                   ),
                                 ),
@@ -766,16 +765,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
-                                                    ),
+                                                        ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ],
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start),
+                                              CrossAxisAlignment.start),
                                     ),
                                   ),
                                 ),
@@ -805,16 +804,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
-                                                    ),
+                                                        ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ],
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start),
+                                              CrossAxisAlignment.start),
                                     ),
                                   ),
                                 ),
@@ -844,16 +843,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
-                                                    ),
+                                                        ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ],
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start),
+                                              CrossAxisAlignment.start),
                                     ),
                                   ),
                                 ),
@@ -883,16 +882,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
-                                                    ),
+                                                        ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ],
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start),
+                                              CrossAxisAlignment.start),
                                     ),
                                   ),
                                 ),
