@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
                     width: 80,
                   ),
                 )),
-              ], mainAxisAlignment: MainAxisAlignment.center),
+              ], mainAxisAlignment: MainAxisAlignment.spaceAround),
               ListTile(
                 title: Text('Grau por item 02'),
                 tileColor: Colors.blueGrey,
@@ -61,10 +61,10 @@ class Home extends StatelessWidget {
                 padding: EdgeInsets.all(8),
                 child: Container(
                   child: SizedBox(
-                    height: 600,
-                    width: double.infinity,
+                    height:300,
+                    width: 300,
                     child: AspectRatio(
-                      aspectRatio: 1 / 1,
+                      aspectRatio: 16 / 9,
                       child: DChartBar(
                         data: [
                           {
@@ -102,6 +102,7 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
+
         ),
       ),
     );

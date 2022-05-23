@@ -13,7 +13,7 @@ class Tel_Chart_2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Tel_Chart_2(),
     );
   }
 }

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:simple_grid/simple_grid.dart';
+import 'package:site_renault_rizzi/interface/Lista_Up_Base.dart';
+import 'package:site_renault_rizzi/interface/T_Participante.dart';
+import 'package:site_renault_rizzi/interface/T_ResumoValores.dart';
+import 'package:site_renault_rizzi/interface/Tel_Ata.dart';
 import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
 import 'package:flutter/rendering.dart';
+import 'package:site_renault_rizzi/interface/Tel_Resumo.dart';
 
 void main() {
   runApp(Tel_PosVenda());
@@ -597,7 +602,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   child: ElevatedButton.icon(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  Lista_Up_Base()));
+                                                    },
                                                     icon: Icon(Icons
                                                         .schema), //icon data for elevated button
                                                     label: Text(
@@ -636,11 +647,17 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   child: ElevatedButton.icon(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  T_Participante()));
+                                                    },
                                                     icon: Icon(Icons
                                                         .nature_people), //icon data for elevated button
                                                     label: Text(
-                                                        "Participantes"), //label text
+                                                        "Lista Participante"), //label text
                                                     style: ElevatedButton.styleFrom(
                                                         primary: Colors
                                                             .blueAccent //elevated btton background color
@@ -675,7 +692,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   child: ElevatedButton.icon(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  Lista_Up_Base()));
+                                                    },
                                                     icon: Icon(Icons
                                                         .manage_search), //icon data for elevated button
                                                     label: Text(
@@ -714,7 +737,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   child: ElevatedButton.icon(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  Tel_Ata()));
+                                                    },
                                                     icon: Icon(Icons
                                                         .task), //icon data for elevated button
                                                     label: Text(
@@ -753,7 +782,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   child: ElevatedButton.icon(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  Tel_Resumo()));
+                                                    },
                                                     icon: Icon(Icons
                                                         .list_alt), //icon data for elevated button
                                                     label: Text(
@@ -792,7 +827,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   child: ElevatedButton.icon(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  T_ResumoValores()));
+                                                    },
                                                     icon: Icon(Icons
                                                         .bar_chart), //icon data for elevated button
                                                     label: Text(
