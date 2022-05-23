@@ -109,7 +109,7 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         field: 'm/o',
         type: PlutoColumnType.text(),
         titleTextAlign: PlutoColumnTextAlign.center,
-        backgroundColor: Colors.greenAccent),
+        backgroundColor: Colors.green),
     PlutoColumn(
         title: 'P/Ç',
         field: 'p/ç',
@@ -126,9 +126,9 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         title: 'Descritivo',
         field: 'descritivo',
         type: PlutoColumnType.select(
-            <String>['23 peças não localizadas', '18 sem requisição de peças']),
+            <String>['23 peças não localizadas', '18 sem requisição de peças', '1 Sem assinatura']),
         titleTextAlign: PlutoColumnTextAlign.center,
-        backgroundColor: Colors.greenAccent),
+        backgroundColor: Colors.green),
     PlutoColumn(
         title: 'Grau',
         field: 'grau',
