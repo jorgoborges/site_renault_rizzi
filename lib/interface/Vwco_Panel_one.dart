@@ -105,8 +105,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: 400,
+                      maxWidth: 400,
+                    ),
+                    child: const Text('Objetivos Estratégicos',
+                        style: TextStyle(fontSize: 24, color: Colors.red)),
 
 
+                  ),
                   Divider(
                     indent: 8.0,
                     endIndent: 8.0,

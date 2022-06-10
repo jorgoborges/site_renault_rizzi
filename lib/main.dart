@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
+import 'package:site_renault_rizzi/interface/Portal_inicial.dart';
+
 
 
 void main() async {
@@ -17,6 +18,6 @@ class Initial extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-        theme: ThemeData(primarySwatch: Colors.red), home: Tel_Senha());
+        theme: ThemeData(primarySwatch: Colors.red), home: Portal_inicial());
   }
 }
