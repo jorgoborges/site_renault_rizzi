@@ -13,6 +13,10 @@ class T_Participante extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+
+
+
       title: 'CADASTRO PARTICIPANTE',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -45,6 +49,7 @@ class _CadastroParticipanteState extends State<CadastroParticipante> {
       title: 'Nome',
       field: 'nome',
       type: PlutoColumnType.text(),
+
       titleTextAlign: PlutoColumnTextAlign.center,
       backgroundColor: Colors.blueGrey,
     ),
@@ -127,3 +132,4 @@ class _CadastroParticipanteState extends State<CadastroParticipante> {
     );
   }
 }
+

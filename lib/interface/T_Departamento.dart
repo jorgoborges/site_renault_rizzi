@@ -4,7 +4,6 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
 import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
-
 void main() {
   runApp(const T_Departamento());
 }
@@ -15,6 +14,8 @@ class T_Departamento extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      title: 'Cadastro Departamento',
+      debugShowCheckedModeBanner: false,
       home: AllFieldsForm(),
     );
   }
@@ -61,7 +62,6 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
     ],
   );
 
-
   final file = InputFieldBloc<File?, String>(initialValue: null);
 
   final date1 = InputFieldBloc<DateTime?, Object>(initialValue: null);
@@ -86,7 +86,6 @@ class AllFieldsFormBloc extends FormBloc<String, String> {
       select2,
       select3,
       select4,
-
       date1,
       dateAndTime1,
       time1,
@@ -127,15 +126,32 @@ class AllFieldsForm extends StatelessWidget {
             ),
             child: Scaffold(
               appBar: AppBar(
-                backgroundColor: const Color(0xff1b5e20),
+                backgroundColor: const Color(0xFF1B5E20),
                 actions: [
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (_) => Tel_BackOffice())),
-                    icon: const Icon(Icons.logout),
+                    icon: Container(
+                        child: const Icon(Icons.assignment_return_outlined)),
                     label: const Text('Voltar',
-                        style: TextStyle(fontSize: 14, color: Colors.black87)),
-                    style: ElevatedButton.styleFrom(primary: Colors.red),
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
+                    icon: const Icon(Icons.save_outlined),
+                    label: const Text('Salvar',
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
+                    icon: const Icon(Icons.mode_edit_outlined),
+                    label: const Text('Editar',
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
                   ),
                 ],
               ),
@@ -178,7 +194,7 @@ class AllFieldsForm extends StatelessWidget {
                       children: <Widget>[
                         Text('CADASTRO DEPARTAMENTO.',
                             style:
-                            TextStyle(fontSize: 14, color: Colors.black87)),
+                                TextStyle(fontSize: 14, color: Colors.black87)),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
@@ -207,7 +223,7 @@ class AllFieldsForm extends StatelessWidget {
                           ),
                         ),
                         BlocBuilder<InputFieldBloc<File?, String>,
-                            InputFieldBlocState<File?, String>>(
+                                InputFieldBlocState<File?, String>>(
                             bloc: formBloc.file,
                             builder: (context, state) {
                               return Container();
@@ -227,11 +243,11 @@ class AllFieldsForm extends StatelessWidget {
 
 class LoadingDialog extends StatelessWidget {
   static void show(BuildContext context, {Key? key}) => showDialog<void>(
-    context: context,
-    useRootNavigator: false,
-    barrierDismissible: false,
-    builder: (_) => LoadingDialog(key: key),
-  ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
+        context: context,
+        useRootNavigator: false,
+        barrierDismissible: false,
+        builder: (_) => LoadingDialog(key: key),
+      ).then((_) => FocusScope.of(context).requestFocus(FocusNode()));
 
   static void hide(BuildContext context) => Navigator.pop(context);
 

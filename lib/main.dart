@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
+import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
 
 void main() async {
@@ -14,6 +14,9 @@ class Initial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.green), home: Tel_Menu());
+
+      debugShowCheckedModeBanner: false,
+
+        theme: ThemeData(primarySwatch: Colors.red), home: Tel_Senha());
   }
 }

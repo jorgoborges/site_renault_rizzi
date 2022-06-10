@@ -13,10 +13,8 @@ class Lista_Up_Base extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'CARREGAR BASE',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: const CarregarBaseGarantia(),
     );
   }
@@ -125,8 +123,11 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
     PlutoColumn(
         title: 'Descritivo',
         field: 'descritivo',
-        type: PlutoColumnType.select(
-            <String>['23 peças não localizadas', '18 sem requisição de peças', '1 Sem assinatura']),
+        type: PlutoColumnType.select(<String>[
+          '23 peças não localizadas',
+          '18 sem requisição de peças',
+          '1 Sem assinatura'
+        ]),
         titleTextAlign: PlutoColumnTextAlign.center,
         backgroundColor: Colors.green),
     PlutoColumn(

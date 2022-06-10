@@ -14,6 +14,8 @@ class T_Sugestao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Cadastro Sugestão Auditoria',
       home: AllFieldsForm(),
     );
   }
@@ -109,15 +111,32 @@ class AllFieldsForm extends StatelessWidget {
             ),
             child: Scaffold(
               appBar: AppBar(
-                backgroundColor: const Color(0xff1b5e20),
+                backgroundColor: const Color(0xFF1B5E20),
                 actions: [
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (_) => Tel_BackOffice())),
-                    icon: const Icon(Icons.logout),
+                    icon: Container(
+                        child: const Icon(Icons.assignment_return_outlined)),
                     label: const Text('Voltar',
-                        style: TextStyle(fontSize: 14, color: Colors.black87)),
-                    style: ElevatedButton.styleFrom(primary: Colors.red),
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
+                    icon: const Icon(Icons.save_outlined),
+                    label: const Text('Salvar',
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
+                    icon: const Icon(Icons.mode_edit_outlined),
+                    label: const Text('Editar',
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
                   ),
                 ],
               ),

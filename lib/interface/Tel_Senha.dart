@@ -16,11 +16,9 @@ class _Tel_SenhaState extends State<Tel_Senha> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Login',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primaryColor: Colors.green,
-          colorScheme:
-              ThemeData.light().colorScheme.copyWith(primary: Colors.green)),
+      theme: ThemeData(primaryColor: const Color(0xff1b5e20)),
       home: PasswordApp(),
     );
   }
@@ -35,7 +33,8 @@ class PasswordApp extends StatelessWidget {
       },
       child: Scaffold(
           appBar: AppBar(
-            title: const Text('Campo de Senha'),
+            backgroundColor: const Color(0xff1b5e20),
+            title: const Text('Efetuar Login'),
           ),
           body: ListView(
             children: <Widget>[
@@ -55,7 +54,7 @@ class PasswordApp extends StatelessWidget {
                     inputPadding: const EdgeInsets.symmetric(horizontal: 10),
                     suffixIcon: const Icon(
                       Icons.key,
-                      color: Colors.grey,
+                      color: Colors.red,
                     ),
                     inputStyle: const TextStyle(
                       fontSize: 14,
@@ -67,13 +66,13 @@ class PasswordApp extends StatelessWidget {
                   },
                   border: PasswordBorder(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                       borderSide:
                           BorderSide(width: 2, color: Colors.red.shade200),
                     ),
@@ -84,7 +83,7 @@ class PasswordApp extends StatelessWidget {
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: PasswordField(
                   color: Colors.blue,
                   passwordConstraint: r'.*[@$#.*].*',
@@ -95,16 +94,16 @@ class PasswordApp extends StatelessWidget {
                       borderSide: BorderSide(
                         color: Colors.blue.shade100,
                       ),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.blue.shade100,
                       ),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                       borderSide:
                           BorderSide(width: 2, color: Colors.red.shade200),
                     ),
@@ -113,7 +112,7 @@ class PasswordApp extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height:50 ,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -133,17 +132,17 @@ class PasswordApp extends StatelessWidget {
                   border: PasswordBorder(
                     border: OutlineInputBorder(
                         borderSide:
-                            const BorderSide(width: 0, color: Colors.grey),
-                        borderRadius: BorderRadius.circular(25.7)),
+                            const BorderSide(width: 0, color: Colors.red),
+                        borderRadius: BorderRadius.circular(10)),
                     focusedBorder: OutlineInputBorder(
                       borderSide:
-                          const BorderSide(width: 0, color: Colors.grey),
-                      borderRadius: BorderRadius.circular(25.7),
+                          const BorderSide(width: 0, color: Colors.red),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          const BorderSide(width: 0, color: Colors.grey),
-                      borderRadius: BorderRadius.circular(25.7),
+                          const BorderSide(width: 0, color: Colors.red),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
@@ -158,7 +157,8 @@ class PasswordApp extends StatelessWidget {
                 children: [
                   Expanded(
                     child: SizedBox(
-                      height: 1,
+                      height: 300,
+
                     ),
                   ),
                   Expanded(
@@ -168,8 +168,9 @@ class PasswordApp extends StatelessWidget {
                       icon: const Icon(Icons.logout),
                       label: const Text('Entrar',
                           style:
-                              TextStyle(fontSize: 14, color: Colors.black87)),
-                      style: ElevatedButton.styleFrom(primary: Colors.green),
+                              TextStyle(fontSize: 14, color: Colors.white)),
+                      style: ElevatedButton.styleFrom(
+                          primary: const Color(0xff1b5e20)),
                     ),
                   ),
                   Expanded(
@@ -180,7 +181,6 @@ class PasswordApp extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           )),
     );

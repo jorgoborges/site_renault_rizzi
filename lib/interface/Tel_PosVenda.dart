@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   page.jumpToPage(0);
                 },
-                icon: Icons.linear_scale,
+                icon: Icons.tune,
               ),
               SideMenuItem(
                 priority: 1,
@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   page.jumpToPage(2);
                 },
-                icon: Icons.hardware,
+                icon: Icons.maps_home_work,
               ),
             ],
           ),
@@ -607,55 +607,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           context,
                                                           MaterialPageRoute(
                                                               builder: (context) =>
-                                                                  Lista_Up_Base()));
-                                                    },
-                                                    icon: Icon(Icons
-                                                        .schema), //icon data for elevated button
-                                                    label: Text(
-                                                        "Base"), //label text
-                                                    style: ElevatedButton.styleFrom(
-                                                        primary: Colors
-                                                            .blueAccent //elevated btton background color
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start),
-                                    ),
-                                  ),
-                                ),
-                                SpGridItem(
-                                  xs: 12,
-                                  sm: 6,
-                                  md: 4,
-                                  lg: 3,
-                                  child: Container(
-                                    color: Colors.blueGrey,
-                                    height: 50,
-                                    child: Center(
-                                      child: Row(
-                                          children: [
-                                            Expanded(
-                                              child: Container(
-                                                margin: const EdgeInsets.all(8),
-                                                alignment: Alignment.center,
-                                                child: SizedBox(
-                                                  width: double.infinity,
-                                                  child: ElevatedButton.icon(
-                                                    onPressed: () {
-                                                      Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                              builder: (context) =>
                                                                   T_Participante()));
                                                     },
                                                     icon: Icon(Icons
-                                                        .nature_people), //icon data for elevated button
+                                                        .people_outline_outlined), //icon data for elevated button
                                                     label: Text(
                                                         "Lista Participante"), //label text
                                                     style: ElevatedButton.styleFrom(
@@ -699,6 +654,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                               builder: (context) =>
                                                                   Lista_Up_Base()));
                                                     },
+
                                                     icon: Icon(Icons
                                                         .manage_search), //icon data for elevated button
                                                     label: Text(
@@ -741,11 +697,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       Navigator.push(
                                                           context,
                                                           MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  Tel_Ata()));
+                                                              builder:
+                                                                  (context) =>
+                                                                      Tel_Ata()));
                                                     },
-                                                    icon: Icon(Icons
-                                                        .task), //icon data for elevated button
+                                                    icon: Icon(Icons.note_alt_outlined
+                                                        ), //icon data for elevated button
                                                     label: Text(
                                                         "Pré Ata"), //label text
                                                     style: ElevatedButton.styleFrom(
@@ -789,8 +746,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                               builder: (context) =>
                                                                   Tel_Resumo()));
                                                     },
-                                                    icon: Icon(Icons
-                                                        .list_alt), //icon data for elevated button
+                                                    icon:Icon(Icons.note_alt_outlined),
+                                                      //icon data for elevated button
                                                     label: Text(
                                                         "Resumo Final"), //label text
                                                     style: ElevatedButton.styleFrom(
@@ -828,7 +785,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   width: double.infinity,
                                                   child: ElevatedButton.icon(
                                                     onPressed: () {
-
                                                       Navigator.push(
                                                           context,
                                                           MaterialPageRoute(
@@ -836,7 +792,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                                   T_ResumoValores()));
                                                     },
                                                     icon: Icon(Icons
-                                                        .bar_chart), //icon data for elevated button
+                                                        .pie_chart), //icon data for elevated button
                                                     label: Text(
                                                         "Dashboard"), //label text
                                                     style: ElevatedButton.styleFrom(
