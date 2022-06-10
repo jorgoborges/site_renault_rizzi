@@ -5,50 +5,11 @@ import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:site_renault_rizzi/interface/Tel_ChartAjuda.dart';
 import 'package:site_renault_rizzi/interface/Tel_Chart_1.dart';
-import 'package:pluto_grid/pluto_grid.dart';
 import 'package:site_renault_rizzi/interface/Tel_Resumo.dart';
 
 /// Provides a UI to select a authentication type page
 class Tel_Ata extends StatefulWidget {
   _Tel_Ata createState() => _Tel_Ata();
-}
-
-class LabeledCheckbox extends StatelessWidget {
-  const LabeledCheckbox({
-    Key? key,
-    required this.label,
-    required this.padding,
-    required this.value,
-    required this.onChanged,
-  }) : super(key: key);
-
-  final String label;
-  final EdgeInsets padding;
-  final bool value;
-  final ValueChanged<bool> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        onChanged(!value);
-      },
-      child: Padding(
-        padding: padding,
-        child: Row(
-          children: <Widget>[
-            Expanded(child: Text(label)),
-            Checkbox(
-              value: value,
-              onChanged: (bool? newValue) {
-                onChanged(newValue!);
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
 
 class _Tel_Ata extends State<Tel_Ata> {
@@ -71,9 +32,7 @@ class _Tel_Ata extends State<Tel_Ata> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-
-              ],
+              children: [],
             ),
             Expanded(
                 child: Container(
@@ -107,10 +66,10 @@ class _Tel_Ata extends State<Tel_Ata> {
             ),
             Expanded(
                 child: Container(
-                  child: SizedBox(
-                    height: 10,
-                  ),
-                )),
+              child: SizedBox(
+                height: 10,
+              ),
+            )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -132,14 +91,6 @@ class _Tel_Ata extends State<Tel_Ata> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ModelFilter())),
-                  icon: const Icon(Icons.search),
-                  label: const Text('Filtro'),
-                ),
-              ],
             ),
             Expanded(
                 child: Container(
@@ -162,12 +113,12 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1)), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
                     'Pré ATA',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 18),
                   ),
                 )),
               ],
@@ -186,7 +137,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                             color: Colors.black, // Set border color
                             width: 1.0), // Set border width
                         borderRadius: BorderRadius.all(
-                            Radius.circular(8.0)), // Set rounded corner radius
+                            Radius.circular(1)), // Set rounded corner radius
                         // Make rounded corner of border
                       ),
                       child: AutoSizeText(
@@ -205,7 +156,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1)), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -224,7 +175,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1)), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -243,7 +194,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                             color: Colors.black, // Set border color
                             width: 1.0), // Set border width
                         borderRadius: BorderRadius.all(
-                            Radius.circular(10.0)), // Set rounded corner radius
+                            Radius.circular(1)), // Set rounded corner radius
                         // Make rounded corner of border
                       ),
                       child: AutoSizeText(
@@ -267,7 +218,8 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1
+                        )), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -286,7 +238,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1)), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -305,7 +257,8 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1
+                        )), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -324,7 +277,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1)), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -349,7 +302,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1)), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -373,7 +326,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                             color: Colors.black, // Set border color
                             width: 1.0), // Set border width
                         borderRadius: BorderRadius.all(
-                            Radius.circular(8.0)), // Set rounded corner radius
+                            Radius.circular(1)), // Set rounded corner radius
                         // Make rounded corner of border
                       ),
                       child: AutoSizeText(
@@ -748,11 +701,12 @@ class _Tel_Ata extends State<Tel_Ata> {
                 // Make rounded corner of border
               ),
               child: AutoSizeText(
-                'Inter',
-                style: TextStyle(fontSize: 11),
+                'Inter.',
+                style: TextStyle(fontSize: 9),
               ),
             )),
             Expanded(
+              flex: 2,
                 child: Container(
                     margin: EdgeInsets.all(5),
                     padding: EdgeInsets.all(5),
@@ -769,23 +723,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                       'VIN',
                       style: TextStyle(fontSize: 11),
                     ))),
-            Expanded(
-                child: Container(
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      border: Border.all(
-                          color: Colors.white70, // Set border color
-                          width: 3.0), // Set border width
-                      // Set rounded corner radius
-                      // Make rounded corner of border
-                    ),
-                    child: AutoSizeText(
-                      'NAT',
-                      style: TextStyle(fontSize: 11),
-                    ))),
+
             Expanded(
                 child: Container(
                     margin: EdgeInsets.all(5),
@@ -803,40 +741,8 @@ class _Tel_Ata extends State<Tel_Ata> {
                       'Valor',
                       style: TextStyle(fontSize: 11),
                     ))),
-            Expanded(
-                child: Container(
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      border: Border.all(
-                          color: Colors.white70, // Set border color
-                          width: 3.0), // Set border width
-                      // Set rounded corner radius
-                      // Make rounded corner of border
-                    ),
-                    child: AutoSizeText(
-                      'NITG',
-                      style: TextStyle(fontSize: 11),
-                    ))),
-            Expanded(
-                child: Container(
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      border: Border.all(
-                          color: Colors.white70, // Set border color
-                          width: 3.0), // Set border width
-                      // Set rounded corner radius
-                      // Make rounded corner of border
-                    ),
-                    child: AutoSizeText(
-                      'Aponte',
-                      style: TextStyle(fontSize: 11),
-                    ))),
+
+
             Expanded(
                 child: Container(
                     margin: EdgeInsets.all(5),
@@ -852,7 +758,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                     ),
                     child: AutoSizeText(
                       'M/O',
-                      style: TextStyle(fontSize: 11),
+                      style: TextStyle(fontSize:9),
                     ))),
             Expanded(
                 child: Container(
@@ -869,7 +775,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                     ),
                     child: AutoSizeText(
                       'PÇ',
-                      style: TextStyle(fontSize: 11),
+                      style: TextStyle(fontSize: 9),
                     ))),
             Expanded(
                 child: Container(
@@ -924,6 +830,23 @@ class _Tel_Ata extends State<Tel_Ata> {
                     ))),
             Expanded(
                 child: Container(
+                    margin: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(5),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      border: Border.all(
+                          color: Colors.green, // Set border color
+                          width: 3.0), // Set border width
+                      // Set rounded corner radius
+                      // Make rounded corner of border
+                    ),
+                    child: AutoSizeText(
+                      'Irregularidade',
+                      style: TextStyle(fontSize: 9),
+                    ))),
+            Expanded(
+                child: Container(
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.all(5),
               alignment: Alignment.center,
@@ -945,7 +868,7 @@ class _Tel_Ata extends State<Tel_Ata> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black12)),
@@ -960,7 +883,7 @@ class _Tel_Ata extends State<Tel_Ata> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black12)),
@@ -975,7 +898,7 @@ class _Tel_Ata extends State<Tel_Ata> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height:80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black12)),
@@ -990,22 +913,23 @@ class _Tel_Ata extends State<Tel_Ata> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  'A',
-                  style: TextStyle(fontSize: 10),
+                  'A.',
+                  style: TextStyle(fontSize: 9),
                 ),
               ),
             ),
             Expanded(
+              flex: 2,
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black12)),
@@ -1017,25 +941,11 @@ class _Tel_Ata extends State<Tel_Ata> {
                 ),
               ),
             ),
+
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'G36',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black12)),
@@ -1047,40 +957,12 @@ class _Tel_Ata extends State<Tel_Ata> {
                 ),
               ),
             ),
+
+
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'A221',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Escrape Em curso',
-                  style: TextStyle(fontSize: 9),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.green)),
@@ -1088,14 +970,14 @@ class _Tel_Ata extends State<Tel_Ata> {
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
                   'XXX?',
-                  style: TextStyle(fontSize: 10),
+                  style: TextStyle(fontSize: 9),
                 ),
               ),
             ),
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.green)),
@@ -1103,14 +985,14 @@ class _Tel_Ata extends State<Tel_Ata> {
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
                   'XPTO?',
-                  style: TextStyle(fontSize: 10),
+                  style: TextStyle(fontSize: 9),
                 ),
               ),
             ),
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.green)),
@@ -1125,14 +1007,14 @@ class _Tel_Ata extends State<Tel_Ata> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '1',
+                  '1.',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -1140,35 +1022,45 @@ class _Tel_Ata extends State<Tel_Ata> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
+                height: 80,
+                width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.green)),
+                BoxDecoration(border: Border.all(color: Colors.green)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 30,
-                  width: 80,
-                  child: AutoSizeText(
-                    'Descritivo de apontamento',
-                    style: TextStyle(fontSize: 10.0),
-                    maxLines: 5,
-                  ),
+                child: AutoSizeText(
+                  '1- descritivo de apontamento',
+                  style: TextStyle(fontSize: 10),
                 ),
               ),
             ),
             Expanded(
               child: Container(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
+                height: 80,
+                width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.green)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
-                child: const SizedBox(
-                  height: 30,
-                  width: 80,
-                  child: AutoSizeText(
-                    'dia-1',
-                    style: TextStyle(fontSize: 10.0),
-                  ),
+                child: AutoSizeText(
+                  '1- descritivo de irregularidade',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 80,
+                width: 80,
+                decoration:
+                BoxDecoration(border: Border.all(color: Colors.green)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '10.',
+                  style: TextStyle(fontSize: 10),
                 ),
               ),
             ),
@@ -1266,7 +1158,7 @@ class _Tel_Ata extends State<Tel_Ata> {
                         color: Colors.black, // Set border color
                         width: 1.0), // Set border width
                     borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
+                        Radius.circular(1)), // Set rounded corner radius
                     // Make rounded corner of border
                   ),
                   child: AutoSizeText(
@@ -1418,133 +1310,5 @@ class _Tel_Ata extends State<Tel_Ata> {
         ], mainAxisAlignment: MainAxisAlignment.center),
       ),
     ));
-  }
-}
-
-void main() {
-  runApp(const ModelFilter());
-}
-
-class ModelFilter extends StatelessWidget {
-  const ModelFilter({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Filtro Base',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const PlutoGridExamplePage(),
-    );
-  }
-}
-
-/// PlutoGrid Example
-//
-/// For more examples, go to the demo web link on the github below.
-class PlutoGridExamplePage extends StatefulWidget {
-  const PlutoGridExamplePage({Key? key}) : super(key: key);
-
-  @override
-  State<PlutoGridExamplePage> createState() => _PlutoGridExamplePageState();
-}
-
-class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
-  final List<PlutoColumn> columns = <PlutoColumn>[
-    PlutoColumn(
-      title: 'Aponte',
-      field: 'aponte',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'OS',
-      field: 'OS',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'Fatura',
-      field: 'fatura',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'NITG',
-      field: 'nitg',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'VIN',
-      field: 'VIN',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'Nat',
-      field: 'Nat',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'Valor',
-      field: 'Valor',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-  ];
-
-  final List<PlutoRow> rows = [
-    PlutoRow(
-      cells: {
-        'aponte': PlutoCell(value: 'escrape em curso'),
-        'fatura': PlutoCell(value: '25642'),
-        'OS': PlutoCell(value: '5486'),
-        'nitg': PlutoCell(value: 'A221'),
-        'VIN': PlutoCell(value: '93YRBB001LJ082736'),
-        'Nat': PlutoCell(value: 'G36'),
-        'Valor': PlutoCell(value: '1254,00')
-      },
-    ),
-  ];
-
-  /// columnGroups that can group columns can be omitted.
-  final List<PlutoColumnGroup> columnGroups = [];
-
-  /// [PlutoGridStateManager] has many methods and properties to dynamically manipulate the grid.
-  /// You can manipulate the grid dynamically at runtime by passing this through the [onLoaded] callback.
-  late final PlutoGridStateManager stateManager;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(15),
-        child: PlutoGrid(
-          columns: columns,
-          rows: rows,
-          columnGroups: columnGroups,
-          onLoaded: (PlutoGridOnLoadedEvent event) {
-            stateManager = event.stateManager;
-          },
-          onChanged: (PlutoGridOnChangedEvent event) {
-            print(event);
-          },
-          configuration: const PlutoGridConfiguration(
-            enableColumnBorder: true,
-            enterKeyAction: PlutoGridEnterKeyAction.editingAndMoveDown,
-          ),
-        ),
-      ),
-    );
   }
 }

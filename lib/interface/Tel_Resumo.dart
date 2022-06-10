@@ -5,8 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:site_renault_rizzi/interface/Tel_ChartAjuda.dart';
 import 'package:site_renault_rizzi/interface/Tel_Chart_3.dart';
-import 'package:pluto_grid/pluto_grid.dart';
 import 'package:site_renault_rizzi/interface/Tel_Ata.dart';
+import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
 
 /// Provides a UI to select a authentication type page
 class Tel_Resumo extends StatefulWidget {
@@ -151,7 +151,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => ModelFilter())),
+                      MaterialPageRoute(builder: (_) => Tel_Menu())),
                   icon: const Icon(Icons.search),
                   label: const Text('Filtro'),
                 ),
@@ -1085,79 +1085,80 @@ class _Tel_Resumo extends State<Tel_Resumo> {
           Row(children: [
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Mês',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Mês',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              alignment: Alignment.center,
-              width: 100,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'O.S',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  alignment: Alignment.center,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'O.S',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Fatura',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  width: 300,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Fatura',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Inter',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Inter.',
+                    style: TextStyle(fontSize: 9),
+                  ),
+                )),
             Expanded(
+                flex: 2,
                 child: Container(
                     margin: EdgeInsets.all(5),
                     padding: EdgeInsets.all(5),
@@ -1174,23 +1175,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                       'VIN',
                       style: TextStyle(fontSize: 11),
                     ))),
-            Expanded(
-                child: Container(
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      border: Border.all(
-                          color: Colors.white70, // Set border color
-                          width: 3.0), // Set border width
-                      // Set rounded corner radius
-                      // Make rounded corner of border
-                    ),
-                    child: AutoSizeText(
-                      'NAT',
-                      style: TextStyle(fontSize: 11),
-                    ))),
+
             Expanded(
                 child: Container(
                     margin: EdgeInsets.all(5),
@@ -1208,40 +1193,8 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                       'Valor',
                       style: TextStyle(fontSize: 11),
                     ))),
-            Expanded(
-                child: Container(
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      border: Border.all(
-                          color: Colors.white70, // Set border color
-                          width: 3.0), // Set border width
-                      // Set rounded corner radius
-                      // Make rounded corner of border
-                    ),
-                    child: AutoSizeText(
-                      'NITG',
-                      style: TextStyle(fontSize: 11),
-                    ))),
-            Expanded(
-                child: Container(
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      border: Border.all(
-                          color: Colors.white70, // Set border color
-                          width: 3.0), // Set border width
-                      // Set rounded corner radius
-                      // Make rounded corner of border
-                    ),
-                    child: AutoSizeText(
-                      'Aponte',
-                      style: TextStyle(fontSize: 11),
-                    ))),
+
+
             Expanded(
                 child: Container(
                     margin: EdgeInsets.all(5),
@@ -1257,7 +1210,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                     ),
                     child: AutoSizeText(
                       'M/O',
-                      style: TextStyle(fontSize: 11),
+                      style: TextStyle(fontSize:9),
                     ))),
             Expanded(
                 child: Container(
@@ -1274,7 +1227,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                     ),
                     child: AutoSizeText(
                       'PÇ',
-                      style: TextStyle(fontSize: 11),
+                      style: TextStyle(fontSize: 9),
                     ))),
             Expanded(
                 child: Container(
@@ -1329,31 +1282,48 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                     ))),
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.green,
-                border: Border.all(
-                    color: Colors.green, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Dia',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                    margin: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(5),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      border: Border.all(
+                          color: Colors.green, // Set border color
+                          width: 3.0), // Set border width
+                      // Set rounded corner radius
+                      // Make rounded corner of border
+                    ),
+                    child: AutoSizeText(
+                      'Irregularidade',
+                      style: TextStyle(fontSize: 9),
+                    ))),
+            Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    border: Border.all(
+                        color: Colors.green, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Dia',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
           ], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1365,10 +1335,10 @@ class _Tel_Resumo extends State<Tel_Resumo> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1380,10 +1350,10 @@ class _Tel_Resumo extends State<Tel_Resumo> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height:80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1395,25 +1365,26 @@ class _Tel_Resumo extends State<Tel_Resumo> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  'A',
-                  style: TextStyle(fontSize: 10),
+                  'A.',
+                  style: TextStyle(fontSize: 9),
                 ),
               ),
             ),
             Expanded(
+              flex: 2,
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1422,28 +1393,14 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 ),
               ),
             ),
+
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'G36',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1452,32 +1409,19 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 ),
               ),
             ),
+
+
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.green)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  'A221',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'Escrape Em curso',
+                  'XXX?',
                   style: TextStyle(fontSize: 9),
                 ),
               ),
@@ -1485,40 +1429,25 @@ class _Tel_Resumo extends State<Tel_Resumo> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.green)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: AutoSizeText(
-                  'XXX?',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                height: 30,
-                width: 80,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.green)),
+                BoxDecoration(border: Border.all(color: Colors.green)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
                   'XPTO?',
-                  style: TextStyle(fontSize: 10),
+                  style: TextStyle(fontSize: 9),
                 ),
               ),
             ),
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.green)),
+                BoxDecoration(border: Border.all(color: Colors.green)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1530,14 +1459,14 @@ class _Tel_Resumo extends State<Tel_Resumo> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                height: 30,
+                height: 80,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '1',
+                  '1.',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -1545,35 +1474,45 @@ class _Tel_Resumo extends State<Tel_Resumo> {
             Expanded(
               child: Container(
                 alignment: Alignment.center,
+                height: 80,
+                width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.green)),
+                BoxDecoration(border: Border.all(color: Colors.green)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 30,
-                  width: 80,
-                  child: AutoSizeText(
-                    'Descritivo de apontamento',
-                    style: TextStyle(fontSize: 10.0),
-                    maxLines: 5,
-                  ),
+                child: AutoSizeText(
+                  '1- descritivo de apontamento',
+                  style: TextStyle(fontSize: 10),
                 ),
               ),
             ),
             Expanded(
               child: Container(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
+                height: 80,
+                width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.green)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
-                child: const SizedBox(
-                  height: 30,
-                  width: 80,
-                  child: AutoSizeText(
-                    'dia-1',
-                    style: TextStyle(fontSize: 10.0),
-                  ),
+                child: AutoSizeText(
+                  '1- descritivo de irregularidade',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                height: 80,
+                width: 80,
+                decoration:
+                BoxDecoration(border: Border.all(color: Colors.green)),
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
+                child: AutoSizeText(
+                  '10.',
+                  style: TextStyle(fontSize: 10),
                 ),
               ),
             ),
@@ -1586,7 +1525,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 45,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                BoxDecoration(border: Border.all(color: Colors.deepOrange)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1601,7 +1540,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 25,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                BoxDecoration(border: Border.all(color: Colors.deepOrange)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1617,7 +1556,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 45,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                BoxDecoration(border: Border.all(color: Colors.deepOrange)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1632,7 +1571,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 25,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                BoxDecoration(border: Border.all(color: Colors.deepOrange)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1647,11 +1586,11 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 40,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.deepOrange)),
+                BoxDecoration(border: Border.all(color: Colors.deepOrange)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
-                  '25% ',
+                  '40% ',
                   style: TextStyle(fontSize: 10),
                 ),
               ),
@@ -1662,101 +1601,101 @@ class _Tel_Resumo extends State<Tel_Resumo> {
               children: [
                 Expanded(
                     child: Container(
-                  margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(5),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey,
-                    border: Border.all(
-                        color: Colors.black, // Set border color
-                        width: 1.0), // Set border width
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(8.0)), // Set rounded corner radius
-                    // Make rounded corner of border
-                  ),
-                  child: AutoSizeText(
-                    'Participantes ',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                )),
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.blueGrey,
+                        border: Border.all(
+                            color: Colors.black, // Set border color
+                            width: 1.0), // Set border width
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(1)), // Set rounded corner radius
+                        // Make rounded corner of border
+                      ),
+                      child: AutoSizeText(
+                        'Participantes ',
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    )),
               ],
               crossAxisAlignment: CrossAxisAlignment.center),
           Row(children: [
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Nome',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Nome',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              alignment: Alignment.center,
-              width: 40,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Cargo/Função',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  alignment: Alignment.center,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Cargo/Função',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Email',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  width: 300,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Email',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              width: 300,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(
-                    color: Colors.white70, // Set border color
-                    width: 3.0), // Set border width
-                // Set rounded corner radius
-                // Make rounded corner of border
-              ),
-              child: AutoSizeText(
-                'Assinatura',
-                style: TextStyle(fontSize: 11),
-              ),
-            )),
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  width: 300,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    border: Border.all(
+                        color: Colors.white70, // Set border color
+                        width: 3.0), // Set border width
+                    // Set rounded corner radius
+                    // Make rounded corner of border
+                  ),
+                  child: AutoSizeText(
+                    'Assinatura',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                )),
           ], mainAxisAlignment: MainAxisAlignment.center),
           Row(children: [
             Expanded(
@@ -1765,7 +1704,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 30,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1780,7 +1719,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 30,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1795,7 +1734,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 30,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1810,7 +1749,7 @@ class _Tel_Resumo extends State<Tel_Resumo> {
                 height: 30,
                 width: 80,
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black12)),
+                BoxDecoration(border: Border.all(color: Colors.black12)),
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 child: AutoSizeText(
@@ -1822,134 +1761,6 @@ class _Tel_Resumo extends State<Tel_Resumo> {
           ], mainAxisAlignment: MainAxisAlignment.center),
         ], mainAxisAlignment: MainAxisAlignment.center),
       ),
-    ));
-  }
-}
-
-void main() {
-  runApp(const ModelFilter());
-}
-
-class ModelFilter extends StatelessWidget {
-  const ModelFilter({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Filtro Base',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const PlutoGridExamplePage(),
-    );
-  }
-}
-
-/// PlutoGrid Example
-//
-/// For more examples, go to the demo web link on the github below.
-class PlutoGridExamplePage extends StatefulWidget {
-  const PlutoGridExamplePage({Key? key}) : super(key: key);
-
-  @override
-  State<PlutoGridExamplePage> createState() => _PlutoGridExamplePageState();
-}
-
-class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
-  final List<PlutoColumn> columns = <PlutoColumn>[
-    PlutoColumn(
-      title: 'Aponte',
-      field: 'aponte',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'OS',
-      field: 'OS',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'Fatura',
-      field: 'fatura',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'NITG',
-      field: 'nitg',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'VIN',
-      field: 'VIN',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'Nat',
-      field: 'Nat',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-    PlutoColumn(
-      title: 'Valor',
-      field: 'Valor',
-      type: PlutoColumnType.text(),
-      titleTextAlign: PlutoColumnTextAlign.center,
-      backgroundColor: Colors.amber,
-    ),
-  ];
-
-  final List<PlutoRow> rows = [
-    PlutoRow(
-      cells: {
-        'aponte': PlutoCell(value: 'escrape em curso'),
-        'fatura': PlutoCell(value: '25642'),
-        'OS': PlutoCell(value: '5486'),
-        'nitg': PlutoCell(value: 'A221'),
-        'VIN': PlutoCell(value: '93YRBB001LJ082736'),
-        'Nat': PlutoCell(value: 'G36'),
-        'Valor': PlutoCell(value: '1254,00')
-      },
-    ),
-  ];
-
-  /// columnGroups that can group columns can be omitted.
-  final List<PlutoColumnGroup> columnGroups = [];
-
-  /// [PlutoGridStateManager] has many methods and properties to dynamically manipulate the grid.
-  /// You can manipulate the grid dynamically at runtime by passing this through the [onLoaded] callback.
-  late final PlutoGridStateManager stateManager;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(15),
-        child: PlutoGrid(
-          columns: columns,
-          rows: rows,
-          columnGroups: columnGroups,
-          onLoaded: (PlutoGridOnLoadedEvent event) {
-            stateManager = event.stateManager;
-          },
-          onChanged: (PlutoGridOnChangedEvent event) {
-            print(event);
-          },
-          configuration: const PlutoGridConfiguration(
-            enableColumnBorder: true,
-            enterKeyAction: PlutoGridEnterKeyAction.editingAndMoveDown,
-          ),
-        ),
-      ),
-    );
+        ));
   }
 }

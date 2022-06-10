@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
-import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
 void main() {
   runApp(const T_Pessoa());
@@ -14,6 +13,8 @@ class T_Pessoa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      title: 'Cadastro Pessoa',
+      debugShowCheckedModeBanner: false,
       home: AllFieldsForm(),
     );
   }
@@ -127,38 +128,38 @@ class AllFieldsForm extends StatelessWidget {
             data: Theme.of(context).copyWith(
               inputDecorationTheme: InputDecorationTheme(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(5),
                 ),
               ),
             ),
             child: Scaffold(
               appBar: AppBar(
-                backgroundColor: const Color(0xff1b5e20),
+                backgroundColor: const Color(0xFF1B5E20),
                 actions: [
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (_) => Tel_BackOffice())),
-                    icon: const Icon(Icons.logout),
+                    icon: Container(
+                        child: const Icon(Icons.assignment_return_outlined)),
                     label: const Text('Voltar',
-                        style: TextStyle(fontSize: 14, color: Colors.black87)),
-                    style: ElevatedButton.styleFrom(primary: Colors.red),
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
                   ),
-                ],
-              ),
-
-              floatingActionButton: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const SizedBox(height: 5, width: 50),
-                  FloatingActionButton.extended(
-                    heroTag: null,
-                    onPressed: formBloc.submit,
-                    icon: const Icon(Icons.send),
-                    label: const Text(
-                      'Enviar',
-                      style: TextStyle(fontSize: 11, color: Colors.white),
-                    ),
-                    backgroundColor: Colors.red,
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
+                    icon: const Icon(Icons.save_outlined),
+                    label: const Text('Salvar',
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => Tel_BackOffice())),
+                    icon: const Icon(Icons.mode_edit_outlined),
+                    label: const Text('Editar',
+                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
                   ),
                 ],
               ),
@@ -168,9 +169,6 @@ class AllFieldsForm extends StatelessWidget {
                 },
                 onSuccess: (context, state) {
                   LoadingDialog.hide(context);
-
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => const SuccessScreen()));
                 },
                 onFailure: (context, state) {
                   LoadingDialog.hide(context);
@@ -196,7 +194,7 @@ class AllFieldsForm extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
-                            labelText: 'Nome', //2
+                            labelText: 'Nome',
                             prefixIcon: Icon(Icons.edit),
                           ),
                         ),
@@ -210,7 +208,7 @@ class AllFieldsForm extends StatelessWidget {
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text4,
                           decoration: const InputDecoration(
-                            labelText: 'Identificação', //3
+                            labelText: 'Identificação',
                             prefixIcon: Icon(Icons.how_to_reg),
                           ),
                         ),
@@ -315,51 +313,6 @@ class LoadingDialog extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: const CircularProgressIndicator(),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Icon(Icons.tag_faces, size: 100),
-            const SizedBox(height: 11),
-            const Text(
-              'Successo',
-              style: TextStyle(fontSize: 11, color: Colors.green),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 11),
-            ElevatedButton.icon(
-              onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const T_Pessoa())),
-              icon: const Icon(Icons.bento_outlined),
-              label: const Text('Novo Cadastro'),
-            ),
-            SizedBox(height: 11),
-            ElevatedButton.icon(
-              onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => Tel_BackOffice())),
-              icon: const Icon(Icons.change_circle_sharp),
-              label: const Text('Voltar'),
-            ),
-            SizedBox(height: 11),
-            ElevatedButton.icon(
-              onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => Tel_Senha())),
-              icon: const Icon(Icons.exit_to_app),
-              label: const Text('Sair Portal'),
-            ),
-          ],
         ),
       ),
     );
