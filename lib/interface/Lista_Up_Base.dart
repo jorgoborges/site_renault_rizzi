@@ -137,6 +137,12 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         titleTextAlign: PlutoColumnTextAlign.center,
         backgroundColor: Colors.redAccent),
     PlutoColumn(
+        title: 'Comentário',
+        field: 'comentário',
+        type: PlutoColumnType.select(<String>['1', '2']),
+        titleTextAlign: PlutoColumnTextAlign.center,
+        backgroundColor: Colors.green),
+    PlutoColumn(
         title: 'PÇ/MO',
         field: 'pç/mo',
         type: PlutoColumnType.text(),
@@ -168,6 +174,7 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         'dia': PlutoCell(value: ''),
         'descritivo': PlutoCell(value: ''),
         'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
         'pç/mo': PlutoCell(value: ''),
         'estorno': PlutoCell(value: ''),
       },
@@ -189,6 +196,30 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         'dia': PlutoCell(value: ''),
         'descritivo': PlutoCell(value: ''),
         'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
+        'pç/mo': PlutoCell(value: ''),
+        'estorno': PlutoCell(value: ''),
+      },
+    ),
+
+    PlutoRow(
+      cells: {
+        'bir': PlutoCell(value: '007605423'),
+        'mês': PlutoCell(value: '202111'),
+        'os': PlutoCell(value: '3254'),
+        'fat': PlutoCell(value: '2513'),
+        'int': PlutoCell(value: 'A'),
+        'vin': PlutoCell(value: 'zzz'),
+        'nat': PlutoCell(value: 'G36'),
+        'valor': PlutoCell(value: '1523'),
+        'nitg': PlutoCell(value: 'G14D'),
+        'apont': PlutoCell(value: 'escrape'),
+        'm/o': PlutoCell(value: ''),
+        'p/ç': PlutoCell(value: ''),
+        'dia': PlutoCell(value: ''),
+        'descritivo': PlutoCell(value: ''),
+        'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
         'pç/mo': PlutoCell(value: ''),
         'estorno': PlutoCell(value: ''),
       },
@@ -210,6 +241,7 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         'dia': PlutoCell(value: ''),
         'descritivo': PlutoCell(value: ''),
         'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
         'pç/mo': PlutoCell(value: ''),
         'estorno': PlutoCell(value: ''),
       },
@@ -231,6 +263,7 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         'dia': PlutoCell(value: ''),
         'descritivo': PlutoCell(value: ''),
         'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
         'pç/mo': PlutoCell(value: ''),
         'estorno': PlutoCell(value: ''),
       },
@@ -252,6 +285,7 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         'dia': PlutoCell(value: ''),
         'descritivo': PlutoCell(value: ''),
         'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
         'pç/mo': PlutoCell(value: ''),
         'estorno': PlutoCell(value: ''),
       },
@@ -273,11 +307,15 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         'dia': PlutoCell(value: ''),
         'descritivo': PlutoCell(value: ''),
         'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
         'pç/mo': PlutoCell(value: ''),
         'estorno': PlutoCell(value: ''),
       },
     ),
     PlutoRow(
+
+
+
       cells: {
         'bir': PlutoCell(value: '007605423'),
         'mês': PlutoCell(value: '202111'),
@@ -294,31 +332,14 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
         'dia': PlutoCell(value: ''),
         'descritivo': PlutoCell(value: ''),
         'grau': PlutoCell(value: ''),
+        'comentário': PlutoCell(value: 'teste de comentário'),
         'pç/mo': PlutoCell(value: ''),
         'estorno': PlutoCell(value: ''),
       },
+
     ),
-    PlutoRow(
-      cells: {
-        'bir': PlutoCell(value: '007605423'),
-        'mês': PlutoCell(value: '202111'),
-        'os': PlutoCell(value: '3254'),
-        'fat': PlutoCell(value: '2513'),
-        'int': PlutoCell(value: 'A'),
-        'vin': PlutoCell(value: 'zzz'),
-        'nat': PlutoCell(value: 'G36'),
-        'valor': PlutoCell(value: '1523'),
-        'nitg': PlutoCell(value: 'G14D'),
-        'apont': PlutoCell(value: 'escrape'),
-        'm/o': PlutoCell(value: ''),
-        'p/ç': PlutoCell(value: ''),
-        'dia': PlutoCell(value: ''),
-        'descritivo': PlutoCell(value: ''),
-        'grau': PlutoCell(value: ''),
-        'pç/mo': PlutoCell(value: ''),
-        'estorno': PlutoCell(value: ''),
-      },
-    ),
+
+
   ];
 
   /// columnGroups that can group columns can be omitted.
@@ -353,6 +374,7 @@ class _CarregarBaseGarantiaState extends State<CarregarBaseGarantia> {
             enableColumnBorder: true,
           ),
         ),
+
       ),
     );
   }

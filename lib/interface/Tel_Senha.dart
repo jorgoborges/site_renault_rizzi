@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:passwordfield/passwordfield.dart';
+import 'package:site_renault_rizzi/interface/Portal_inicial.dart';
 import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
 
 void main() {
@@ -164,7 +165,7 @@ class PasswordApp extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton.icon(
                       onPressed: () => Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (_) => Tel_Menu())),
+                          MaterialPageRoute(builder: (_) => Portal_inicial())),
                       icon: const Icon(Icons.logout),
                       label: const Text('Entrar',
                           style:

@@ -1,24 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:site_renault_rizzi/interface/Tel_PosVenda.dart';
-import 'package:site_renault_rizzi/interface/Tel_Venda.dart';
-import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
-import 'package:site_renault_rizzi/interface/Tel_Auditor.dart';
+import 'package:site_renault_rizzi/interface/Menu_VWCO.dart';
+import 'package:site_renault_rizzi/interface/Tel_Menu.dart';
 import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
-import 'package:site_renault_rizzi/interface/Tel_PG.dart';
 
-void main() => runApp(const Tel_Menu());
 
-class Tel_Menu extends StatelessWidget {
-  const Tel_Menu({Key? key}) : super(key: key);
+void main() => runApp(const Portal_inicial());
+
+class Portal_inicial extends StatelessWidget {
+  const Portal_inicial({Key? key}) : super(key: key);
 
   static const appTitle = 'PORTAL';
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Cockpit Renault',
+      title: 'Cockpit Inicial',
       debugShowCheckedModeBanner: false,
       home: MyHomePage(title: appTitle),
     );
@@ -42,59 +40,47 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountEmail: Text("user@mail.com"),
-              accountName: Text("User"),
+              accountName: Text("Renault"),
               currentAccountPicture: CircleAvatar(
-                child: Text("US"),
+                child: Text("RDB"),
                 backgroundColor: const Color(0xff1b5e20),
               ),
             ),
             ListTile(
               leading: Icon(Icons.manage_accounts_outlined),
-              title: Text("Minha conta"),
+              title: Text("Renault"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Tel_Senha()));
+                    MaterialPageRoute(builder: (context) => Tel_Menu()));
               },
             ),
             ListTile(
               leading: Icon(Icons.app_settings_alt_outlined),
-              title: Text("BackOffice"),
+              title: Text("VWCO"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Tel_BackOffice()));
+                    MaterialPageRoute(builder: (context) => Menu_Vwco()));
               },
             ),
             ListTile(
               leading: Icon(Icons.work_outline_outlined),
-              title: Text("Auditor"),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Tel_Auditor()));
-              },
+              title: Text("TEXTO"),
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.home_work_outlined),
-              title: Text("Plataforma"),
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Tel_PG()));
-              },
+              title: Text("TEXTO"),
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.car_rental_outlined),
-              title: Text("Dep.Vendas"),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Tel_Venda()));
-              },
+              title: Text("TEXTO"),
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.car_repair),
-              title: Text("Pós Vendas"),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Tel_PosVenda()));
-              },
+              title: Text("TEXTO"),
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.exit_to_app_outlined),

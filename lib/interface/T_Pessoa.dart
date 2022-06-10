@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
+import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 
 void main() {
   runApp(const T_Pessoa());
@@ -143,7 +144,8 @@ class AllFieldsForm extends StatelessWidget {
                         child: const Icon(Icons.assignment_return_outlined)),
                     label: const Text('Voltar',
                         style: TextStyle(fontSize: 12, color: Colors.white)),
-                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                    style: ElevatedButton.styleFrom(
+                        primary: const Color(0xFF1B5E20)),
                   ),
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
@@ -151,7 +153,8 @@ class AllFieldsForm extends StatelessWidget {
                     icon: const Icon(Icons.save_outlined),
                     label: const Text('Salvar',
                         style: TextStyle(fontSize: 12, color: Colors.white)),
-                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                    style: ElevatedButton.styleFrom(
+                        primary: const Color(0xFF1B5E20)),
                   ),
                   ElevatedButton.icon(
                     onPressed: () => Navigator.of(context).pushReplacement(
@@ -159,7 +162,24 @@ class AllFieldsForm extends StatelessWidget {
                     icon: const Icon(Icons.mode_edit_outlined),
                     label: const Text('Editar',
                         style: TextStyle(fontSize: 12, color: Colors.white)),
-                    style: ElevatedButton.styleFrom(primary: const Color(0xFF1B5E20)),
+                    style: ElevatedButton.styleFrom(
+                        primary: const Color(0xFF1B5E20)),
+                  ),
+                ],
+              ),
+              floatingActionButton: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const SizedBox(height: 5, width: 50),
+                  FloatingActionButton.extended(
+                    heroTag: null,
+                    onPressed: formBloc.submit,
+                    icon: const Icon(Icons.send),
+                    label: const Text(
+                      'Enviar',
+                      style: TextStyle(fontSize: 11, color: Colors.white),
+                    ),
+                    backgroundColor: const Color(0xFF1B5E20),
                   ),
                 ],
               ),
@@ -169,6 +189,9 @@ class AllFieldsForm extends StatelessWidget {
                 },
                 onSuccess: (context, state) {
                   LoadingDialog.hide(context);
+
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => const SuccessScreen()));
                 },
                 onFailure: (context, state) {
                   LoadingDialog.hide(context);
@@ -195,21 +218,23 @@ class AllFieldsForm extends StatelessWidget {
                           textFieldBloc: formBloc.text2,
                           decoration: const InputDecoration(
                             labelText: 'Nome',
-                            prefixIcon: Icon(Icons.edit),
+                            prefixIcon:
+                                Icon(Icons.drive_file_rename_outline_outlined),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text3,
                           decoration: const InputDecoration(
                             labelText: 'SobreNome',
-                            prefixIcon: Icon(Icons.edit),
+                            prefixIcon:
+                                Icon(Icons.drive_file_rename_outline_outlined),
                           ),
                         ),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.text4,
                           decoration: const InputDecoration(
                             labelText: 'Identificação',
-                            prefixIcon: Icon(Icons.how_to_reg),
+                            prefixIcon: Icon(Icons.security_outlined),
                           ),
                         ),
                         RadioButtonGroupFieldBlocBuilder<String>(
@@ -313,6 +338,63 @@ class LoadingDialog extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: const CircularProgressIndicator(),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class SuccessScreen extends StatelessWidget {
+  const SuccessScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            const Icon(Icons.tag_faces, size: 100),
+            const SizedBox(height: 11),
+            const Text(
+              'Successo',
+              style: TextStyle(fontSize: 20, color: Colors.black),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 11),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const SizedBox(width: 5),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => const T_Pessoa())),
+                  icon: const Icon(Icons.bento_outlined),
+                  label: const Text('Novo Cadastro'),
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF1B5E20)),
+                ),
+                const SizedBox(width: 5),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => Tel_BackOffice())),
+                  icon: const Icon(Icons.change_circle_sharp),
+                  label: const Text('Voltar'),
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF1B5E20)),
+                ),
+                const SizedBox(width: 5),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => Tel_Senha())),
+                  icon: const Icon(Icons.exit_to_app),
+                  label: const Text('Sair Portal'),
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF1B5E20)),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

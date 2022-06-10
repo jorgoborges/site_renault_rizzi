@@ -4,21 +4,21 @@ import 'package:flutter/rendering.dart';
 import 'package:site_renault_rizzi/interface/Tel_PosVenda.dart';
 import 'package:site_renault_rizzi/interface/Tel_Venda.dart';
 import 'package:site_renault_rizzi/interface/Tel_BackOffice.dart';
-import 'package:site_renault_rizzi/interface/Tel_Auditor.dart';
 import 'package:site_renault_rizzi/interface/Tel_Senha.dart';
 import 'package:site_renault_rizzi/interface/Tel_PG.dart';
+import 'package:site_renault_rizzi/interface/Vwco_Panel_one.dart';
 
-void main() => runApp(const Tel_Menu());
+void main() => runApp(const Menu_Vwco());
 
-class Tel_Menu extends StatelessWidget {
-  const Tel_Menu({Key? key}) : super(key: key);
+class Menu_Vwco extends StatelessWidget {
+  const Menu_Vwco({Key? key}) : super(key: key);
 
   static const appTitle = 'PORTAL';
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Cockpit Renault',
+      title: 'Cockpit VWCO',
       debugShowCheckedModeBanner: false,
       home: MyHomePage(title: appTitle),
     );
@@ -42,9 +42,9 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountEmail: Text("user@mail.com"),
-              accountName: Text("User"),
+              accountName: Text("VWCO"),
               currentAccountPicture: CircleAvatar(
-                child: Text("US"),
+                child: Text("VWCO"),
                 backgroundColor: const Color(0xff1b5e20),
               ),
             ),
@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.app_settings_alt_outlined),
-              title: Text("BackOffice"),
+              title: Text("Gestão Estratégica VN  e SN"),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Tel_BackOffice()));
@@ -66,10 +66,10 @@ class MyHomePage extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.work_outline_outlined),
-              title: Text("Auditor"),
+              title: Text("Gestão Estratégiva PV"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Tel_Auditor()));
+                    MaterialPageRoute(builder: (context) => Vwco_Panel_one()));
               },
             ),
             ListTile(
