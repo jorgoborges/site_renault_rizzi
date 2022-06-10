@@ -61,7 +61,7 @@ class MyHomePage extends StatelessWidget {
               title: Text("Gestão Estratégica VN  e SN"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Tel_BackOffice()));
+                    MaterialPageRoute(builder: (context) => Vwco_Panel_one()));
               },
             ),
             ListTile(
