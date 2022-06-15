@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:fwfh_webview/fwfh_webview.dart';
 
+import 'Vwco.dart';
+
 void main() => runApp(const Chart_Bi_One());
 
 class Chart_Bi_One extends StatelessWidget {
@@ -10,10 +12,23 @@ class Chart_Bi_One extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BI demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Gestão de Operação',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Power BI Demo'),
+            actions: [
+              ElevatedButton.icon(
+                onPressed: () => Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (_) => Vwco())),
+                icon: const Icon(Icons.arrow_circle_left_outlined),
+                label: const Text('Voltar'),
+              ),
+
+            ],
+
+
+          backgroundColor: Colors.black,
+          title: Text('VWCO'),
         ),
         body: Center(
           child: HtmlWidget(
