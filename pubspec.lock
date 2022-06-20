@@ -99,6 +99,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.4"
+  draggable_home:
+    dependency: "direct main"
+    description:
+      name: draggable_home
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   easy_sidemenu:
     dependency: "direct main"
     description:
@@ -125,6 +132,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_admin_scaffold:
+    dependency: "direct main"
+    description:
+      name: flutter_admin_scaffold
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.1"
   flutter_bloc:
     dependency: transitive
     description:
@@ -167,6 +181,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_menu:
+    dependency: "direct main"
+    description:
+      name: flutter_menu
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1"
   flutter_social_button:
     dependency: "direct main"
     description:
@@ -174,6 +195,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.4"
+  flutter_staggered_grid_view:
+    dependency: transitive
+    description:
+      name: flutter_staggered_grid_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -345,6 +373,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.3"
+  reorderableitemsview:
+    dependency: "direct main"
+    description:
+      name: reorderableitemsview
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   responsive_grid:
     dependency: "direct main"
     description:
@@ -468,7 +503,7 @@ packages:
       name: url_launcher_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.5"
+    version: "2.1.0"
   url_launcher_web:
     dependency: transitive
     description:

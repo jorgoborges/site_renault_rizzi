@@ -1,9 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pluto_menu_bar/pluto_menu_bar.dart';
-import 'package:site_renault_rizzi/interface/chat.dart';
+import 'package:site_renault_rizzi/interface/grid_demo_rizzi.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'Chart_Bi_One.dart';
+import 'chart_bi_one';
+
+
+
+
 
 void main() {
   runApp(Vwco());
@@ -100,7 +105,8 @@ class Vwco extends StatelessWidget {
             ),
             TextButton(
               onPressed: () async {
-                const url = 'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
+                const url =
+                    'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {
@@ -126,7 +132,8 @@ class Vwco extends StatelessWidget {
             ),
           ],
           backgroundColor: Colors.black,
-          title: Text('Ola Fiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiooooooooooooooooooooooooooooooottttttteeeeee!'),
+          title: Text(
+              'Ola Fiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiooooooooooooooooooooooooooooooottttttteeeeee!'),
         ),
         body: PlutoMenuBarDemo(scaffoldKey: _scaffoldKey),
       ),
@@ -164,7 +171,7 @@ class PlutoMenuBarDemo extends StatelessWidget {
               MenuItem(
                   title: 'Texto',
                   onTap: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => Chart_Bi_One()))),
+                      MaterialPageRoute(builder: (_) => MyApp()))),
             ],
           ),
           MenuItem(
@@ -173,14 +180,6 @@ class PlutoMenuBarDemo extends StatelessWidget {
           ),
           MenuItem(
             title: 'Pag/3',
-            onTap: () => message(context, 'Menu 1-1-2 tap'),
-          ),
-          MenuItem(
-            title: 'Pag/4',
-            onTap: () => message(context, 'Menu 1-1-2 tap'),
-          ),
-          MenuItem(
-            title: 'Pag/5',
             onTap: () => message(context, 'Menu 1-1-2 tap'),
           ),
         ],
@@ -402,7 +401,7 @@ class PlutoMenuBarDemo extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              width: 70,
+              width: 40,
               child: Container(
                 child: Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2awK4qvs_KG5DkPAdOAWuC56sRIOuARNLMzHRg9gjI__14J9mV9Nqcc6-APf9sQsl_9M&usqp=CAU',
