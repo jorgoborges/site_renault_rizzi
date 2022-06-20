@@ -6,8 +6,8 @@ import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
 import 'package:site_renault_rizzi/model_vwco//third_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_vwco//third_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//third_level_item_3_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../model_vwco//dashboard_page.dart';
-
 
 void main() {
   runApp(SamplePagevwco());
@@ -135,7 +135,7 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title: 'Veículo Engrenado sem Injeção de Combustível',
-              route: '/',
+              route: '/secondLevelItem3',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
@@ -331,6 +331,111 @@ class MyScaffold extends StatelessWidget {
                   'actions: onSelected(): title = ${item.title}, route = ${item.route}');
               Navigator.of(context).pushNamed(item.route!);
             },
+          ),
+          TextButton(
+            onPressed: () async {
+              const url = 'https://www.vwco.com.br/';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.directions_bus_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 20.0),
+                Text('vwco',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              const url = 'https://rizziconsulting.com.br/';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.home_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 20.0),
+                Text('Rizziconsulting',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              const url = 'https://www.rizziacademy.com.br/';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.school_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 20.0),
+                Text('Rizziacademy',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              const url =
+                  'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 20.0),
+                Text('Maps',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
           ),
         ],
       ),

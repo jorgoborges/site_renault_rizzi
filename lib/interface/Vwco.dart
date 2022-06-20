@@ -6,10 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'chart_bi_one';
 
-
-
-
-
 void main() {
   runApp(Vwco());
 }

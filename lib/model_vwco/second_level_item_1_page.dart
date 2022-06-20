@@ -9,14 +9,12 @@ class SecondLevelItem1Page extends StatelessWidget {
     return MyScaffold(
       route: '/secondLevelItem1',
       body: SpGrid(width: MediaQuery.of(context).size.width, children: [
-
         SpGridItem(
           xs: 12,
           sm: 6,
           md: 4,
           lg: 3,
           child: Container(
-
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.black38, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),

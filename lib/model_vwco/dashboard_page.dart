@@ -16,13 +16,9 @@ class DashboardPage extends StatelessWidget {
             SizedBox(
               width: 100,
               height: 100,
-              child: Container(
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage("images/logo.PNG"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
+              child: Image(
+                image: AssetImage("images/logotrans.jpeg"),
+                fit: BoxFit.fill,
               ),
             ),
           ],
