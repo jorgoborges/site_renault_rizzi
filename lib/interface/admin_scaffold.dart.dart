@@ -331,17 +331,17 @@ class MyScaffold extends StatelessWidget {
               const url = 'https://rizziconsulting.com.br/';
             },
             style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(8),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.home_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
+                SizedBox(width: 10),
                 AutoSizeText('Rizziconsulting',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
+                        fontSize: 12.0,
                         fontWeight: FontWeight.w500)),
               ],
             ),
@@ -351,17 +351,17 @@ class MyScaffold extends StatelessWidget {
               const url = 'https://www.rizziacademy.com.br/';
             },
             style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(8),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.school_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
+                SizedBox(width: 10),
                 AutoSizeText('Rizziacademy',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
+                        fontSize: 12.0,
                         fontWeight: FontWeight.w500)),
               ],
             ),
@@ -372,17 +372,17 @@ class MyScaffold extends StatelessWidget {
                   'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
             },
             style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(10),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
+                SizedBox(width: 10),
                 AutoSizeText('Maps',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
+                        fontSize: 12.0,
                         fontWeight: FontWeight.w400)),
               ],
             ),
@@ -403,7 +403,7 @@ class MyScaffold extends StatelessWidget {
                     height: 60,
                   ),
                 ),
-                Container(padding: const EdgeInsets.all(8.0)),
+   
               ],
             ),
           ),
