@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fwfh_webview/fwfh_webview.dart';
-import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
-import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:flutter/cupertino.dart';
 
-class MyWidgetFactory extends WidgetFactory with WebViewFactory {}
+import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
+
+import 'package:flutter/cupertino.dart';
 
 class SecondLevelItem1Page extends StatelessWidget {
   @override
@@ -16,7 +14,6 @@ class SecondLevelItem1Page extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Text(
           'Dashboard',
-
         ),
       ),
     );
