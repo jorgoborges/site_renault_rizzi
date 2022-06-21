@@ -387,9 +387,7 @@ class MyScaffold extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () async {
-
-            },
+            onPressed: () async {},
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(15),
             ),
@@ -397,7 +395,7 @@ class MyScaffold extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Image.asset(
-                  "images/logo.PNG",
+                  "assets/images/logo.PNG",
                   fit: BoxFit.fill,
                   height: 60,
                   width: 60,
