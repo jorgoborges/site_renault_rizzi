@@ -4,7 +4,9 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
+import 'package:site_renault_rizzi/model_vwco//second_level_item_4_page.dart';
 
+import 'package:url_launcher/url_launcher.dart';
 import '../model_vwco//dashboard_page.dart';
 
 void main() {
@@ -84,9 +86,8 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
         return SecondLevelItem2Page();
       case '/secondLevelItem3':
         return SecondLevelItem3Page();
-
-
-
+      case '/secondLevelItem4':
+        return SecondLevelItem4Page();
     }
     return null;
   }
@@ -119,17 +120,17 @@ class MyScaffold extends StatelessWidget {
           children: [
             AdminMenuItem(
               title: 'Excesso de Velocidade',
-              route: '/secondLevelItem1',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Marcha lenta',
-              route: '/secondLevelItem2',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Veículo Engrenado sem Injeção de Combustível',
-              route: '/secondLevelItem3',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
@@ -156,22 +157,22 @@ class MyScaffold extends StatelessWidget {
           children: [
             AdminMenuItem(
               title: 'Estratificação por Modelo',
-              route: '/',
+              route: '/secondLevelItem1',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Consumo km da Frota',
-              route: '/',
+              route: '/secondLevelItem2',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Top 10 veículos com maior consumo',
-              route: '/',
+              route: '/secondLevelItem3',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Aplicação Check-list de Consumo',
-              route: '/',
+              route: '/secondLevelItem4',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
@@ -295,20 +296,9 @@ class MyScaffold extends StatelessWidget {
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         backgroundColor: Color(0xFF041e42),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset(
-              "images/logo.PNG",
-              fit: BoxFit.fill,
-              height: 60,
-              width: 60,
-            ),
-            Container(padding: const EdgeInsets.all(8.0)),
-          ],
-        ),
         actions: [
           PopupMenuButton<AdminMenuItem>(
+            color: Color(0xFF041e42),
             child: const Icon(Icons.account_circle),
             itemBuilder: (context) {
               return _adminMenuItems.map((AdminMenuItem item) {
@@ -322,7 +312,7 @@ class MyScaffold extends StatelessWidget {
                         child: Text(
                           item.title,
                           style: const TextStyle(
-                            fontSize: 14.0,
+                            fontSize: 14.0,color: Colors.white
                           ),
                         ),
                       ),
@@ -336,6 +326,131 @@ class MyScaffold extends StatelessWidget {
                   'actions: onSelected(): title = ${item.title}, route = ${item.route}');
               Navigator.of(context).pushNamed(item.route!);
             },
+          ),
+          TextButton(
+            onPressed: () async {
+              const url = 'https://www.vwco.com.br/';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.directions_bus_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 15.0),
+                Text('vwco',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              const url = 'https://rizziconsulting.com.br/';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.home_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 15.0),
+                Text('Rizziconsulting',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              const url = 'https://www.rizziacademy.com.br/';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.school_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 15.0),
+                Text('Rizziacademy',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              const url =
+                  'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Não foi possível';
+              }
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
+                SizedBox(width: 15.0),
+                Text('Maps',
+                    style: TextStyle(
+                        color: Color(0xFFECEFF1),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400)),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              //logic  goes here
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Image.asset(
+                  "images/logo.PNG",
+                  fit: BoxFit.fill,
+                  height: 60,
+                  width: 60,
+                ),
+                Container(padding: const EdgeInsets.all(8.0)),
+              ],
+            ),
           ),
         ],
       ),

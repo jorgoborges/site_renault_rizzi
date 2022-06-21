@@ -101,6 +101,7 @@ flutter:
 
     - assets/images/logo.PNG
     - assets/images/logotrans.jpeg
+    - assets/images/dois.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
