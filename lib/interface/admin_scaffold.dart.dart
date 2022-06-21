@@ -6,7 +6,6 @@ import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
 import 'package:site_renault_rizzi/model_vwco//third_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_vwco//third_level_item_2_page.dart';
-import 'package:site_renault_rizzi/model_vwco//third_level_item_3_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../model_vwco//dashboard_page.dart';
 
@@ -91,8 +90,7 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
         return ThirdLevelItem1Page();
       case '/thirdLevelItem2':
         return ThirdLevelItem2Page();
-      case '/thirdLevelItem3':
-        return ThirdLevelItem3Page();
+
     }
     return null;
   }
