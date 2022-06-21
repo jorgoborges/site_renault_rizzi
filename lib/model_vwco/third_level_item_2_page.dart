@@ -11,10 +11,7 @@ class ThirdLevelItem2Page extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Text(
           'Third Level Item 2',
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 36,
-          ),
+
         ),
       ),
     );
