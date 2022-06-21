@@ -16,7 +16,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,
@@ -142,7 +142,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,
@@ -268,7 +268,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,
@@ -394,7 +394,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,
@@ -520,7 +520,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,
@@ -646,7 +646,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,
@@ -772,7 +772,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,
@@ -898,7 +898,7 @@ class SecondLevelItem1Page extends StatelessWidget {
           lg: 3,
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 3.0),
+                border: Border.all(color: Colors.white, width: 3.0),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             padding: EdgeInsets.all(10),
             height: 300,

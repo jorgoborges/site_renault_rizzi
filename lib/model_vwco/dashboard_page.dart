@@ -11,17 +11,12 @@ class DashboardPage extends StatelessWidget {
         color: Color(0xFF041e42),
         alignment: Alignment.topLeft,
         padding: const EdgeInsets.all(10),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 100,
-              height: 100,
-              child: Image(
-                image: AssetImage("images/logotrans.jpeg"),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ],
+        child: Text(
+          'Texto',
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 36,
+          ),
         ),
       ),
     );

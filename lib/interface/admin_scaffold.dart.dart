@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_1_page.dart';
@@ -41,7 +42,6 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Menu',
       theme: ThemeData(
         primarySwatch: themeBlack,
         textTheme: Theme.of(context).textTheme.apply(
@@ -112,7 +112,7 @@ class MyScaffold extends StatelessWidget {
     AdminMenuItem(
       title: 'Rizzi',
       route: '/', //definir rota e titulo ver com Alysson
-      icon: Icons.pie_chart,
+      icon: Icons.people,
     ),
     AdminMenuItem(
       title: 'Control Tower',
@@ -298,10 +298,22 @@ class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdminScaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
+
         backgroundColor: Color(0xFF041e42),
-        title: const Text('MENU'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image.asset(
+              "images/logo.PNG",
+              fit: BoxFit.fill,
+              height: 60,
+              width: 60,
+            ),
+            Container(padding: const EdgeInsets.all(8.0)),
+          ],
+        ),
         actions: [
           PopupMenuButton<AdminMenuItem>(
             child: const Icon(Icons.account_circle),
@@ -317,7 +329,7 @@ class MyScaffold extends StatelessWidget {
                         child: Text(
                           item.title,
                           style: const TextStyle(
-                            fontSize: 14,
+                            fontSize: 14.0,
                           ),
                         ),
                       ),
@@ -349,11 +361,11 @@ class MyScaffold extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.directions_bus_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 20.0),
+                SizedBox(width: 15.0),
                 Text('vwco',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 16.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w500)),
               ],
             ),
@@ -375,11 +387,11 @@ class MyScaffold extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.home_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 20.0),
+                SizedBox(width: 15.0),
                 Text('Rizziconsulting',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 16.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w500)),
               ],
             ),
@@ -401,11 +413,11 @@ class MyScaffold extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.school_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 20.0),
+                SizedBox(width: 15.0),
                 Text('Rizziacademy',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 16.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w500)),
               ],
             ),
@@ -428,12 +440,12 @@ class MyScaffold extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 20.0),
+                SizedBox(width: 15.0),
                 Text('Maps',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500)),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400)),
               ],
             ),
           ),
@@ -463,7 +475,7 @@ class MyScaffold extends StatelessWidget {
           }
         },
         header: Container(
-          height: 50,
+          height: 25,
           width: double.infinity,
           color: const Color(0xff444444),
           child: const Center(
@@ -476,7 +488,7 @@ class MyScaffold extends StatelessWidget {
           ),
         ),
         footer: Container(
-          height: 50,
+          height: 30,
           width: double.infinity,
           color: const Color(0xff444444),
           child: const Center(
