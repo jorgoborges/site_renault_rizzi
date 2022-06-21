@@ -327,31 +327,7 @@ class MyScaffold extends StatelessWidget {
           ),
           TextButton(
             onPressed: () async {
-              const url = 'https://www.vwco.com.br/';
-
-              //logic  goes here
-            },
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.directions_bus_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
-                Text('vwco',
-                    style: TextStyle(
-                        color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w500)),
-              ],
-            ),
-          ),
-          TextButton(
-            onPressed: () async {
               const url = 'https://rizziconsulting.com.br/';
-
-              //logic  goes here
             },
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(15),
@@ -372,8 +348,6 @@ class MyScaffold extends StatelessWidget {
           TextButton(
             onPressed: () async {
               const url = 'https://www.rizziacademy.com.br/';
-
-              //logic  goes here
             },
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(15),
@@ -414,7 +388,7 @@ class MyScaffold extends StatelessWidget {
           ),
           TextButton(
             onPressed: () async {
-              //logic  goes here
+
             },
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(15),

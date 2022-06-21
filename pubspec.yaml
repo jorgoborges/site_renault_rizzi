@@ -100,8 +100,11 @@ flutter:
   assets:
 
     - assets/images/logo.PNG
-    - assets/images/logotrans.jpeg
+    - assets/images/um.jpeg
     - assets/images/dois.jpeg
+    - assets/images/tres.jpeg
+    - assets/images/quatro.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
