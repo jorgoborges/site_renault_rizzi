@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:site_renault_rizzi/interface/chart_bi_one';
+import 'package:site_renault_rizzi/interface/chart_bi_one.dart';
 
 class SecondLevelItem2Page extends StatelessWidget {
   @override
