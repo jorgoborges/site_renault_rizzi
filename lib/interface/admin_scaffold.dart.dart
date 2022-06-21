@@ -6,7 +6,6 @@ import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_4_page.dart';
 
-import 'package:url_launcher/url_launcher.dart';
 import '../model_vwco//dashboard_page.dart';
 
 void main() {
@@ -312,8 +311,7 @@ class MyScaffold extends StatelessWidget {
                         child: Text(
                           item.title,
                           style: const TextStyle(
-                            fontSize: 14.0,color: Colors.white
-                          ),
+                              fontSize: 14.0, color: Colors.white),
                         ),
                       ),
                     ],
@@ -330,11 +328,7 @@ class MyScaffold extends StatelessWidget {
           TextButton(
             onPressed: () async {
               const url = 'https://www.vwco.com.br/';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
+
               //logic  goes here
             },
             style: TextButton.styleFrom(
@@ -356,11 +350,7 @@ class MyScaffold extends StatelessWidget {
           TextButton(
             onPressed: () async {
               const url = 'https://rizziconsulting.com.br/';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
+
               //logic  goes here
             },
             style: TextButton.styleFrom(
@@ -382,11 +372,7 @@ class MyScaffold extends StatelessWidget {
           TextButton(
             onPressed: () async {
               const url = 'https://www.rizziacademy.com.br/';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
+
               //logic  goes here
             },
             style: TextButton.styleFrom(
@@ -409,12 +395,6 @@ class MyScaffold extends StatelessWidget {
             onPressed: () async {
               const url =
                   'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
-              //logic  goes here
             },
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(15),
