@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
@@ -337,7 +338,7 @@ class MyScaffold extends StatelessWidget {
               children: const [
                 Icon(Icons.home_outlined, color: Color(0xFFECEFF1)),
                 SizedBox(width: 15.0),
-                Text('Rizziconsulting',
+                AutoSizeText('Rizziconsulting',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
                         fontSize: 14.0,
@@ -357,7 +358,7 @@ class MyScaffold extends StatelessWidget {
               children: const [
                 Icon(Icons.school_outlined, color: Color(0xFFECEFF1)),
                 SizedBox(width: 15.0),
-                Text('Rizziacademy',
+                AutoSizeText('Rizziacademy',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
                         fontSize: 14.0,
@@ -378,7 +379,7 @@ class MyScaffold extends StatelessWidget {
               children: const [
                 Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
                 SizedBox(width: 15.0),
-                Text('Maps',
+                AutoSizeText('Maps',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
                         fontSize: 14.0,
