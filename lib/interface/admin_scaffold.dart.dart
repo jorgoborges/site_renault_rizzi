@@ -90,7 +90,6 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
         return ThirdLevelItem1Page();
       case '/thirdLevelItem2':
         return ThirdLevelItem2Page();
-
     }
     return null;
   }
@@ -298,7 +297,6 @@ class MyScaffold extends StatelessWidget {
     return AdminScaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-
         backgroundColor: Color(0xFF041e42),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -341,111 +339,6 @@ class MyScaffold extends StatelessWidget {
                   'actions: onSelected(): title = ${item.title}, route = ${item.route}');
               Navigator.of(context).pushNamed(item.route!);
             },
-          ),
-          TextButton(
-            onPressed: () async {
-              const url = 'https://www.vwco.com.br/';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
-              //logic  goes here
-            },
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.directions_bus_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
-                Text('vwco',
-                    style: TextStyle(
-                        color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w500)),
-              ],
-            ),
-          ),
-          TextButton(
-            onPressed: () async {
-              const url = 'https://rizziconsulting.com.br/';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
-              //logic  goes here
-            },
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.home_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
-                Text('Rizziconsulting',
-                    style: TextStyle(
-                        color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w500)),
-              ],
-            ),
-          ),
-          TextButton(
-            onPressed: () async {
-              const url = 'https://www.rizziacademy.com.br/';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
-              //logic  goes here
-            },
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.school_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
-                Text('Rizziacademy',
-                    style: TextStyle(
-                        color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w500)),
-              ],
-            ),
-          ),
-          TextButton(
-            onPressed: () async {
-              const url =
-                  'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
-              if (await canLaunch(url)) {
-                await launch(url);
-              } else {
-                throw 'Não foi possível';
-              }
-              //logic  goes here
-            },
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(15),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 15.0),
-                Text('Maps',
-                    style: TextStyle(
-                        color: Color(0xFFECEFF1),
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w400)),
-              ],
-            ),
           ),
         ],
       ),
