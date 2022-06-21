@@ -4,14 +4,11 @@ import 'package:fwfh_webview/fwfh_webview.dart';
 import 'package:flutter/cupertino.dart';
 
 
-import '../interface/admin_scaffold.dart.dart';
-import '../login/login.dart';
 
+void main() => runApp(const chart_bi_one());
 
-void main() => runApp(const Chart_Bi_One());
-
-class Chart_Bi_One extends StatelessWidget {
-  const Chart_Bi_One({Key? key}) : super(key: key);
+class chart_bi_one extends StatelessWidget {
+  const chart_bi_one({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +17,7 @@ class Chart_Bi_One extends StatelessWidget {
       title: 'Gestão de Operação',
       home: Scaffold(
         appBar: AppBar(
-            actions: [
-              ElevatedButton.icon(
-                onPressed: () => Navigator.of(context)
-                    .pushReplacement(MaterialPageRoute(builder: (_) => Tel_Senha())),
-                icon: const Icon(Icons.arrow_circle_left_outlined),
-                label: const Text('Voltar'),
-              ),
-
-            ],
-
-
+          actions: [],
           backgroundColor: Colors.black,
           title: Text('VWCO'),
         ),

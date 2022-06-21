@@ -34,23 +34,12 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  easy_sidemenu: ^0.1.1+1
-  flutter_form_bloc: ^0.30.0
+
   auto_size_text: ^3.0.0
-  pluto_grid: ^2.10.3
-  flutter_social_button: ^1.1.4
-  pie_chart: ^5.3.0
-  d_chart: ^0.0.4
   simple_grid: ^0.1.1
-  passwordfield: ^0.1.0
   responsive_grid: ^2.1.0
-  multi_split_view: ^2.1.0
-  sidebarx: ^0.4.0
-  pluto_menu_bar: ^1.0.0-nullsafety.0
   fwfh_webview: ^0.6.2+2
   url_launcher: ^6.1.3
-  draggable_home: ^1.0.3
-  flutter_menu: ^0.4.1
   flutter_admin_scaffold: ^1.1.1
 
 
