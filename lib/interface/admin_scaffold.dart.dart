@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
+import 'package:site_renault_rizzi/model_vwco//one_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
@@ -80,6 +81,8 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
     switch (uri.path) {
       case '/':
         return DashboardPage();
+      case '/oneLevelItem1':
+        return oneLevelItem1Page();
       case '/secondLevelItem1':
         return SecondLevelItem1Page();
       case '/secondLevelItem2':
@@ -403,7 +406,7 @@ class MyScaffold extends StatelessWidget {
                     height: 60,
                   ),
                 ),
-   
+
               ],
             ),
           ),
