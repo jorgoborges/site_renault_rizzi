@@ -4,9 +4,7 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
-import 'package:site_renault_rizzi/model_vwco//third_level_item_1_page.dart';
-import 'package:site_renault_rizzi/model_vwco//third_level_item_2_page.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import '../model_vwco//dashboard_page.dart';
 
 void main() {
@@ -86,10 +84,9 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
         return SecondLevelItem2Page();
       case '/secondLevelItem3':
         return SecondLevelItem3Page();
-      case '/thirdLevelItem1':
-        return ThirdLevelItem1Page();
-      case '/thirdLevelItem2':
-        return ThirdLevelItem2Page();
+
+
+
     }
     return null;
   }
