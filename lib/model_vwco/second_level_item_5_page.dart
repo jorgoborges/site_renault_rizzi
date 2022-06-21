@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:simple_grid/simple_grid.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 
-class oneLevelItem1Page extends StatelessWidget {
+
+class SecondLevelItem5Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      route: '/',
+      route: '/secondLevelItem5',
       body: SpGrid(width: MediaQuery.of(context).size.width, children: [
         SpGridItem(
           xs: 12,
@@ -28,22 +29,21 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Excesso de marcha lenta",
-                              style:
-                              TextStyle(color: Colors.black, fontSize:30)),
-                        )),
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Excesso de marcha lenta",
+                          style: TextStyle(color: Colors.black, fontSize: 30)),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -75,7 +75,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 25)),
+                                TextStyle(color: Colors.black, fontSize: 25)),
                       ),
                     ),
                     Padding(
@@ -112,7 +112,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("140",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 25)),
+                                TextStyle(color: Colors.black, fontSize: 25)),
                       ),
                     ),
                     Expanded(
@@ -154,22 +154,22 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Embreagem",
-                              style:
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Embreagem",
+                          style:
                               TextStyle(color: Colors.black54, fontSize: 20)),
-                        )),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -201,7 +201,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18)),
+                                TextStyle(color: Colors.black54, fontSize: 18)),
                       ),
                     ),
                     Padding(
@@ -238,7 +238,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("30",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 22)),
+                                TextStyle(color: Colors.black, fontSize: 22)),
                       ),
                     ),
                     Expanded(
@@ -280,22 +280,22 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Banguela",
-                              style:
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Banguela",
+                          style:
                               TextStyle(color: Colors.black54, fontSize: 20)),
-                        )),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -327,7 +327,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18)),
+                                TextStyle(color: Colors.black54, fontSize: 18)),
                       ),
                     ),
                     Padding(
@@ -364,7 +364,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("88",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 22)),
+                                TextStyle(color: Colors.black, fontSize: 22)),
                       ),
                     ),
                     Expanded(
@@ -406,22 +406,22 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Excesso de RPM",
-                              style:
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Excesso de RPM",
+                          style:
                               TextStyle(color: Colors.black54, fontSize: 20)),
-                        )),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -453,7 +453,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18)),
+                                TextStyle(color: Colors.black54, fontSize: 18)),
                       ),
                     ),
                     Padding(
@@ -490,7 +490,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("3",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 22)),
+                                TextStyle(color: Colors.black, fontSize: 22)),
                       ),
                     ),
                     Expanded(
@@ -532,22 +532,22 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Excesso de marcha lenta",
-                              style:
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Excesso de marcha lenta",
+                          style:
                               TextStyle(color: Colors.black54, fontSize: 20)),
-                        )),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -579,7 +579,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18)),
+                                TextStyle(color: Colors.black54, fontSize: 18)),
                       ),
                     ),
                     Padding(
@@ -616,7 +616,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("140",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 22)),
+                                TextStyle(color: Colors.black, fontSize: 22)),
                       ),
                     ),
                     Expanded(
@@ -658,22 +658,22 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Embreagem",
-                              style:
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Embreagem",
+                          style:
                               TextStyle(color: Colors.black54, fontSize: 20)),
-                        )),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -705,7 +705,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18)),
+                                TextStyle(color: Colors.black54, fontSize: 18)),
                       ),
                     ),
                     Padding(
@@ -742,7 +742,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("30",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 22)),
+                                TextStyle(color: Colors.black, fontSize: 22)),
                       ),
                     ),
                     Expanded(
@@ -784,22 +784,22 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Banguela",
-                              style:
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Banguela",
+                          style:
                               TextStyle(color: Colors.black54, fontSize: 20)),
-                        )),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -831,7 +831,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18)),
+                                TextStyle(color: Colors.black54, fontSize: 18)),
                       ),
                     ),
                     Padding(
@@ -868,7 +868,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("88",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 22)),
+                                TextStyle(color: Colors.black, fontSize: 22)),
                       ),
                     ),
                     Expanded(
@@ -910,22 +910,22 @@ class oneLevelItem1Page extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                          margin: const EdgeInsets.all(8),
-                          alignment: Alignment.center,
-                          child: AutoSizeText("Excesso de RPM",
-                              style:
+                      margin: const EdgeInsets.all(8),
+                      alignment: Alignment.center,
+                      child: AutoSizeText("Excesso de RPM",
+                          style:
                               TextStyle(color: Colors.black54, fontSize: 20)),
-                        )),
+                    )),
                     Expanded(
                         child: Column(
-                          children: [
-                            Divider(
-                              height: 5,
-                              thickness: 1,
-                              color: Colors.black12,
-                            )
-                          ],
-                        )),
+                      children: [
+                        Divider(
+                          height: 5,
+                          thickness: 1,
+                          color: Colors.black12,
+                        )
+                      ],
+                    )),
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.all(8),
@@ -957,7 +957,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText("Principal infrator",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18)),
+                                TextStyle(color: Colors.black54, fontSize: 18)),
                       ),
                     ),
                     Padding(
@@ -994,7 +994,7 @@ class oneLevelItem1Page extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AutoSizeText("3",
                             style:
-                            TextStyle(color: Colors.black, fontSize: 22)),
+                                TextStyle(color: Colors.black, fontSize: 22)),
                       ),
                     ),
                     Expanded(
