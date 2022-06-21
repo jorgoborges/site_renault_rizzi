@@ -393,9 +393,9 @@ class MyScaffold extends StatelessWidget {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
+              children: <Widget>[
                 Image.asset(
-                  "assets/images/logo.PNG",
+                  'images/logo.PNG',
                   fit: BoxFit.fill,
                   height: 60,
                   width: 60,
