@@ -10,10 +10,11 @@ class SecondLevelItem1Page extends StatelessWidget {
     return MyScaffold(
       route: '/secondLevelItem1',
       body: Container(
+
         alignment: Alignment.center,
         padding: EdgeInsets.only(left: 20, top:10),
         child: Image.network(
-          'https://snz04pap002files.storage.live.com/y4mfHIYgcFGiKnW-SST7N9MWB5Z_QSjZPgdPRySKgO9NVga31_fsZYKRrQfBId1YRi2hQiAsae9DTbti65gIfRWWZUo_NBbO-Q2XEfori8iSrxXKCUxzk2tOM-oAQAnboPpNzlyC24UGowe5twAK3U-0SjnYsewdOh_B-vESdlX79RJRNC8fF8T29GaPmaOVj3tsUHGdVDKnaJfyKD9AG0DuAH_1laC4uu5Y8imcNLsR3A?encodeFailures=1&width=1442&height=765',
+          'https://snz04pap002files.storage.live.com/y4mspK2xLddOnEhkdNgMHNX6dryArVxMGXbBvZY1k1E94w6VmZMMb2QZXbfkBM00fAAf_3Atb1QHkXnoxsZFZSDgYO7hnFK8UGU_H1EU0o6SGuU6KrdHIHFIwJt7WY68Bn1S2EPcY96ryDnQHi7uRjhVRn0ef8asTq9ZT_AAPaBDZYIuf8IlrxpqOvfJ4__GNAOe1ws8RvHlaEr911bWuqe1_PD0Ma-ZpoDlCU0RYttSUM?encodeFailures=1&width=1633&height=842',
           fit: BoxFit.fill,
         ),
       ),

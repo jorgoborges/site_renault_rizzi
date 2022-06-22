@@ -166,17 +166,17 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title: 'Consumo km da Frota',
-              route: '/secondLevelItem2',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Top 10 veículos com maior consumo',
-              route: '/secondLevelItem3',
+              route: '/secondLevelItem2',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Aplicação Check-list de Consumo',
-              route: '/secondLevelItem4',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
@@ -203,7 +203,7 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title: 'Monitoramento da Saúde dos ativos',
-              route: '/',
+              route: '/secondLevelItem3',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
@@ -213,7 +213,7 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title: 'Planejamento das Manutenções',
-              route: '/',
+              route: '/secondLevelItem4',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
