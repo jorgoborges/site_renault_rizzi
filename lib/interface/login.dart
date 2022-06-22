@@ -35,6 +35,14 @@ class PasswordApp extends StatelessWidget {
           appBar: AppBar(
 
             actions: [
+              ElevatedButton.icon(
+                onPressed: () => Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (_) => SamplePagevwco())),
+                icon: const Icon(Icons.logout),
+                label: const Text('Entrar'),
+                style: ElevatedButton.styleFrom(
+                    primary: const Color(0xff041e42)),
+              ),
               TextButton(
                 onPressed: ()  {},
                 style: TextButton.styleFrom(
@@ -181,17 +189,7 @@ class PasswordApp extends StatelessWidget {
                       height: 10,
                     ),
                   ),
-                  Expanded(
-                    child: ElevatedButton.icon(
-                      onPressed: () => Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (_) => SamplePagevwco())),
-                      icon: const Icon(Icons.logout),
-                      label: const Text('Entrar',
-                          style: TextStyle(fontSize: 14, color: Colors.white)),
-                      style: ElevatedButton.styleFrom(
-                          primary: const Color(0xff041e42)),
-                    ),
-                  ),
+
                   Expanded(
                     child: SizedBox(
                       height: 10,
