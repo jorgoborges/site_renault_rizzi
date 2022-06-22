@@ -149,7 +149,7 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title: 'Condução do Trecho em Serra',
-              route: '/',
+              route: '/secondLevelItem5',
               icon: Icons.subdirectory_arrow_right,
             ),
           ],
@@ -241,7 +241,7 @@ class MyScaffold extends StatelessWidget {
               children: [
                 AdminMenuItem(
                   title: 'Gestão VN-1',
-                  route: '/secondLevelItem5',
+                  route: '/',
                   icon: Icons.subdirectory_arrow_right,
                 )
               ],
@@ -382,7 +382,7 @@ class MyScaffold extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 10),
+                SizedBox(width: 8),
                 AutoSizeText('Maps',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),

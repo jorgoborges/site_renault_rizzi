@@ -7,15 +7,11 @@ class SecondLevelItem3Page extends StatelessWidget {
     return MyScaffold(
       route: '/secondLevelItem3',
       body: Container(
-        width: 900,
-        height: 600,
         alignment: Alignment.center,
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.only(left: 20, top: 10),
         child: Image.network(
-          'https://snz04pap002files.storage.live.com/y4mKcQhdLh-k24wqSkxWRktWfGkmCwEAbAtQP9tI3E79VtMvuqGje6pCXu-raYXSHt0a9zqvac6GmbPe_0Ut4BvaJome-YUi960oIvebE-v2Ob4TAMsiZbuCO4wcqOumADhlEXJ_1uoBjxIub8VN0ELWauiS18iw8rITfdF4Sqb0jmC0ivLKl30Ygm4lwSQYAoDBQFmGlQvrfP-FDXIYgw9Ha12tJA9JiVcv0UBrpBEajA?encodeFailures=1&width=855&height=461',
+          'https://snz04pap002files.storage.live.com/y4mbhxr5XCBwmVcJktHJPLcMpUH5cxSvRMQl7zgL8i8WHsy_h3u5Kji4OdZLEYMew8aq6LIzXp_Cit3p6s2VH1LgUQtmbTAMRLa3aUKVQxfLbCVgOGGVYBLm8wQEWDRtmHJsR_BqsLGYnTZlcVEG4xCj8613TIRzWHnuWPsxm9TTz_ZpfPMfMyjnjS9lfc_k6sK54bs_acVPF4UbOvUtvAAlmka6sF3T0XbYm_ywynFa14?encodeFailures=1&width=1298&height=709',
           fit: BoxFit.fill,
-
-
         ),
       ),
     );
