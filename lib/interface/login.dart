@@ -74,15 +74,18 @@ class PasswordApp extends StatelessWidget {
 
 
           body: ListView(
-            
+
+            padding: EdgeInsets.all(2.0),
+
 
             children: <Widget>[
               const SizedBox(
                 height: 40,
+
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal:40, vertical: 40),
                 child: PasswordField(
                   backgroundColor: Colors.red.shade100,
                   controller: TextEditingController(text: 'senha'),

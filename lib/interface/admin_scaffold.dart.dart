@@ -457,7 +457,7 @@ class MyScaffold extends StatelessWidget {
           color: const Color(0xff444444),
           child: const Center(
             child: Text(
-              'By Borges',
+              'Rizzi Consulting Ⓡ 2000|2022',
               style: TextStyle(
                 color: Colors.white,
               ),
