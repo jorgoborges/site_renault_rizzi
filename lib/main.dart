@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
+import 'package:site_renault_rizzi/interface/login.dart';
 
 
 void main() async {
@@ -17,6 +17,6 @@ class Initial extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-        theme: ThemeData(primarySwatch: Colors.red), home: SamplePagevwco());
+        theme: ThemeData(primarySwatch: Colors.red), home: Tel_Senha());
   }
 }
