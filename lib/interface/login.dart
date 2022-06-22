@@ -31,6 +31,9 @@ class PasswordApp extends StatelessWidget {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
+
+
+
           backgroundColor: const Color(0xff546e7a),
           appBar: AppBar(
 
@@ -67,7 +70,12 @@ class PasswordApp extends StatelessWidget {
             backgroundColor: const Color(0xff041e42),
             title: const Text('Portal 4.0'),
           ),
+
+
+
           body: ListView(
+            
+
             children: <Widget>[
               const SizedBox(
                 height: 40,

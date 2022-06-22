@@ -7,6 +7,7 @@ import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_4_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_5_page.dart';
+import 'package:site_renault_rizzi/model_vwco//second_level_item_6_page.dart';
 
 import '../model_vwco//dashboard_page.dart';
 
@@ -92,6 +93,8 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
         return SecondLevelItem4Page();
       case '/secondLevelItem5':
         return SecondLevelItem5Page();
+      case '/secondLevelItem6':
+        return SecondLevelItem6Page();
     }
     return null;
   }
@@ -217,8 +220,8 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Performance dos Motorista',
-              route: '/',
+              title: 'Performance dos Motoristas',
+              route: '/secondLevelItem6',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
