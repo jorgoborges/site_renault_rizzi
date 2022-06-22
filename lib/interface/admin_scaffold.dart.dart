@@ -312,11 +312,11 @@ class MyScaffold extends StatelessWidget {
                     children: [
                       Icon(item.icon),
                       Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
+                        padding: const EdgeInsets.only(left: 5.0),
                         child: Text(
                           item.title,
                           style: const TextStyle(
-                              fontSize: 14.0, color: Colors.white),
+                              fontSize: 11, color: Colors.white),
                         ),
                       ),
                     ],
@@ -341,12 +341,12 @@ class MyScaffold extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.home_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 10),
+                SizedBox(width: 8),
                 AutoSizeText('Rizziconsulting',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 12.0,
-                        fontWeight: FontWeight.w500)),
+                        fontSize: 8,
+                        fontWeight: FontWeight.w200)),
               ],
             ),
           ),
@@ -361,12 +361,12 @@ class MyScaffold extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(Icons.school_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 10),
+                SizedBox(width: 8),
                 AutoSizeText('Rizziacademy',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 12.0,
-                        fontWeight: FontWeight.w500)),
+                        fontSize: 8,
+                        fontWeight: FontWeight.w200)),
               ],
             ),
           ),
@@ -386,8 +386,8 @@ class MyScaffold extends StatelessWidget {
                 AutoSizeText('Maps',
                     style: TextStyle(
                         color: Color(0xFFECEFF1),
-                        fontSize: 12.0,
-                        fontWeight: FontWeight.w400)),
+                        fontSize: 8,
+                        fontWeight: FontWeight.w200)),
               ],
             ),
           ),
@@ -420,11 +420,11 @@ class MyScaffold extends StatelessWidget {
         activeIconColor: Colors.blue,
         textStyle: const TextStyle(
           color: Color(0xFF337ab7),
-          fontSize: 13,
+          fontSize: 12,
         ),
         activeTextStyle: const TextStyle(
           color: Colors.white,
-          fontSize: 13,
+          fontSize: 12,
         ),
         items: _sideBarItems,
         selectedRoute: route,

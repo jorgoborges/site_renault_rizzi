@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 
 
-
-
-
-
-
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
   //await Firebase.initializeApp(
