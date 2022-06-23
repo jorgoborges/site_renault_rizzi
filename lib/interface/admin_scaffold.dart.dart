@@ -268,7 +268,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subscriptions_outlined,
               children: [
                 AdminMenuItem(
-                  title: 'Gestão SN-1',
+                  title: 'Gestão SN-1-1',
                   route: '/',
                   icon: Icons.subdirectory_arrow_right,
                 )
