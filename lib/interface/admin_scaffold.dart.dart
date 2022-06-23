@@ -334,27 +334,7 @@ class MyScaffold extends StatelessWidget {
               ],
             ),
           ),
-          TextButton(
-            onPressed: () async {
-              const url =
-                  'https://www.google.com/maps/place/Rizzi+Consulting/@-22.7436674,-47.3365886,17z/data=!3m1!4b1!4m5!3m4!1s0x94c8909475c5b495:0x4a88399fc4515adc!8m2!3d-22.7436674!4d-47.3343999';
-            },
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(10),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.location_on_outlined, color: Color(0xFFECEFF1)),
-                SizedBox(width: 8),
-                AutoSizeText('Maps',
-                    style: TextStyle(
-                        color: Color(0xFFECEFF1),
-                        fontSize: 8,
-                        fontWeight: FontWeight.w200)),
-              ],
-            ),
-          ),
+
           TextButton(
             onPressed: () async {},
             style: TextButton.styleFrom(

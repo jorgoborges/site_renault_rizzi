@@ -37,26 +37,24 @@ class LoginPage extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.cover,
               child: Image.network(
-                'https://snz04pap002files.storage.live.com/y4myz_LE64FhE-PLgL4mgbmBrlznZ-FuzK5ZzEAVmf21vr_-xSJ8X_K6L5iMQxmDjrGg2suZ90ojyyvbMFAUfaeV5zfg-oyR_VwoN4lE5laxL0CLxIrz15fXFB-qI2R8_soqw7TxDstucHtbXPRsdDc2IHQY2MfriMgzJlNqvAVY17Fl9a5qRiMvr0iY76a8fcWZSovHXv6VjheYQ1xqb8jx_I8FYPJQe1W9nJkdmnE0tk?encodeFailures=1&width=1104&height=536',
+                'https://snz04pap002files.storage.live.com/y4mh4Jfq9lNgw9RWMDnghKVY93nPF6gn7z0Dv51lwcJf1VVE-KZkXxDIo74q2L9xN3fqfq0oDcHyzXCvYoS0JTHyjSwlJex0kHQX-kw9a2hOk1_YWYbYOhHbsKPgu1UnyRFOB6KhxKcwr0IEEKHaQLfRGkl_6-XogGmwEa_xjMgrHtCKWDx7Rk-n0TYTfG8sdRMXsLdxPGAXXGqB3aUC-AQyfcLzqV8zX7sVKjQY9JFFEI?encodeFailures=1&width=1537&height=433',
                 fit: BoxFit.fill,
               ),
             ),
           ),
-
           Padding(
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
                 Container(
-                  width: double.infinity,
                   child: Container(
                     child: Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                      Padding(
-                      padding: EdgeInsets.all(20),
-                      ),
+                          Padding(
+                            padding: EdgeInsets.all(5),
+                          ),
                           Column(
                             children: [
                               Column(
@@ -72,10 +70,10 @@ class LoginPage extends StatelessWidget {
                                     height: 20,
                                   ),
                                   Text(
-                                    "Bem vindo de volta ! Faça login com suas credenciais",
+                                    "",
                                     style: TextStyle(
                                       fontSize: 15,
-                                      color: Colors.grey[700],
+                                      color: Colors.white,
                                     ),
                                   ),
                                   SizedBox(
@@ -94,7 +92,8 @@ class LoginPage extends StatelessWidget {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(70),),
+                                padding: EdgeInsets.all(70),
+                              ),
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 40),
                                 child: Container(
@@ -134,18 +133,6 @@ class LoginPage extends StatelessWidget {
                               SizedBox(
                                 height: 20,
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text("Não tem uma conta?"),
-                                  Text(
-                                    "Inscrever-se",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 18),
-                                  ),
-                                ],
-                              )
                             ],
                           ),
                         ],
