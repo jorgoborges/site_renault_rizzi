@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
+import 'package:site_renault_rizzi/login/login_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
@@ -279,24 +280,6 @@ class MyScaffold extends StatelessWidget {
     ),
   ];
 
-  final List<AdminMenuItem> _adminMenuItems = const [
-    AdminMenuItem(
-      title: 'User Profile',
-      icon: Icons.account_circle,
-      route: '/',
-    ),
-    AdminMenuItem(
-      title: 'Settings',
-      icon: Icons.settings,
-      route: '/',
-    ),
-    AdminMenuItem(
-      title: 'Logout',
-      icon: Icons.logout,
-      route: '/',
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return AdminScaffold(
@@ -304,34 +287,12 @@ class MyScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFF041e42),
         actions: [
-          PopupMenuButton<AdminMenuItem>(
-            color: Color(0xFF041e42),
-            child: const Icon(Icons.account_circle),
-            itemBuilder: (context) {
-              return _adminMenuItems.map((AdminMenuItem item) {
-                return PopupMenuItem<AdminMenuItem>(
-                  value: item,
-                  child: Row(
-                    children: [
-                      Icon(item.icon),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0),
-                        child: Text(
-                          item.title,
-                          style: const TextStyle(
-                              fontSize: 11, color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }).toList();
-            },
-            onSelected: (item) {
-              print(
-                  'actions: onSelected(): title = ${item.title}, route = ${item.route}');
-              Navigator.of(context).pushNamed(item.route!);
-            },
+          ElevatedButton.icon(
+            onPressed: () => Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (_) => LoginPage())),
+            icon: const Icon(Icons.exit_to_app_outlined),
+            label: const Text('Sair'),
+            style: ElevatedButton.styleFrom(primary: const Color(0xff041e42)),
           ),
           TextButton(
             onPressed: () async {
@@ -355,7 +316,7 @@ class MyScaffold extends StatelessWidget {
           ),
           TextButton(
             onPressed: () async {
-              const url = 'https://www.rizziacademy.com.br/';
+              'https://www.rizziacademy.com.br/';
             },
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(8),
