@@ -175,7 +175,7 @@ class LoginPage extends StatelessWidget {
                             children: [
                               Expanded(
                                 child: Container(
-                                    height: 60,
+                                    height: 40,
                                     child: Center(
                                       child: CircularProgressIndicator(),
                                     )),

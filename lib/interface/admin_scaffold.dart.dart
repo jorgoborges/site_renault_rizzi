@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:site_renault_rizzi/login/login_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_1_page.dart';
+import 'package:site_renault_rizzi/model_backoffice/zero_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_3_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_4_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_5_page.dart';
@@ -15,24 +16,6 @@ import 'package:site_renault_rizzi/model_backoffice/zero_level_item_11_page.dart
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_12_page.dart';
 import 'package:site_renault_rizzi/model_vwco/home_page.dart';
 import 'package:site_renault_rizzi/model_vwco/one_level_item_1_page.dart';
-import 'package:site_renault_rizzi/model_vwco/one_level_item_2_page.dart';
-import 'package:site_renault_rizzi/model_vwco/one_level_item_3_page.dart';
-import 'package:site_renault_rizzi/model_vwco/one_level_item_4_page.dart';
-import 'package:site_renault_rizzi/model_vwco/one_level_item_5_page.dart';
-import 'package:site_renault_rizzi/model_vwco/one_level_item_6_page.dart';
-import 'package:site_renault_rizzi/model_vwco//second_level_item_1_page.dart';
-import 'package:site_renault_rizzi/model_vwco//second_level_item_2_page.dart';
-import 'package:site_renault_rizzi/model_vwco//second_level_item_3_page.dart';
-import 'package:site_renault_rizzi/model_vwco//second_level_item_4_page.dart';
-import 'package:site_renault_rizzi/model_vwco//second_level_item_5_page.dart';
-import 'package:site_renault_rizzi/model_vwco//second_level_item_6_page.dart';
-import 'package:site_renault_rizzi/model_vwco//second_level_item_7_page.dart';
-import 'package:site_renault_rizzi/model_vwco/third_level_item_1_page.dart';
-import 'package:site_renault_rizzi/model_vwco/third_level_item_2_page.dart';
-import 'package:site_renault_rizzi/model_vwco/third_level_item_3_page.dart';
-import 'package:site_renault_rizzi/model_vwco/third_level_item_4_page.dart';
-import 'package:site_renault_rizzi/model_vwco/third_level_item_5_page.dart';
-import 'package:site_renault_rizzi/model_vwco/third_level_item_6_page.dart';
 
 void main() {
   runApp(SamplePagevwco());
@@ -108,7 +91,8 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
 
       case '/zeroLevelItem1':
         return zeroLevelItem1Page();
-
+      case '/zeroLevelItem2':
+        return zeroLevelItem2Page();
       case '/zeroLevelItem3':
         return zeroLevelItem3Page();
       case '/zeroLevelItem4':
@@ -133,43 +117,6 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
       case '/oneLevelItem1':
         return oneLevelItem1Page();
       case '/oneLevelItem2':
-        return oneLevelItem2Page();
-      case '/oneLevelItem3':
-        return oneLevelItem3Page();
-      case '/oneLevelItem4':
-        return oneLevelItem4Page();
-      case '/oneLevelItem5':
-        return oneLevelItem5Page();
-      case '/oneLevelItem6':
-        return oneLevelItem6Page();
-
-      case '/secondLevelItem1':
-        return SecondLevelItem1Page();
-      case '/secondLevelItem2':
-        return SecondLevelItem2Page();
-      case '/secondLevelItem3':
-        return SecondLevelItem3Page();
-      case '/secondLevelItem4':
-        return SecondLevelItem4Page();
-      case '/secondLevelItem5':
-        return SecondLevelItem5Page();
-      case '/secondLevelItem6':
-        return SecondLevelItem6Page();
-      case '/secondLevelItem7':
-        return SecondLevelItem7Page();
-
-      case '/thirdLevelItem1':
-        return thirdLevelItem1Page();
-      case '/thirdLevelItem2':
-        return thirdLevelItem2Page();
-      case '/thirdLevelItem3':
-        return thirdLevelItem3Page();
-      case '/thirdLevelItem4':
-        return thirdLevelItem4Page();
-      case '/thirdLevelItem5':
-        return thirdLevelItem5Page();
-      case '/thirdLevelItem6':
-        return thirdLevelItem6Page();
     }
     return null;
   }
@@ -281,32 +228,32 @@ class MyScaffold extends StatelessWidget {
           children: [
             AdminMenuItem(
               title: 'Excesso de Velocidade',
-              route: '/',
+              route: '/oneLevelItem1',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Marcha lenta',
-              route: '/secondLevelItem3',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Veículo Engrenado sem Injeção de Combustível',
-              route: '/secondLevelItem4',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Condução com Velocidade Cruzeiro',
-              route: '/secondLevelItem5',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Previsão',
-              route: '/secondLevelItem6',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Condução do Trecho em Serra',
-              route: '/secondLevelItem7',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
           ],
@@ -318,32 +265,32 @@ class MyScaffold extends StatelessWidget {
           children: [
             AdminMenuItem(
               title: 'Estratificação por Modelo',
-              route: '/thirdLevelItem1',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Consumo km da Frota',
-              route: '/thirdLevelItem2',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Top 10 veículos com maior consumo',
-              route: '/thirdLevelItem3',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Aplicação Check-list de Consumo',
-              route: '/thirdLevelItem4',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Treinamento Instrutor Operacional',
-              route: '/thirdLevelItem5',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Acompanhamento do consumo por veículo',
-              route: '/thirdLevelItem6',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
           ],
@@ -355,22 +302,22 @@ class MyScaffold extends StatelessWidget {
           children: [
             AdminMenuItem(
               title: 'Excesso de Velocidade',
-              route: '/oneLevelItem1',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Monitoramento da Saúde dos ativos',
-              route: '/oneLevelItem2',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Plano Contrato de Manutenção',
-              route: '/oneLevelItem3',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title: 'Planejamento das Manutenções',
-              route: '/oneLevelItem4',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
@@ -380,7 +327,7 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title: 'Monitoramento da Disponibilidade',
-              route: '/oneLevelItem6',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
           ],
@@ -492,7 +439,6 @@ class MyScaffold extends StatelessWidget {
             label: const Text('Sair'),
             style: ElevatedButton.styleFrom(primary: const Color(0xff041e42)),
           ),
-
           TextButton(
             onPressed: () async {},
             style: TextButton.styleFrom(

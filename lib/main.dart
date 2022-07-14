@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:site_renault_rizzi/login/login_page.dart';
 
 void main() async {

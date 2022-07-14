@@ -40,13 +40,12 @@ dependencies:
   responsive_grid: ^2.1.0
   flutter_admin_scaffold: ^1.1.1
   passwordfield: ^0.1.0
-  flutter_login_template: ^1.1.0
-  flutter_form_bloc: ^0.30.1
-  fwfh_webview: ^0.6.2+2
   tabbed_view: ^1.13.0+1
   brasil_fields: ^1.4.5
   http: ^0.12.0+1
   json_table: ^2.0.1
+  flutter_widget_from_html_core: any
+  fwfh_webview: ^0.6.2
 
 
 
