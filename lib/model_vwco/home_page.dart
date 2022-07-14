@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             html.window.open(
                 'https://rizziconsulting.com.br/',
-                "_self");
+                "_blank");
           },
           child: Text('Rizzi'),
         ),
