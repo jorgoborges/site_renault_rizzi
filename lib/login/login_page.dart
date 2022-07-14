@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
                   Container(
                     child: Image(
                       image: AssetImage(
-                      "images/logo.PNG"),
+                      "assets/images/logo.PNG"),
                       fit: BoxFit.fill,
                       height: 100,
                       width: 100,
@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
               fit: BoxFit.cover,
               child: Image(
                 image:AssetImage(
-                "images/login.PNG"),
+                "assets/images/login.PNG"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -77,7 +77,7 @@ class LoginPage extends StatelessWidget {
                                   children: <Widget>[
                                     TextField(
                                         maxLines: null,
-                                        maxLength: 50,
+                                        maxLength: 25,
                                         controller: _controladorEmail,
                                         style: TextStyle(
                                             fontSize: 20, color: Colors.white),
@@ -109,6 +109,7 @@ class LoginPage extends StatelessWidget {
                                         labelStyle: TextStyle(
                                             fontSize: 20, color: Colors.red),
                                         border: OutlineInputBorder(),
+
                                       ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
