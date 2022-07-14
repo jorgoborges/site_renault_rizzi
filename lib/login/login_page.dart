@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
-import 'package:site_renault_rizzi/interface/class_senha.dart';
+
 
 import 'package:flutter/cupertino.dart';
 
@@ -23,8 +23,9 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    child: Image.asset(
-                      "images/logo.PNG",
+                    child: Image(
+                      image: AssetImage(
+                      "images/logo.PNG"),
                       fit: BoxFit.fill,
                       height: 100,
                       width: 100,
@@ -41,8 +42,9 @@ class LoginPage extends StatelessWidget {
           SizedBox.expand(
             child: FittedBox(
               fit: BoxFit.cover,
-              child: Image.asset(
-                "images/login.PNG",
+              child: Image(
+                image:AssetImage(
+                "images/login.PNG"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -149,28 +151,6 @@ class LoginPage extends StatelessWidget {
                               ),
                             ],
                           ),
-
-                          // Botão provisório para criar lista senha-user
-
-                          Row(
-                              children: [
-                                Expanded(
-                                    child: FloatingActionButton(
-                                  child: Icon(Icons.login_outlined),
-                                  onPressed: () {
-                                    final String Email = _controladorEmail.text;
-                                    final String Senha = _controladorSenha.text;
-
-                                    final SenhaLogin novoLogin =
-                                        SenhaLogin(Email, Senha);
-
-                                    print(novoLogin);
-                                  },
-                                )),
-                              ],
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center),
-
                           Row(
                             children: [
                               Expanded(
