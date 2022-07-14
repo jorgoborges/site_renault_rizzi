@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fwfh_webview/fwfh_webview.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+import 'package:flutter/cupertino.dart';
 
 class SecondLevelItem6Page extends StatelessWidget {
   @override
@@ -7,13 +10,16 @@ class SecondLevelItem6Page extends StatelessWidget {
     return MyScaffold(
       route: '/secondLevelItem6',
       body: Container(
+        height: 700,
         alignment: Alignment.center,
-        padding: EdgeInsets.only(left: 20, top: 10),
-        child: Image.network(
-          'https://snz04pap002files.storage.live.com/y4m48J5iv04l033QH9-miy5xz6IsAgVT8v0pmv-8mGaJ0O788OfXb9vICTrCychKsW2wBdmOR6UUCHhG0wbm8tjPptvk7zMYASbm_ANmDOKav-6g1KNdG8t1qB10oy1_n7je7h6oNBUnxXp9FBSLaSXMHl9p_7tV1-xddXFm2Tx5KTJBC8KcTpEe_a3xpOiy3Igt0WebcL3RR5CgVk5yk0N-XjpzaVUv3kr48hCpZLzN3A?encodeFailures=1&width=1406&height=712',
-          fit: BoxFit.fill,
+        padding: EdgeInsets.only(left: 20, top: 50),
+        child: HtmlWidget(
+          '<iframe title="Torre_de_Controle_Cequip" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=fe6de127-f910-4618-a02b-fbd48ed4d3b1&autoAuth=true&ctid=bae03bf5-f801-4f8b-adba-c177d66c8180&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="0" allowFullScreen="true"></iframe>',
+          factoryBuilder: () => MyWidgetFactory(),
         ),
       ),
     );
   }
 }
+
+class MyWidgetFactory extends WidgetFactory with WebViewFactory {}
