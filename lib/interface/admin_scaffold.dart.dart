@@ -5,15 +5,6 @@ import 'package:site_renault_rizzi/login/login_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_3_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_4_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_5_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_6_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_7_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_8_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_9_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_10_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_11_page.dart';
-import 'package:site_renault_rizzi/model_backoffice/zero_level_item_12_page.dart';
 import 'package:site_renault_rizzi/model_vwco/home_page.dart';
 import 'package:site_renault_rizzi/model_vwco/one_level_item_1_page.dart';
 
@@ -95,24 +86,6 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
         return zeroLevelItem2Page();
       case '/zeroLevelItem3':
         return zeroLevelItem3Page();
-      case '/zeroLevelItem4':
-        return zeroLevelItem4Page();
-      case '/zeroLevelItem5':
-        return zeroLevelItem5Page();
-      case '/zeroLevelItem6':
-        return zeroLevelItem6Page();
-      case '/zeroLevelItem7':
-        return zeroLevelItem7Page();
-      case '/zeroLevelItem8':
-        return zeroLevelItem8Page();
-      case '/zeroLevelItem9':
-        return zeroLevelItem9Page();
-      case '/zeroLevelItem10':
-        return zeroLevelItem10Page();
-      case '/zeroLevelItem11':
-        return zeroLevelItem11Page();
-      case '/zeroLevelItem12':
-        return zeroLevelItem12Page();
 
       case '/oneLevelItem1':
         return oneLevelItem1Page();
@@ -138,82 +111,19 @@ class MyScaffold extends StatelessWidget {
       icon: Icons.admin_panel_settings_outlined,
       children: [
         AdminMenuItem(
-          title: 'Liberação',
-          icon: Icons.create_outlined,
+          title: 'Cadastro Pessoa',
+          icon: Icons.person_pin_outlined,
           route: '/zeroLevelItem1',
         ),
         AdminMenuItem(
-          title: 'Historico',
-          icon: Icons.history_outlined,
+          title: 'Cadastro Parceiros',
+          icon: Icons.business_outlined,
           route: '/zeroLevelItem2',
         ),
         AdminMenuItem(
-          title: 'Pessoas',
-          icon: Icons.people,
-          children: [
-            AdminMenuItem(
-              title: 'Funcionarios',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem3',
-            ),
-            AdminMenuItem(
-              title: 'Dependentes',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem4',
-            ),
-          ],
-        ),
-        AdminMenuItem(
-          title: 'Controle Acesso',
+          title: 'Liberação Senha',
           icon: Icons.key_outlined,
-          children: [
-            AdminMenuItem(
-              title: 'Nivel Acesso',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem5',
-            ),
-            AdminMenuItem(
-              title: 'Empregos',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem6',
-            ),
-            AdminMenuItem(
-              title: 'Departamento',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem7',
-            ),
-          ],
-        ),
-        AdminMenuItem(
-          title: 'Parceiros',
-          icon: Icons.business_outlined,
-          children: [
-            AdminMenuItem(
-              title: 'Bandeira',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem8',
-            ),
-            AdminMenuItem(
-              title: 'Nome Comercial',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem9',
-            ),
-            AdminMenuItem(
-              title: 'Região',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem10',
-            ),
-            AdminMenuItem(
-              title: 'Paises',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem11',
-            ),
-            AdminMenuItem(
-              title: 'Localização',
-              icon: Icons.create_outlined,
-              route: '/zeroLevelItem12',
-            ),
-          ],
+          route: '/zeroLevelItem3',
         ),
       ],
     ),

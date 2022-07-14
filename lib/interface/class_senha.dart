@@ -7,9 +7,8 @@ class SenhaLogin {
     this.senha,
   );
 
-@override
-
-String toString() {
-  return 'SenhaLogin{email: $email, senha:$senha }';
-}
+  @override
+  String toString() {
+    return 'SenhaLogin{email: $email, senha:$senha }';
+  }
 }

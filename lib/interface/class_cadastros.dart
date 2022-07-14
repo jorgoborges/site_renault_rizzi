@@ -27,12 +27,10 @@ class Cadastroempresa {
   final String grupo;
   final String cat;
   final String tamshowroom;
-  final String primeironome;
-  final String segundonome;
-  final String cpf;
+
   final String cargo;
   final String funcao;
-  final String emailcomercialdepartamento;
+
   final String senhagerada;
   final String emailparaenviodeacesso;
 
@@ -65,21 +63,14 @@ class Cadastroempresa {
     this.grupo,
     this.cat,
     this.tamshowroom,
-    this.primeironome,
-    this.segundonome,
-    this.cpf,
     this.cargo,
     this.funcao,
-    this.emailcomercialdepartamento,
     this.senhagerada,
     this.emailparaenviodeacesso,
   );
 
-@override
-
-    String toString(){
-  return 'Cadastroempresa{data:$data,conta:$conta,contagrupo:$contagrupo,contamatriz:$contamatriz,razao:$razao,bandeira:$bandeira,nomecomercial:$nomecomercial,tipo:$tipo,cnpj:$cnpj,ie:$ie,endereco:$endereco;cep:$cep,complemento:$complemento,bairro:$bairro,uf:$uf,cidade:$cidade,fone:$fone,fax:$fax,emailcomercial:$emailcomercial,site:$site,titular:$titular,representante:$representante,regiao:$regiao,setor:$setor,regiaosetor:$regiaosetor,grupo:$grupo,cat:$cat,tamshowroom:$tamshowroom,primeironome:$primeironome,segundonome:$segundonome,cpf:$cpf,cargo:$cargo,funcao:$funcao,emailcomercialdepartamento:$emailcomercialdepartamento,senhagerada:$senhagerada,emailparaenvioacesso:$emailparaenviodeacesso}';
-
-
-    }
+  @override
+  String toString() {
+    return 'Cadastroempresa{data:$data,conta:$conta,contagrupo:$contagrupo,contamatriz:$contamatriz,razao:$razao,bandeira:$bandeira,nomecomercial:$nomecomercial,tipo:$tipo,cnpj:$cnpj,ie:$ie,endereco:$endereco;cep:$cep,complemento:$complemento,bairro:$bairro,uf:$uf,cidade:$cidade,fone:$fone,fax:$fax,emailcomercial:$emailcomercial,site:$site,titular:$titular,representante:$representante,regiao:$regiao,setor:$setor,regiaosetor:$regiaosetor,grupo:$grupo,cat:$cat,tamshowroom:$tamshowroom,cargo:$cargo,funcao:$funcao,senhagerada:$senhagerada,emailparaenvioacesso:$emailparaenviodeacesso}';
+  }
 }

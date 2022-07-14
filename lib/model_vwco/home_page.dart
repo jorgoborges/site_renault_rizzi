@@ -7,23 +7,48 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-
       route: '/homeoardPage',
       body: Container(
-        height: 700,
-        alignment: Alignment.center,
-        padding: EdgeInsets.only(left: 20, top: 50),
-        child: ElevatedButton(
-          onPressed: () {
-            html.window.open(
-                'https://rizziconsulting.com.br/',
-                "_blank");
-          },
-          child: Text('Rizzi'),
-        ),
-      ),
+          height: 400,
+          width: 400,
+          alignment: Alignment.center,
+          child: Column(
+            children: <Widget>[
+              Expanded(child: Container()),
+              Row(
+                  children: [
+                    Expanded(
+                      child: IconButton(
+                        tooltip: 'Rizzi Academy',
+                        iconSize: 100,
+                        icon: const Icon(Icons.school_outlined),
+                        onPressed: () {
+                          html.window.open(
+                              'https://www.rizziacademy.com.br/login/index.php/',
+                              "_blank");
+                        },
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      width: 50,
+                    )),
+                    Expanded(
+                      child: IconButton(
+                        tooltip: 'Rizzi Consulting',
+                        iconSize: 100,
+                        icon: const Icon(Icons.home_outlined),
+                        onPressed: () {
+                          html.window.open(
+                              'https://rizziconsulting.com.br/', "_blank");
+                        },
+                      ),
+                    ),
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center),
+            ],
+          )),
     );
   }
 }
-
-

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 
-
 import 'package:flutter/cupertino.dart';
 
 class LoginPage extends StatelessWidget {
@@ -24,8 +23,7 @@ class LoginPage extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     child: Image(
-                      image: AssetImage(
-                      "assets/images/logo.PNG"),
+                      image: AssetImage("assets/images/logo.PNG"),
                       fit: BoxFit.fill,
                       height: 100,
                       width: 100,
@@ -43,8 +41,7 @@ class LoginPage extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.cover,
               child: Image(
-                image:AssetImage(
-                "assets/images/login.PNG"),
+                image: AssetImage("assets/images/login.PNG"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -109,7 +106,6 @@ class LoginPage extends StatelessWidget {
                                         labelStyle: TextStyle(
                                             fontSize: 20, color: Colors.red),
                                         border: OutlineInputBorder(),
-
                                       ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
