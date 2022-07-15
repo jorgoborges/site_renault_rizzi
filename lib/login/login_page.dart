@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
+
+import 'dart:core';
 
 import 'package:flutter/cupertino.dart';
+import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _controladorEmail = TextEditingController();
   final TextEditingController _controladorSenha = TextEditingController();
 
+  final _formKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
+
         appBar: AppBar(
           actions: [
             TextButton(
@@ -47,120 +52,93 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.only(left: 30, right: 30),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   child: Container(
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(5),
-                          ),
-                          Column(
-                            children: [
-                              Column(
-                                children: [
-                                  SizedBox(
-                                    height: 130,
-                                  )
-                                ],
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 40),
-                                child: Column(
-                                  children: <Widget>[
-                                    TextField(
-                                        maxLines: null,
-                                        maxLength: 25,
-                                        controller: _controladorEmail,
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
-                                        decoration: InputDecoration(
-                                          hintText: 'Email Comercial',
-                                          labelStyle: TextStyle(
-                                              fontSize: 20, color: Colors.red),
-                                          border: OutlineInputBorder(),
-                                        ),
-                                        keyboardType:
-                                            TextInputType.emailAddress),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(20),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 40),
-                                child: Column(
-                                  children: <Widget>[
-                                    TextField(
-                                      maxLength: 10,
-                                      controller: _controladorSenha,
-                                      style: TextStyle(
-                                          fontSize: 20, color: Colors.white),
-                                      decoration: InputDecoration(
-                                        hintText: 'Senha',
-                                        labelStyle: TextStyle(
-                                            fontSize: 20, color: Colors.red),
-                                        border: OutlineInputBorder(),
-                                      ),
-                                      keyboardType:
-                                          TextInputType.visiblePassword,
-                                      obscureText: true,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(70),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 40),
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 3, left: 3),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  child: MaterialButton(
-                                    minWidth: 150,
-                                    height: 60,
-                                    onPressed: () =>
-                                        Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (_) => SamplePagevwco()),
-                                    ),
-                                    color: Color(0xff041e42),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(60)),
-                                    child: Text(
-                                      "Login",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 18,
-                                          color: Colors.white),
-                                    ),
+                    child: Column(
+
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 5, top: 150),
+                          child: Column(
+                            children: <Widget>[
+                              TextFormField(
+                                style: TextStyle(color: Colors.black87),
+                                controller: _controladorEmail,
+                                decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "WorkSansLight",
+                                      fontSize: 15.0),
+                                  filled: true,
+                                  fillColor: Colors.white24,
+                                  hintText: "E-mail",
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(90.0)),
+                                      borderSide: BorderSide(
+                                          color: Colors.white24, width: 0.5)),
+                                  prefixIcon: const Icon(
+                                    Icons.email,
+                                    color: Colors.white,
                                   ),
                                 ),
+                                keyboardType: TextInputType.emailAddress,
                               ),
                             ],
                           ),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                    height: 40,
-                                    child: Center(
-                                      child: CircularProgressIndicator(),
-                                    )),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 5, top: 60),
+                        ),
+                        TextFormField(
+                          style: TextStyle(color: Colors.black87),
+                          controller: _controladorSenha,
+                          decoration: InputDecoration(
+                            hintStyle: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "WorkSansLight",
+                                fontSize: 15.0),
+                            filled: true,
+                            fillColor: Colors.white24,
+                            hintText: "Senha",
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(90.0)),
+                                borderSide: BorderSide(
+                                    color: Colors.white24, width: 0.5)),
+                            prefixIcon: const Icon(
+                              Icons.lock_outline,
+                              color: Colors.white,
+                            ),
+                          ),
+                          keyboardType: TextInputType.visiblePassword,
+                          obscureText: true,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 5, top: 150),
+                        ),
+                        SizedBox(
+                          height: 80,
+                          width: 80,
+                          child: new FloatingActionButton(
+                            backgroundColor: Colors.white30,
+                            child: Text(
+                              "Entrar",
+                              style: TextStyle(
+                                  fontSize: 18.0, color: Colors.white),
+                            ),
+                            onPressed: () =>
+                                Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (_) => SamplePagevwco()),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

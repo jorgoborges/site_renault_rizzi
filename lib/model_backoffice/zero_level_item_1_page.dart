@@ -19,9 +19,10 @@ class zeroLevelItem1Page extends StatelessWidget {
     return MyScaffold(
       route: '/zeroLevelItem1',
       body: Container(
+        height: 800,
         color: const Color(0xFFffff8e1),
         alignment: Alignment.center,
-        padding: EdgeInsets.only(left: 20, top: 10),
+        padding: EdgeInsets.only(left: 5, top: 10),
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(30.0),
           child: Column(
@@ -31,7 +32,7 @@ class zeroLevelItem1Page extends StatelessWidget {
                   Expanded(
                       child: Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.only(left: 20, top: 50),
+                    padding: EdgeInsets.only(left: 5, top: 50),
                     child: Text(
                       'Cadastro Pessoa',
                       style: TextStyle(
@@ -126,7 +127,7 @@ class zeroLevelItem1Page extends StatelessWidget {
                     Container(
                       child: Container(
                         alignment: Alignment.center,
-                        padding: EdgeInsets.only(left: 20, top: 100),
+                        padding: EdgeInsets.only(left: 5, top: 100),
                       ),
                     ),
                     Expanded(
