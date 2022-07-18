@@ -118,7 +118,7 @@ class MyScaffold extends StatelessWidget {
       icon: Icons.admin_panel_settings_outlined,
       children: [
         AdminMenuItem(
-          title: 'Cadastro Pessoa',
+          title: 'Cadastro Pessoa**',
           icon: Icons.person_pin_outlined,
           route: '/zeroLevelItem1',
         ),
