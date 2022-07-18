@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "77614029235",
+    "project_id": "portal-12121",
+    "storage_bucket": "portal-12121.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77614029235:android:572486212b4c06d3f5d3c6",
+        "android_client_info": {
+          "package_name": "com.example.site_renault_rizzi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77614029235-loapllvkmr0oa778bqjanuep1nfdkc8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3PLDWM0eVgHzt0niPWjentOBrBZ2tKlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77614029235-loapllvkmr0oa778bqjanuep1nfdkc8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "77614029235-6kmibl3cmrnjt3ierf9bpjde62s5a33n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.siteRenaultRizzi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

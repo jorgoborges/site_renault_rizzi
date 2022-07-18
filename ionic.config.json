@@ -1,0 +1,7 @@
+{
+  "name": "site_rizzi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

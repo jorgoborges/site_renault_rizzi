@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:site_renault_rizzi/login/login_home.dart';
 import 'package:site_renault_rizzi/provider/users.dart';
 import 'package:firebase_core/firebase_core.dart';
-import '../firebase_options.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
 

@@ -20,6 +20,11 @@ class LoginHome extends StatelessWidget {
         MaterialPageRoute(builder: (_) => SamplePagePortal()),
       );
     } catch (FirebaseAuthException) {
+
+      const snackBar = SnackBar(
+        content: Text('Autenticação inválida.'),
+      );
+
       print('Senha invalida');
     }
   }
