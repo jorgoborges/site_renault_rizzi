@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
-
-import 'dart:core';
-
-import 'package:flutter/cupertino.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginPage extends StatelessWidget {
+final FirebaseAuth _auth = FirebaseAuth.instance;
+
+class LoginHome extends StatelessWidget {
   final TextEditingController _controladorEmail = TextEditingController();
   final TextEditingController _controladorSenha = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  Future<void> newlogin(BuildContext context) async {
+    try {
+    await  _auth.signInWithEmailAndPassword(
+          email: _controladorEmail.text, password: _controladorSenha.text);
+
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => SamplePagePortal()),
+      );
+    } catch (FirebaseAuthException) {
+      print('Senha invalida');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         appBar: AppBar(
           actions: [
             TextButton(
@@ -59,10 +70,9 @@ class LoginPage extends StatelessWidget {
                 Container(
                   child: Container(
                     child: Column(
-
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 5, top: 150),
+                          padding: EdgeInsets.only(left: 5, top: 100),
                           child: Column(
                             children: <Widget>[
                               TextFormField(
@@ -92,7 +102,7 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 5, top: 60),
+                          padding: EdgeInsets.only(left: 5, top: 50),
                         ),
                         TextFormField(
                           style: TextStyle(color: Colors.black87),
@@ -119,24 +129,19 @@ class LoginPage extends StatelessWidget {
                           obscureText: true,
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 5, top: 150),
+                          padding: EdgeInsets.only(left: 5, top: 140),
                         ),
                         SizedBox(
                           height: 80,
                           width: 80,
                           child: new FloatingActionButton(
-                            backgroundColor: Colors.white30,
-                            child: Text(
-                              "Entrar",
-                              style: TextStyle(
-                                  fontSize: 18.0, color: Colors.white),
-                            ),
-                            onPressed: () =>
-                                Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (_) => SamplePagevwco()),
-                            ),
-                          ),
+                              backgroundColor: Colors.white30,
+                              child: Text(
+                                "Entrar",
+                                style: TextStyle(
+                                    fontSize: 18.0, color: Colors.white),
+                              ),
+                              onPressed: () => {newlogin(context)}),
                         ),
                       ],
                     ),

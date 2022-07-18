@@ -21,7 +21,8 @@ class HomePage extends StatelessWidget {
                       child: IconButton(
                         tooltip: 'Rizzi Academy',
                         iconSize: 100,
-                        icon: const Icon(Icons.school_outlined),color: Colors.lightGreen,
+                        icon: const Icon(Icons.school_outlined),
+                        color: Colors.lightGreen,
                         onPressed: () {
                           html.window.open(
                               'https://www.rizziacademy.com.br/login/index.php/',
@@ -37,7 +38,8 @@ class HomePage extends StatelessWidget {
                       child: IconButton(
                         tooltip: 'Rizzi Consulting',
                         iconSize: 100,
-                        icon: const Icon(Icons.home_outlined),color: Colors.greenAccent,
+                        icon: const Icon(Icons.home_outlined),
+                        color: Colors.greenAccent,
                         onPressed: () {
                           html.window.open(
                               'https://rizziconsulting.com.br/', "_blank");

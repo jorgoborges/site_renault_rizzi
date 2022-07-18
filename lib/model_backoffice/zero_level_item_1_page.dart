@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:site_renault_rizzi/interface/class.pessoa.dart';
+import 'package:site_renault_rizzi/model_class_cad_full/cad_pessoa.dart';
 
 class zeroLevelItem1Page extends StatelessWidget {
   final TextEditingController _controladorprimeironome =

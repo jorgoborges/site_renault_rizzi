@@ -1,23 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
-import 'package:site_renault_rizzi/login/login_page.dart';
+import 'package:site_renault_rizzi/login/login_home.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_3_page.dart';
-import 'package:site_renault_rizzi/model_vwco/home_page.dart';
-import 'package:site_renault_rizzi/model_vwco/one_level_item_1_page.dart';
+import 'package:site_renault_rizzi/views/user_form.dart';
+import 'package:site_renault_rizzi/views/user_list.dart';
+import '../model_power_bi_vwco/home_page.dart';
+import '../model_power_bi_vwco/one_level_item_1_page.dart';
 
 void main() {
-  runApp(SamplePagevwco());
+  runApp(SamplePagePortal());
 }
 
-class SamplePagevwco extends StatefulWidget {
+class SamplePagePortal extends StatefulWidget {
   @override
-  _SamplePagevwcoState createState() => _SamplePagevwcoState();
+  _SamplePagePortalState createState() => _SamplePagePortalState();
 }
 
-class _SamplePagevwcoState extends State<SamplePagevwco> {
+class _SamplePagePortalState extends State<SamplePagePortal> {
   static const MaterialColor themeBlack = MaterialColor(
     _themeBlackPrimaryValue,
     <int, Color>{
@@ -89,7 +91,12 @@ class _SamplePagevwcoState extends State<SamplePagevwco> {
 
       case '/oneLevelItem1':
         return oneLevelItem1Page();
-      case '/oneLevelItem2':
+
+      case '/userform':
+        return UserForm();
+
+      case '/userlist':
+        return UserList();
     }
     return null;
   }
@@ -116,14 +123,14 @@ class MyScaffold extends StatelessWidget {
           route: '/zeroLevelItem1',
         ),
         AdminMenuItem(
-          title: 'Cadastro Parceiros',
-          icon: Icons.business_outlined,
-          route: '/zeroLevelItem2',
+          title: 'Lista de Usuários Cadastrados',
+          icon: Icons.list,
+          route: '/userlist',
         ),
         AdminMenuItem(
-          title: 'Liberação Senha',
-          icon: Icons.key_outlined,
-          route: '/zeroLevelItem3',
+          title: 'Formulário Cadastro de Usuários',
+          icon: Icons.add,
+          route: '/userform',
         ),
       ],
     ),
@@ -344,7 +351,7 @@ class MyScaffold extends StatelessWidget {
           ),
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => LoginPage())),
+                MaterialPageRoute(builder: (_) => LoginHome())),
             icon: const Icon(Icons.exit_to_app_outlined),
             label: const Text('Sair'),
             style: ElevatedButton.styleFrom(primary: const Color(0xff041e42)),
