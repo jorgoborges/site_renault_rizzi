@@ -5,8 +5,6 @@ import 'package:site_renault_rizzi/login/login_home.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_1_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_2_page.dart';
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_3_page.dart';
-import 'package:site_renault_rizzi/views/user_form.dart';
-import 'package:site_renault_rizzi/views/user_list.dart';
 import '../model_power_bi_vwco/home_page.dart';
 import '../model_power_bi_vwco/one_level_item_1_page.dart';
 
@@ -91,12 +89,6 @@ class _SamplePagePortalState extends State<SamplePagePortal> {
 
       case '/oneLevelItem1':
         return oneLevelItem1Page();
-
-      case '/userform':
-        return UserForm();
-
-      case '/userlist':
-        return UserList();
     }
     return null;
   }
@@ -114,27 +106,6 @@ class MyScaffold extends StatelessWidget {
 
   final List<AdminMenuItem> _sideBarItems = const [
     AdminMenuItem(
-      title: 'BackOffice',
-      icon: Icons.admin_panel_settings_outlined,
-      children: [
-        AdminMenuItem(
-          title: 'Cadastro Pessoa**',
-          icon: Icons.person_pin_outlined,
-          route: '/zeroLevelItem1',
-        ),
-        AdminMenuItem(
-          title: 'Lista de Usuários Cadastrados',
-          icon: Icons.list,
-          route: '/userlist',
-        ),
-        AdminMenuItem(
-          title: 'Formulário Cadastro de Usuários',
-          icon: Icons.add,
-          route: '/userform',
-        ),
-      ],
-    ),
-    AdminMenuItem(
       title: 'Control Tower',
       icon: Icons.cell_tower,
       children: [
@@ -149,7 +120,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Marcha lenta',
+              title: 'Marcha Lenta',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -191,7 +162,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Top 10 veículos com maior consumo',
+              title: 'Top 10 Veículos com Maior Consumo',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -206,7 +177,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Acompanhamento do consumo por veículo',
+              title: 'Acompanhamento do Consumo por Veículo',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -223,7 +194,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Monitoramento da Saúde dos ativos',
+              title: 'Monitoramento da Saúde dos Ativos',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -249,46 +220,383 @@ class MyScaffold extends StatelessWidget {
             ),
           ],
         ),
+        AdminMenuItem(
+          title: 'Confiabilidade de Manutenção (Qebra por Km)',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+          children: [
+            AdminMenuItem(
+              title: 'Quebra por KM - Geral',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Top 10 Grupos e Subgrupos',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Análise Crítica de Ofensores',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Acompanhamento Falhas em Garantia',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Melhoria na Disponibilidade do Veículo',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+          ],
+        ),
+        AdminMenuItem(
+          title: 'Serviços (Desempenho do Produto)',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+          children: [
+            AdminMenuItem(
+              title: 'Custo de Operação do Veículo',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Aplicação de Peças e Serviços',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Estrafificação por modelo e ano (5 anos)',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Durabilidade - Peças Aplicadas',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Acompanhamento - Custo de Operação (Peças)',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+          ],
+        ),
+        AdminMenuItem(
+          title: 'Gestão de Compomentes',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+          children: [
+            AdminMenuItem(
+              title: 'Estratificação por Compomente Modelo ',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Análise 1ª Vida - Não Genuína',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Análise 2ª Vida - Não Genuína',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Desempenho por Compomente',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Treinamento Sob Demanda',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Melhorias nos Intervalos de Manutenção',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+          ],
+        ),
+        AdminMenuItem(
+          title: 'CPK - Peças',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+          children: [
+            AdminMenuItem(
+              title: 'Consumo do Veículo',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Estratificação por Preço e Marca',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Avaliação de Volume x Aplicação',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Desempenho - CPK',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Pacotes de Peças por Grupo - Top 20',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Pacotes de Peças',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+          ],
+        ),
+        AdminMenuItem(
+          title: 'Gestão de Pneus',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+          children: [
+            AdminMenuItem(
+              title: 'Compra (Fornecedor / Km mádio / Preço Unitário / CPK',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Itendtificação de Pneus e Controle',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title:
+                  'Montagem(Como;Característica,Ex.Dianteira não Monta Recapados',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title:
+                  'Controle (Coleta, Histórico de Dados;Calibragem;Alinhamento/Balanceamento;Rodízios;Profundidade dos Sulcos;Cortes;etc ',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title:
+                  'Gestão (Custo total de Manutenção, Custo Aplicado dos pneus;Gastos com pneus na estrada;Índice de sucateamento)',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title:
+                  'Descarte (Ex. Vendidos na segunda recapagem;podendo ainda ser recapados;pneus que não servem vão para o sucateiro especializado)',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+          ],
+        ),
+        AdminMenuItem(
+          title: 'Gestão de Disponibilidade', //09
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+          children: [
+            AdminMenuItem(
+              title: 'Frota',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Fluxo de Transporte',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Garantia de Disponibilidade',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+          ],
+        ),
       ],
     ),
     AdminMenuItem(
-      title: 'Gestão',
-      icon: Icons.work_rounded,
+      title: 'Gestão de Ativos',
+      icon: Icons.business_center_outlined,
+      children: [
+        AdminMenuItem(
+          title: 'Visão Geral da Frota',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+        AdminMenuItem(
+          title: 'Gastos x Metas',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+        AdminMenuItem(
+          title: 'Operação da Frota',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+        AdminMenuItem(
+          title: 'Desenvolvimento da Frota',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+        AdminMenuItem(
+          title: 'Resumo de Contas',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+        AdminMenuItem(
+          title: 'Informação de Contas',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+        AdminMenuItem(
+          title: 'Tendência da Moeda (Financeiro)',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+        AdminMenuItem(
+          title: 'Previsão no Ano Corrente',
+          route: '/',
+          icon: Icons.subscriptions_outlined,
+        ),
+      ],
+    ),
+    AdminMenuItem(
+      title: 'Gestão Estratégica',
+      icon: Icons.network_check_outlined,
       children: [
         AdminMenuItem(
           title: 'Gestão VN',
           route: '/',
-          icon: Icons.subscriptions_outlined,
+          icon: Icons.bookmark_added_outlined,
           children: [
             AdminMenuItem(
-              title: 'Gestão VN-1',
+              title: 'Macroeconômica',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
-            )
+            ),
+            AdminMenuItem(
+              title: 'Análise Concorrência',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'RoadMap',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Business Plan ',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Vitrine P&S',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Interação Cliente',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Gestão atividades/ Temperatura de Campo',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
           ],
         ),
         AdminMenuItem(
-          title: 'Gestão PV',
+          title: 'Gestão pv',
           route: '/',
-          icon: Icons.subscriptions_outlined,
+          icon: Icons.bookmark_added_outlined,
           children: [
             AdminMenuItem(
-              title: 'Gestão PV-1',
+              title: 'Macroeconômica',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
-            )
+            ),
+            AdminMenuItem(
+              title: 'Análise Concorrência',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'RoadMap',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Business Plan ',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Vitrine P&S',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Interação Cliente',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Gestão atividades/ Temperatura de Campo',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
           ],
         ),
         AdminMenuItem(
           title: 'Gestão SN',
           route: '/',
-          icon: Icons.subscriptions_outlined,
+          icon: Icons.bookmark_added_outlined,
           children: [
             AdminMenuItem(
-              title: 'Gestão SN-1-1',
+              title: 'Macroeconômica',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
-            )
+            ),
+            AdminMenuItem(
+              title: 'Análise Concorrência',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'RoadMap',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Business Plan ',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Vitrine P&S',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Interação Cliente',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
+            AdminMenuItem(
+              title: 'Gestão atividades/ Temperatura de Campo',
+              route: '/',
+              icon: Icons.subdirectory_arrow_right,
+            ),
           ],
         ),
       ],
@@ -320,35 +628,35 @@ class MyScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFF041e42),
         actions: [
-          PopupMenuButton<AdminMenuItem>(
-            child: const Icon(Icons.account_circle),
-            itemBuilder: (context) {
-              return _adminMenuItems.map((AdminMenuItem item) {
-                return PopupMenuItem<AdminMenuItem>(
-                  value: item,
-                  child: Row(
-                    children: [
-                      Icon(item.icon),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          item.title,
-                          style: const TextStyle(
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }).toList();
-            },
-            onSelected: (item) {
-              print(
-                  'actions: onSelected(): title = ${item.title}, route = ${item.route}');
-              Navigator.of(context).pushNamed(item.route!);
-            },
-          ),
+          // PopupMenuButton<AdminMenuItem>(
+          //    child: const Icon(Icons.account_circle),
+          //    itemBuilder: (context) {
+          ////     return _adminMenuItems.map((AdminMenuItem item) {
+          //     return PopupMenuItem<AdminMenuItem>(
+          //       value: item,
+          //       child: Row(
+          //         children: [
+          //          Icon(item.icon),
+          //         Padding(
+          //       padding: const EdgeInsets.only(left: 8.0),
+          //       child: Text(
+          //        item.title,
+          //       style: const TextStyle(
+          //         fontSize: 14,
+          //        ),
+          //       ),
+          //     ),
+          //    ],
+          //   ),
+          //   );
+          //     }).toList();
+          //    },
+          //     onSelected: (item) {
+          //       print(
+          //    'actions: onSelected(): title = ${item.title}, route = ${item.route}');
+          //       Navigator.of(context).pushNamed(item.route!);
+          //     },
+          //       ),
           ElevatedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
                 MaterialPageRoute(builder: (_) => LoginHome())),
@@ -356,6 +664,7 @@ class MyScaffold extends StatelessWidget {
             label: const Text('Sair'),
             style: ElevatedButton.styleFrom(primary: const Color(0xff041e42)),
           ),
+
           TextButton(
             onPressed: () async {},
             style: TextButton.styleFrom(
@@ -401,19 +710,25 @@ class MyScaffold extends StatelessWidget {
           }
         },
         header: Container(
-          height: 25,
+          height: 30,
           width: double.infinity,
-          color: const Color(0xffeceff1),
+          color: const Color(0xff007a33),
+          child: const Center(
+            child: Text('RMS - RIZZI MANAGEMENT SYSTEM',
+                style: TextStyle(
+                  color: Colors.white,
+                )),
+          ),
         ),
         footer: Container(
           height: 30,
           width: double.infinity,
-          color: const Color(0xffeceff1),
+          color: const Color(0xff007a33),
           child: const Center(
             child: Text(
               'Rizzi Consulting Ⓡ 2000|2022',
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),

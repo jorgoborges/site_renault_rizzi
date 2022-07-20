@@ -22,7 +22,7 @@ class zeroLevelItem3Page extends StatelessWidget {
         height: 800,
         color: const Color(0xFFffff8e1),
         alignment: Alignment.center,
-        padding: EdgeInsets.only(left: 20, top: 10),
+        padding: const EdgeInsets.only(left: 20, top: 10),
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(30.0),
           child: Column(

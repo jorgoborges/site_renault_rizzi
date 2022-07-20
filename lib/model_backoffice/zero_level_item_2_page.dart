@@ -2,7 +2,6 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:site_renault_rizzi/model_class_cad_full/cad_pessoa.dart';
 
 class zeroLevelItem2Page extends StatelessWidget {
@@ -20,7 +19,7 @@ class zeroLevelItem2Page extends StatelessWidget {
       route: '/zeroLevelItem2',
       body: Container(
         height: 800,
-        color: const Color(0xFFffff8e1),
+        color: const Color(0xffffff8e1),
         alignment: Alignment.center,
         padding: EdgeInsets.only(left: 20, top: 10),
         child: SingleChildScrollView(
