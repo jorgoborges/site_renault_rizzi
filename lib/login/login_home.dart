@@ -63,7 +63,7 @@ class LoginHome extends StatelessWidget {
             child: FittedBox(
               alignment: Alignment.center,
               child: Image(
-                image: AssetImage("assets/images/control.PNG"),
+                image: AssetImage("assets/images/RizziControlTower.png"),
                 fit: BoxFit.contain,
               ),
             ),
