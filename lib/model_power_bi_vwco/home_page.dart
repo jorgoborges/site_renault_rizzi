@@ -9,12 +9,16 @@ class HomePage extends StatelessWidget {
     return MyScaffold(
       route: '/homeoardPage',
       body: Container(
-          height: 400,
-          width: 400,
+          height: 300,
+          width: 300,
+          padding: EdgeInsets.only(left: 100, top: 50),
           alignment: Alignment.center,
           child: Column(
             children: <Widget>[
-              Expanded(child: Container()),
+              Expanded(
+                  child: Container(
+                width: 50,
+              )),
               Row(
                   children: [
                     Expanded(
@@ -22,7 +26,7 @@ class HomePage extends StatelessWidget {
                         tooltip: 'Rizzi Academy',
                         iconSize: 100,
                         icon: const Icon(Icons.school_outlined),
-                        color: Colors.lightGreen,
+                        color: Colors.black,
                         onPressed: () {
                           html.window.open(
                               'https://www.rizziacademy.com.br/login/index.php/',
@@ -32,14 +36,14 @@ class HomePage extends StatelessWidget {
                     ),
                     Expanded(
                         child: Container(
-                      width: 50,
+                      width: 80,
                     )),
                     Expanded(
                       child: IconButton(
                         tooltip: 'Rizzi Consulting',
                         iconSize: 100,
                         icon: const Icon(Icons.home_outlined),
-                        color: Colors.greenAccent,
+                        color: Colors.black,
                         onPressed: () {
                           html.window.open(
                               'https://rizziconsulting.com.br/', "_blank");

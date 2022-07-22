@@ -16,9 +16,7 @@ class oneLevelItem1Page extends StatelessWidget {
         alignment: Alignment.center,
         padding: EdgeInsets.only(left: 20, top: 50),
         child: IconButton(
-
           tooltip: 'Power Bi',
-
           iconSize: 300,
           icon: const Icon(Icons.insert_chart_outlined),
           color: Colors.black,

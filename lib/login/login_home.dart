@@ -63,22 +63,23 @@ class LoginHome extends StatelessWidget {
             child: FittedBox(
               alignment: Alignment.center,
               child: Image(
-                image: AssetImage("assets/images/logoR.PNG"),
-                fit: BoxFit.contain,
+                image: AssetImage("assets/images/rizzi.PNG"),
+                fit: BoxFit.fill,
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 30, right: 30),
+            padding: EdgeInsets.only(left: 100, right:100),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   child: Container(
+
                     child: Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 5, top: 60),
+                          padding: EdgeInsets.only(left: 5, top: 50),
                           child: Column(
                             children: <Widget>[
                               TextFormField(
