@@ -45,7 +45,7 @@ class LoginHome extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     child: Image(
-                      image: AssetImage("assets/images/logo.PNG"),
+                      image: AssetImage("assets/images/image1.png"),
                       fit: BoxFit.fill,
                       height: 100,
                       width: 100,
@@ -61,113 +61,105 @@ class LoginHome extends StatelessWidget {
         body: Stack(children: [
           SizedBox.expand(
             child: FittedBox(
-              alignment: Alignment.center,
               child: Image(
-                image: AssetImage("assets/images/rizzi.PNG"),
-                fit: BoxFit.fill,
+                image: AssetImage("assets/images/image2.png"),
+                fit: BoxFit.contain,
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 100, right:100),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  child: Container(
-
+            padding: const EdgeInsets.only(left: 228, right: 320),
+            child: Container(
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 93),
                     child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 5, top: 50),
-                          child: Column(
-                            children: <Widget>[
-                              TextFormField(
-                                style: TextStyle(color: Colors.black87),
-                                controller: _controladorEmail,
-                                decoration: InputDecoration(
-                                  hintStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: "WorkSansLight",
-                                      fontSize: 17.0),
-                                  filled: true,
-                                  fillColor: Colors.white24,
-                                  hintText: "E-mail",
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(90.0)),
-                                      borderSide: BorderSide(
-                                          color: Colors.white24, width: 0.5)),
-                                  prefixIcon: const Icon(
-                                    Icons.email,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                keyboardType: TextInputType.emailAddress,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 5, top: 30),
-                        ),
+                      children: <Widget>[
                         TextFormField(
                           style: TextStyle(color: Colors.black87),
-                          controller: _controladorSenha,
+                          controller: _controladorEmail,
                           decoration: InputDecoration(
-                              hintStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: "WorkSansLight",
-                                  fontSize: 17.0),
-                              filled: true,
-                              fillColor: Colors.white24,
-                              hintText: "Senha",
-                              border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(90.0)),
-                                  borderSide: BorderSide(
-                                      color: Colors.white24, width: 0.5)),
-                              prefixIcon: const Icon(
-                                Icons.lock_outline,
+                            hintStyle: TextStyle(
                                 color: Colors.black,
-                              ),
-                              suffixIcon: GestureDetector(
-                                child: Icon(
-                                  _verPassword == false
-                                      ? Icons.visibility_off
-                                      : Icons.visibility,
-                                  color: Colors.white,
-                                ),
-
-                                //onTap: ()
-                                //setState(() {
-                                // _verPassword = !_verPassword;
-                                //     });
-                                //     },
-                              )),
-                          keyboardType: TextInputType.visiblePassword,
-                          obscureText: true,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 5, top: 140),
-                        ),
-                        SizedBox(
-                          height: 80,
-                          width: 90,
-                          child: new FloatingActionButton(
-                              backgroundColor: Colors.black,
-                              child: Text(
-                                "Entrar",
-                                style: TextStyle(
-                                    fontSize: 18.0, color: Colors.white),
-                              ),
-                              onPressed: () => {newlogin(context)}),
+                                fontFamily: "WorkSansLight",
+                                fontSize: 17.0),
+                            filled: true,
+                            fillColor: Colors.white24,
+                            hintText: "E-mail",
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(90.0)),
+                                borderSide: BorderSide(
+                                    color: Colors.white24, width: 0.5)),
+                            prefixIcon: const Icon(
+                              Icons.email,
+                              color: Colors.black,
+                            ),
+                          ),
+                          keyboardType: TextInputType.emailAddress,
                         ),
                       ],
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.only(top: 30),
+                  ),
+                  TextFormField(
+                    style: TextStyle(color: Colors.black87),
+                    controller: _controladorSenha,
+                    decoration: InputDecoration(
+                        hintStyle: TextStyle(
+                            color: Colors.black,
+                            fontFamily: "WorkSansLight",
+                            fontSize: 17.0),
+                        filled: true,
+                        fillColor: Colors.white24,
+                        hintText: "Senha",
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(90.0)),
+                            borderSide:
+                                BorderSide(color: Colors.white24, width: 0.5)),
+                        prefixIcon: const Icon(
+                          Icons.lock_outline,
+                          color: Colors.black,
+                        ),
+                        suffixIcon: GestureDetector(
+                          child: Icon(
+                            _verPassword == false
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.white,
+                          ),
+
+                          //onTap: ()
+                          //setState(() {
+                          // _verPassword = !_verPassword;
+                          //     });
+                          //     },
+                        )),
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5, top: 100),
+                  ),
+                  SizedBox(
+                    height: 80,
+                    width: 90,
+                    child: new FloatingActionButton(
+                        backgroundColor: Colors.black,
+                        child: Text(
+                          "Entrar",
+                          style: TextStyle(fontSize: 18.0, color: Colors.white),
+                        ),
+                        onPressed: () => {newlogin(context)}),
+                  ),
+                ],
+              ),
             ),
           ),
         ]));

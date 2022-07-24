@@ -675,7 +675,7 @@ class MyScaffold extends StatelessWidget {
               children: <Widget>[
                 Container(
                   child: Image(
-                    image: AssetImage("assets/images/logo.PNG"),
+                    image: AssetImage("assets/images/image1.png"),
                     fit: BoxFit.fill,
                     height: 100,
                     width: 100,
