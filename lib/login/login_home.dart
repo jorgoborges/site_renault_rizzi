@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -53,7 +54,7 @@ class LoginHome extends StatelessWidget {
           ),
         ],
         backgroundColor: const Color(0xff041e42),
-        title: const Text('RMS - RIZZI MANAGEMENT SYSTEM'),
+        title: const AutoSizeText('RMS - RIZZI MANAGEMENT SYSTEM'),
       ),
       body: Stack(children: [
         Container(
@@ -63,8 +64,8 @@ class LoginHome extends StatelessWidget {
           ),
           child: Image(
             image: AssetImage("assets/images/image2.png.png"),
-            fit: BoxFit.fill,
-            width:800,
+            fit: BoxFit.contain,
+            width: 800,
             height: 400,
           ),
         ),
@@ -149,79 +150,6 @@ class LoginHome extends StatelessWidget {
                             ),
                             onPressed: () => {newlogin(context)}),
                       )),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Container(
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(right: 20, left: 20, top: 5),
-                          child: RichText(
-                            text: TextSpan(
-                              children: [
-                                WidgetSpan(
-                                  child: Icon(
-                                    Icons.whatsapp_outlined,
-                                    size: 25,
-                                    color: const Color(0xff007a33),
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: "+ 55 (19) 3465-2318.",
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Container(
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(right: 20, left: 20, top: 5),
-                          child: RichText(
-                            text: TextSpan(
-                              children: [
-                                WidgetSpan(
-                                  child: Icon(Icons.email,
-                                      size: 25, color: const Color(0xff007a33)),
-                                ),
-                                TextSpan(
-                                  text: "contato@rizziconsulting.com.br",
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Container(
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(right: 20, left: 20, top: 5),
-                          child: RichText(
-                            text: TextSpan(
-                              children: [
-                                WidgetSpan(
-                                  child: Icon(Icons.location_on_outlined,
-                                      size: 25, color: const Color(0xff007a33)),
-                                ),
-                                TextSpan(
-                                  text:
-                                      "Rua José Ferreira Aranha, 251 - Americana - SP",
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                   Row(
