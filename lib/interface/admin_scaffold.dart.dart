@@ -499,7 +499,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Vitrine P&S',
+              title: 'Vitrine e Acessórios',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -541,7 +541,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Vitrine Acessórios',
+              title: 'Vitrine P&S e Acessórios',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
