@@ -71,88 +71,86 @@ class LoginHome extends StatelessWidget {
         Expanded(
           child: Container(
             alignment: Alignment.center,
-            child: SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Container(
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(
-                          left: 80,
-                          top: 290,
-                        ),
-                        child: TextField(
-                          controller: _controladorEmail,
-                          decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white24,
-                              hintText: 'Email',
-                              border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(90.0)),
-                                  borderSide: BorderSide(
-                                      color: Colors.red, width: 0.5)),
-                              prefixIcon: const Icon(
-                                Icons.email,
-                                color: Colors.black,
-                              )),
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                      )),
-                      Padding(
-                          padding: EdgeInsets.only(
-                        right: 20,
-                      )),
-                      Expanded(
-                          child: Container(
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(
-                          right: 80,
-                          top: 290,
-                        ),
-                        child: TextField(
-                          controller: _controladorSenha,
-                          decoration: InputDecoration(
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(
+                        left: 80,
+                        top: 430,
+                      ),
+                      child: TextField(
+                        controller: _controladorEmail,
+                        decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white24,
-                            hintText: 'Senha',
+                            hintText: 'Email',
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(90.0)),
-                                borderSide: BorderSide(
-                                    color: Colors.white24, width: 0.5)),
+                                borderSide:
+                                    BorderSide(color: Colors.red, width: 0.5)),
                             prefixIcon: const Icon(
-                              Icons.lock_outline,
+                              Icons.email,
                               color: Colors.black,
-                            ),
+                            )),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                    )),
+                    Padding(
+                        padding: EdgeInsets.only(
+                      right: 20,
+                    )),
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(
+                        right: 80,
+                        top: 430,
+                      ),
+                      child: TextField(
+                        controller: _controladorSenha,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white24,
+                          hintText: 'Senha',
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(90.0)),
+                              borderSide: BorderSide(
+                                  color: Colors.white24, width: 0.5)),
+                          prefixIcon: const Icon(
+                            Icons.lock_outline,
+                            color: Colors.black,
                           ),
-                          keyboardType: TextInputType.visiblePassword,
-                          obscureText: true,
                         ),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Container(
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(right: 20, left: 20, top: 50),
-                        child: new FloatingActionButton(
-                            backgroundColor: Colors.black,
-                            child: Text(
-                              "Entrar",
-                              style: TextStyle(
-                                  fontSize: 18.0, color: Colors.white),
-                            ),
-                            onPressed: () => {newlogin(context)}),
-                      )),
-                    ],
-                  )
-                ],
-              ),
+                        keyboardType: TextInputType.visiblePassword,
+                        obscureText: true,
+                      ),
+                    )),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(right: 20, left: 20, top: 50),
+                      child: new FloatingActionButton(
+                          backgroundColor: Colors.black,
+                          child: Text(
+                            "Entrar",
+                            style:
+                                TextStyle(fontSize: 18.0, color: Colors.white),
+                          ),
+                          onPressed: () => {newlogin(context)}),
+                    )),
+                  ],
+                )
+              ],
             ),
           ),
         ),
