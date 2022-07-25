@@ -68,7 +68,50 @@ class LoginHome extends StatelessWidget {
             height: 400,
           ),
         ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(
+                        left: 80,
+                        top: 430,
+                      ),
+                      child: TextField(
+                        controller: _controladorEmail,
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white24,
+                            hintText: 'Email',
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(90.0)),
+                                borderSide:
+                                    BorderSide(color: Colors.red, width: 0.5)),
+                            prefixIcon: const Icon(
+                              Icons.email,
+                              color: Colors.black,
+                            )),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                    )),
+                    Padding(
+                        padding: EdgeInsets.only(
+                      right: 20,
+                    )),
 
+                  ],
+                ),
+
+              ],
+            ),
+          ),
+        ),
       ]),
     );
   }
