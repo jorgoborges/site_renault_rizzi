@@ -68,14 +68,14 @@ class LoginHome extends StatelessWidget {
             height: 400,
           ),
         ),
-        Expanded(
+        Flexible(
           child: Container(
             alignment: Alignment.center,
             child: Column(
               children: <Widget>[
                 Row(
                   children: [
-                    Expanded(
+                    Flexible(
                         child: Container(
                       alignment: Alignment.center,
                       padding: EdgeInsets.only(
