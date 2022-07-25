@@ -24,148 +24,139 @@ class LoginHome extends StatelessWidget {
         content: Text('Autenticação inválida.'),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      print('Senha invalida');
     }
   }
 
-  bool _verPassword = false;
-
   @override
   Widget build(BuildContext context) {
-    bool isScreenWide = MediaQuery.of(context).size.width >= 4000 ;
     return Scaffold(
-        appBar: AppBar(
-          actions: [
-            TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.all(15),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Container(
-                    child: Image(
-                      image: AssetImage("assets/images/image1.png.png"),
-                      fit: BoxFit.fill,
-                      height: 100,
-                      width: 100,
-                    ),
-                  ),
-                ],
-              ),
+      appBar: AppBar(
+        actions: [
+          TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(15),
             ),
-          ],
-          backgroundColor: const Color(0xff041e42),
-          title: const Text('RMS - RIZZI MANAGEMENT SYSTEM'),
-        ),
-        body: Stack(children: [
-          const SizedBox.expand(
-            child: FittedBox(
-              child: Image(
-                image: AssetImage("assets/images/image2.png.png"),
-                fit: BoxFit.fill,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  child: Image(
+                    image: AssetImage("assets/images/image1.png.png"),
+                    fit: BoxFit.fill,
+                    height: 100,
+                    width: 100,
+                  ),
+                ),
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 150, right: 130),
-            child: Container(
-              alignment: Alignment.center,
-              child: Flex(
-                direction: isScreenWide ? Axis.horizontal : Axis.vertical,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 93),
-                    child: Column(
-                      children: <Widget>[
-                        TextFormField(
-                          style: TextStyle(color: Colors.black87),
+        ],
+        backgroundColor: const Color(0xff041e42),
+        title: const Text('RMS - RIZZI MANAGEMENT SYSTEM'),
+      ),
+      body: Stack(children: [
+        Container(
+          alignment: Alignment.topCenter,
+          padding: EdgeInsets.only(
+            top: 3,
+          ),
+          child: Image(
+            image: AssetImage("assets/images/image2.png.png"),
+            fit: BoxFit.fill,
+            width: 900,
+            height: 400,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: [
+                      Expanded(
+                          child: Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(
+                          left: 80,
+                          top: 290,
+                        ),
+                        child: TextField(
                           controller: _controladorEmail,
                           decoration: InputDecoration(
-                            hintStyle: TextStyle(
+                              filled: true,
+                              fillColor: Colors.white24,
+                              hintText: 'Email',
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(90.0)),
+                                  borderSide: BorderSide(
+                                      color: Colors.red, width: 0.5)),
+                              prefixIcon: const Icon(
+                                Icons.email,
                                 color: Colors.black,
-                                fontFamily: "WorkSansLight",
-                                fontSize: 17.0),
+                              )),
+                          keyboardType: TextInputType.emailAddress,
+                        ),
+                      )),
+                      Padding(
+                          padding: EdgeInsets.only(
+                        right: 20,
+                      )),
+                      Expanded(
+                          child: Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(
+                          right: 80,
+                          top: 290,
+                        ),
+                        child: TextField(
+                          controller: _controladorSenha,
+                          decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white24,
-                            hintText: "E-mail",
+                            hintText: 'Senha',
                             border: OutlineInputBorder(
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(90.0)),
+                                    BorderRadius.all(Radius.circular(90.0)),
                                 borderSide: BorderSide(
                                     color: Colors.white24, width: 0.5)),
                             prefixIcon: const Icon(
-                              Icons.email,
+                              Icons.lock_outline,
                               color: Colors.black,
                             ),
                           ),
-                          keyboardType: TextInputType.emailAddress,
+                          keyboardType: TextInputType.visiblePassword,
+                          obscureText: true,
                         ),
-                      ],
-                    ),
+                      )),
+                    ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 30),
-                  ),
-                  TextFormField(
-                    style: TextStyle(color: Colors.black87),
-                    controller: _controladorSenha,
-                    decoration: InputDecoration(
-                        hintStyle: TextStyle(
-                            color: Colors.black,
-                            fontFamily: "WorkSansLight",
-                            fontSize: 17.0),
-                        filled: true,
-                        fillColor: Colors.white24,
-                        hintText: "Senha",
-                        border: OutlineInputBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(90.0)),
-                            borderSide:
-                            BorderSide(color: Colors.white24, width: 0.5)),
-                        prefixIcon: const Icon(
-                          Icons.lock_outline,
-                          color: Colors.black,
-                        ),
-                        suffixIcon: GestureDetector(
-                          child: Icon(
-                            _verPassword == false
-                                ? Icons.visibility_off
-                                : Icons.visibility,
-                            color: Colors.white,
-                          ),
-
-                          //   onTap: () {
-                          //    setState(())
-                          //    {
-                          //   _verPassword = !_verPassword;
-                          //    }
-                          //    }
-
-                        )),
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 5, top: 100),
-                  ),
-                  SizedBox(
-                    height: 80,
-                    width: 90,
-                    child: new FloatingActionButton(
-                        backgroundColor: Colors.black,
-                        child: Text(
-                          "Entrar",
-                          style: TextStyle(fontSize: 18.0, color: Colors.white),
-                        ),
-                        onPressed: () => {newlogin(context)}),
-                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                          child: Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(right: 20, left: 20, top: 50),
+                        child: new FloatingActionButton(
+                            backgroundColor: Colors.black,
+                            child: Text(
+                              "Entrar",
+                              style: TextStyle(
+                                  fontSize: 18.0, color: Colors.white),
+                            ),
+                            onPressed: () => {newlogin(context)}),
+                      )),
+                    ],
+                  )
                 ],
               ),
             ),
           ),
-        ]));
+        ),
+      ]),
+    );
   }
 }
