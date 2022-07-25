@@ -82,7 +82,7 @@ class LoginHome extends StatelessWidget {
                         left: 80,
                         top: 430,
                       ),
-                      child: TextField(
+                      child: TextFormField(
                         controller: _controladorEmail,
                         decoration: InputDecoration(
                             filled: true,
