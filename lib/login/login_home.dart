@@ -22,6 +22,7 @@ class LoginHome extends StatelessWidget {
     } catch (FirebaseAuthException) {
       const snackBar = SnackBar(
         content: Text('Autenticação inválida.'),
+        backgroundColor: const Color(0xFFB71C1C),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
@@ -59,24 +60,24 @@ class LoginHome extends StatelessWidget {
           Container(
             alignment: Alignment.topCenter,
             padding: EdgeInsets.only(
-              top: 3,
+              top: 5,
             ),
             child: Image(
               image: AssetImage("assets/images/image2.png.png"),
               fit: BoxFit.fill,
               height: 400,
-              width: 1000,
+              width: 900,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 150, right: 130),
+            padding: const EdgeInsets.only(left: 100, right: 100),
             child: Container(
               alignment: Alignment.center,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 420),
+                      padding: EdgeInsets.only(top: 410),
                       child: Column(
                         children: <Widget>[
                           TextFormField(
@@ -136,8 +137,8 @@ class LoginHome extends StatelessWidget {
                       padding: EdgeInsets.only(left: 5, top:80),
                     ),
                     SizedBox(
-                      height: 80,
-                      width: 90,
+                      height: 70,
+                      width: 80,
                       child: new FloatingActionButton(
                           backgroundColor: Colors.black,
                           child: Text(
