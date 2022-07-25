@@ -59,16 +59,16 @@ class LoginHome extends StatelessWidget {
           title: const Text('RMS - RIZZI MANAGEMENT SYSTEM'),
         ),
         body: Stack(children: [
-          SizedBox.expand(
+          const SizedBox.expand(
             child: FittedBox(
               child: Image(
                 image: AssetImage("assets/images/image2.png.png"),
-                fit: BoxFit.contain,
+                fit: BoxFit.fill,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 228, right: 320),
+            padding: const EdgeInsets.only(left: 100, right: 100),
             child: Container(
               alignment: Alignment.center,
               child: Column(
