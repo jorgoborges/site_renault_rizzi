@@ -65,8 +65,8 @@ class LoginHome extends StatelessWidget {
             child: Image(
               image: AssetImage("assets/images/image2.png.png"),
               fit: BoxFit.fill,
-              height: 400,
-              width: 900,
+              height: 390,
+              width: 1300,
             ),
           ),
           Padding(
@@ -77,7 +77,7 @@ class LoginHome extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 410),
+                      padding: EdgeInsets.only(top: 360),
                       child: Column(
                         children: <Widget>[
                           TextFormField(
@@ -134,17 +134,19 @@ class LoginHome extends StatelessWidget {
                       obscureText: true,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 5, top:80),
+                      padding: EdgeInsets.only(left: 5, top: 40),
                     ),
                     SizedBox(
-                      height: 70,
+                      height: 40,
                       width: 80,
-                      child: new FloatingActionButton(
-                          backgroundColor: Colors.black,
-                          child: Text(
-                            "Entrar",
-                            style:
-                                TextStyle(fontSize: 18.0, color: Colors.white),
+                      child: ElevatedButton(
+                          child: Text('Entrar'),
+                          style: ElevatedButton.styleFrom(
+                            primary: const Color(0xff041e42),
+                            elevation: 15,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(3))),
                           ),
                           onPressed: () => {newlogin(context)}),
                     ),
