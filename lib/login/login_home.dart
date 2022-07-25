@@ -64,7 +64,7 @@ class LoginHome extends StatelessWidget {
           child: Image(
             image: AssetImage("assets/images/image2.png.png"),
             fit: BoxFit.fill,
-            width: 1000,
+            width:800,
             height: 400,
           ),
         ),
