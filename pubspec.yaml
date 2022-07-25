@@ -126,8 +126,8 @@ flutter:
   assets:
 
 
-    - assets/images/image1.png
-    - assets/images/image2.png
+    - assets/images/image1.png.png
+    - assets/images/image2.png.png
 
 
 

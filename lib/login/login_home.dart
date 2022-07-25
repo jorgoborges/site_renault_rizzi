@@ -45,7 +45,7 @@ class LoginHome extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     child: Image(
-                      image: AssetImage("assets/images/image1.png"),
+                      image: AssetImage("assets/images/image1.png.png"),
                       fit: BoxFit.fill,
                       height: 100,
                       width: 100,
@@ -62,7 +62,7 @@ class LoginHome extends StatelessWidget {
           SizedBox.expand(
             child: FittedBox(
               child: Image(
-                image: AssetImage("assets/images/image2.png"),
+                image: AssetImage("assets/images/image2.png.png"),
                 fit: BoxFit.contain,
               ),
             ),
