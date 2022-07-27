@@ -111,7 +111,7 @@ class MyScaffold extends StatelessWidget {
       icon: Icons.cell_tower,
       children: [
         AdminMenuItem(
-          title: 'Operador de Operação ( Motorista )',
+          title: 'Gestão de Operação ( Motorista )',
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
