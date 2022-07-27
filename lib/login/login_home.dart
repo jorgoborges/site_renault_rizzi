@@ -150,6 +150,25 @@ class LoginHome extends StatelessWidget {
                           ),
                           onPressed: () => {newlogin(context)}),
                     ),
+                    SizedBox(
+                      width: 40,
+                      height: 40,
+                    ),
+                    SizedBox(
+                      height: 40,
+                      width:600,
+                      child: Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(right: 20, left: 20, top: 5),
+                        child: Text(
+                          'Rizzi Consulting Ⓡ 2000|2022 - Todos os Direitos Reservados.',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+
+                    ),
                   ],
                 ),
               ),
