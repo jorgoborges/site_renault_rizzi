@@ -7,6 +7,7 @@ import 'package:site_renault_rizzi/model_backoffice/zero_level_item_2_page.dart'
 import 'package:site_renault_rizzi/model_backoffice/zero_level_item_3_page.dart';
 import '../model_power_bi_vwco/home_page.dart';
 import '../model_power_bi_vwco/one_level_item_1_page.dart';
+import 'dart:html' as html;
 
 void main() {
   runApp(SamplePagePortal());
@@ -110,44 +111,44 @@ class MyScaffold extends StatelessWidget {
       icon: Icons.cell_tower,
       children: [
         AdminMenuItem(
-          title: 'Gestão de Operação',
+          title: 'Operador de Operação ( Motorista )',
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
             AdminMenuItem(
-              title: 'Excesso de Velocidade',
+              title: 'Excesso de Velocidade + Excesso de Velocidade na Chuva',
               route: '/oneLevelItem1',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Marcha Lenta',
+              title: 'Excesso de Marcha Lenta + Excesso de Marcha Lenta com A/C',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Veículo Engrenado sem Injeção de Combustível',
+              title: 'Banguela',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Condução com Velocidade Cruzeiro',
+              title: '% Faixa Verde Econômica',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Previsão',
+              title: 'Freada Brusca',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Condução do Trecho em Serra',
+              title: 'Excesso de RPM',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
           ],
         ),
         AdminMenuItem(
-          title: 'Gestão de Combustível ARLA',
+          title: 'Gestão de Combustível / ARLA',
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
@@ -188,21 +189,13 @@ class MyScaffold extends StatelessWidget {
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
-            AdminMenuItem(
-              title: 'Excesso de Velocidade',
-              route: '/',
-              icon: Icons.subdirectory_arrow_right,
-            ),
+
             AdminMenuItem(
               title: 'Monitoramento da Saúde dos Ativos',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
-            AdminMenuItem(
-              title: 'Plano Contrato de Manutenção',
-              route: '/',
-              icon: Icons.subdirectory_arrow_right,
-            ),
+
             AdminMenuItem(
               title: 'Planejamento das Manutenções',
               route: '/',
@@ -210,7 +203,7 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title: 'Performance dos Motoristas',
-              route: '/oneLevelItem5',
+              route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
@@ -221,7 +214,7 @@ class MyScaffold extends StatelessWidget {
           ],
         ),
         AdminMenuItem(
-          title: 'Confiabilidade de Manutenção (Qebra por Km)',
+          title: 'Confiabilidade de Manutenção ( Quebra por Km )',
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
@@ -253,7 +246,7 @@ class MyScaffold extends StatelessWidget {
           ],
         ),
         AdminMenuItem(
-          title: 'Serviços (Desempenho do Produto)',
+          title: 'Serviços ( Desempenho do Produto )',
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
@@ -268,7 +261,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Estrafificação por modelo e ano (5 anos)',
+              title: 'Estrafificação por modelo e ano ( 5 anos )',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -278,29 +271,29 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Acompanhamento - Custo de Operação (Peças)',
+              title: 'Acompanhamento - Custo de Operação ( Peças )',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
           ],
         ),
         AdminMenuItem(
-          title: 'Gestão de Compomentes',
+          title: 'Gestão de Componentes',
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
             AdminMenuItem(
-              title: 'Estratificação por Compomente Modelo ',
+              title: 'Estratificação por Compomente e Modelo ',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Análise 1ª Vida - Não Genuína',
+              title: 'Análise 1ª Vida - Genuína e Não Genuína',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Análise 2ª Vida - Não Genuína',
+              title: 'Análise 2ª Vida - Genuína e Não Genuína',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -332,7 +325,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Estratificação por Preço e Marca',
+              title: 'Estratificação por Preço e Modelo',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -364,7 +357,7 @@ class MyScaffold extends StatelessWidget {
           icon: Icons.subscriptions_outlined,
           children: [
             AdminMenuItem(
-              title: 'Compra (Fornecedor / Km mádio / Preço Unitário / CPK',
+              title: 'Compra ( Fornecedor / Km mádio / Preço Unitário / CPK )',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -375,25 +368,25 @@ class MyScaffold extends StatelessWidget {
             ),
             AdminMenuItem(
               title:
-                  'Montagem(Como;Característica,Ex.Dianteira não Monta Recapados',
+                  'Montagem ( Como; Característica, Ex. Dianteira não Monta Recapados )',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title:
-                  'Controle (Coleta, Histórico de Dados;Calibragem;Alinhamento/Balanceamento;Rodízios;Profundidade dos Sulcos;Cortes;etc ',
+                  'Controle ( Coleta, Histórico de Dados; Calibragem; Alinhamento / Balanceamento; Rodízios; Profundidade dos Sulcos; Cortes; etc )',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title:
-                  'Gestão (Custo total de Manutenção, Custo Aplicado dos pneus;Gastos com pneus na estrada;Índice de sucateamento)',
+                  'Gestão ( Custo total de Manutenção, Custo Aplicado dos pneus; Gastos com pneus na estrada; Índice de sucateamento )',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
               title:
-                  'Descarte (Ex. Vendidos na segunda recapagem;podendo ainda ser recapados;pneus que não servem vão para o sucateiro especializado)',
+                  'Descarte ( Ex. Vendidos na segunda recapagem; podendo ainda ser recapados; pneus que não servem vão para o sucateiro especializado )',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -458,7 +451,7 @@ class MyScaffold extends StatelessWidget {
           icon: Icons.subscriptions_outlined,
         ),
         AdminMenuItem(
-          title: 'Tendência da Moeda (Financeiro)',
+          title: 'Tendência da Moeda ( Financeiro )',
           route: '/',
           icon: Icons.subscriptions_outlined,
         ),
@@ -509,7 +502,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Gestão atividades/ Temperatura de Campo',
+              title: 'Gestão atividades / Temperatura de Campo',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -536,7 +529,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Business Plan ',
+              title: 'Business Plan',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -551,7 +544,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Gestão atividades/ Temperatura de Campo',
+              title: 'Gestão atividades / Temperatura de Campo',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -593,7 +586,7 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Gestão atividades/ Temperatura de Campo',
+              title: 'Gestão Atividades / Temperatura de Campo',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -657,12 +650,35 @@ class MyScaffold extends StatelessWidget {
           //       Navigator.of(context).pushNamed(item.route!);
           //     },
           //       ),
-          ElevatedButton.icon(
-            onPressed: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => LoginHome())),
+
+          IconButton(
+            tooltip: 'Sair',
+            iconSize: 25,
             icon: const Icon(Icons.exit_to_app_outlined),
-            label: const Text('Sair'),
-            style: ElevatedButton.styleFrom(primary: const Color(0xff041e42)),
+            color: Colors.white,
+              onPressed: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => LoginHome()))
+          ),
+          IconButton(
+            tooltip: 'Rizzi Academy',
+            iconSize: 25,
+            icon: const Icon(Icons.school_outlined),
+            color: Colors.white,
+            onPressed: () {
+              html.window.open(
+                  'https://www.rizziacademy.com.br/login/index.php/',
+                  "_blank");
+            },
+          ),
+          IconButton(
+            tooltip: 'Rizzi Consulting',
+            iconSize: 25,
+            icon: const Icon(Icons.home_outlined),
+            color: Colors.white,
+            onPressed: () {
+              html.window.open(
+                  'https://rizziconsulting.com.br/', "_blank");
+            },
           ),
 
           TextButton(
@@ -698,7 +714,7 @@ class MyScaffold extends StatelessWidget {
         ),
         activeTextStyle: const TextStyle(
           color: Colors.white,
-          fontSize: 12,
+          fontSize: 15,
         ),
         items: _sideBarItems,
         selectedRoute: route,
@@ -710,7 +726,7 @@ class MyScaffold extends StatelessWidget {
           }
         },
         header: Container(
-          height: 30,
+          height: 40,
           width: double.infinity,
           color: const Color(0xff007a33),
           child: const Center(
@@ -721,7 +737,7 @@ class MyScaffold extends StatelessWidget {
           ),
         ),
         footer: Container(
-          height: 30,
+          height: 40,
           width: double.infinity,
           color: const Color(0xff007a33),
           child: const Center(

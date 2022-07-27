@@ -9,50 +9,17 @@ class HomePage extends StatelessWidget {
     return MyScaffold(
       route: '/homeoardPage',
       body: Container(
-          height: 300,
-          width: 300,
-          padding: EdgeInsets.only(left: 100, top: 50),
+          height: 600,
+          width: 600,
+          padding: EdgeInsets.only(left: 300, top: 200),
           alignment: Alignment.center,
           child: Column(
             children: <Widget>[
               Expanded(
-                  child: Container(
-                width: 50,
-              )),
-              Row(
-                  children: [
-                    Expanded(
-                      child: IconButton(
-                        tooltip: 'Rizzi Academy',
-                        iconSize: 100,
-                        icon: const Icon(Icons.school_outlined),
-                        color: Colors.black,
-                        onPressed: () {
-                          html.window.open(
-                              'https://www.rizziacademy.com.br/login/index.php/',
-                              "_blank");
-                        },
-                      ),
-                    ),
-                    Expanded(
-                        child: Container(
-                      width: 80,
-                    )),
-                    Expanded(
-                      child: IconButton(
-                        tooltip: 'Rizzi Consulting',
-                        iconSize: 100,
-                        icon: const Icon(Icons.home_outlined),
-                        color: Colors.black,
-                        onPressed: () {
-                          html.window.open(
-                              'https://rizziconsulting.com.br/', "_blank");
-                        },
-                      ),
-                    ),
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center),
+                  child: Text('Bem Vindo ao Portal'),
+
+              ),
+
             ],
           )),
     );

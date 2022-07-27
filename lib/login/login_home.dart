@@ -81,7 +81,7 @@ class LoginHome extends StatelessWidget {
                       child: Column(
                         children: <Widget>[
                           TextFormField(
-                            style: TextStyle(color: Colors.black87),
+                            style: TextStyle(color: Colors.black),
                             controller: _controladorEmail,
                             decoration: InputDecoration(
                               hintStyle: TextStyle(
@@ -90,15 +90,15 @@ class LoginHome extends StatelessWidget {
                                   fontSize: 17.0),
                               filled: true,
                               fillColor: Colors.white24,
-                              hintText: "E-mail",
+                              hintText: "Email",
                               border: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(90.0)),
                                   borderSide: BorderSide(
-                                      color: Colors.white24, width: 0.5)),
+                                      color: Colors.white24, width: 0.9)),
                               prefixIcon: const Icon(
                                 Icons.email,
-                                color: Colors.black,
+                                color: const Color(0xff041e42),
                               ),
                             ),
                             keyboardType: TextInputType.emailAddress,
@@ -110,7 +110,7 @@ class LoginHome extends StatelessWidget {
                       padding: EdgeInsets.only(top: 30),
                     ),
                     TextFormField(
-                      style: TextStyle(color: Colors.black87),
+                      style: TextStyle(color: Colors.black),
                       controller: _controladorSenha,
                       decoration: InputDecoration(
                         hintStyle: TextStyle(
@@ -124,10 +124,10 @@ class LoginHome extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(90.0)),
                             borderSide:
-                                BorderSide(color: Colors.white24, width: 0.5)),
+                                BorderSide(color: Colors.white24, width: 0.9)),
                         prefixIcon: const Icon(
                           Icons.lock_outline,
-                          color: Colors.black,
+                          color: const Color(0xff041e42),
                         ),
                       ),
                       keyboardType: TextInputType.visiblePassword,
