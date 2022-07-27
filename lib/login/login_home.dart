@@ -77,7 +77,7 @@ class LoginHome extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 360),
+                      padding: EdgeInsets.only(top: 400),
                       child: Column(
                         children: <Widget>[
                           TextFormField(
@@ -107,7 +107,7 @@ class LoginHome extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.only(top: 20),
                     ),
                     TextFormField(
                       style: TextStyle(color: Colors.black),
@@ -134,11 +134,11 @@ class LoginHome extends StatelessWidget {
                       obscureText: true,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 5, top: 40),
+                      padding: EdgeInsets.only(left: 5, top: 15),
                     ),
                     SizedBox(
-                      height: 40,
-                      width: 80,
+                      height: 25,
+                      width: 100,
                       child: ElevatedButton(
                           child: Text('Entrar'),
                           style: ElevatedButton.styleFrom(
@@ -151,15 +151,75 @@ class LoginHome extends StatelessWidget {
                           onPressed: () => {newlogin(context)}),
                     ),
                     SizedBox(
-                      width: 40,
-                      height: 40,
+                      height: 25,
                     ),
                     SizedBox(
-                      height: 40,
-                      width:600,
+                        height: 25,
+                        width: 600,
+                        child: Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(right: 20, left: 20, top: 1),
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                WidgetSpan(
+                                  child: Icon(Icons.whatsapp_outlined,
+                                      size: 25, color: const Color(0xff007a33)),
+                                ),
+                                TextSpan(
+                                  text: "+ 55 (19) 3465-2318.",
+                                ),
+                              ],
+                            ),
+                          ),
+                        )),
+                    SizedBox(
+                        height: 25,
+                        width: 600,
+                        child: Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(right: 20, left: 20, top: 1),
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                WidgetSpan(
+                                  child: Icon(Icons.email,
+                                      size: 25, color: const Color(0xff007a33)),
+                                ),
+                                TextSpan(
+                                  text: "contato@rizziconsulting.com.br",
+                                ),
+                              ],
+                            ),
+                          ),
+                        )),
+                    SizedBox(
+                        height: 25,
+                        width: 600,
+                        child: Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(right: 20, left: 20, top: 1),
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                WidgetSpan(
+                                  child: Icon(Icons.location_on_outlined,
+                                      size: 25, color: const Color(0xff007a33)),
+                                ),
+                                TextSpan(
+                                  text:
+                                      "Rua José Ferreira Aranha, 251 - Americana - SP",
+                                ),
+                              ],
+                            ),
+                          ),
+                        )),
+                    SizedBox(
+                      height: 25,
+                      width: 600,
                       child: Container(
                         alignment: Alignment.center,
-                        padding: EdgeInsets.only(right: 20, left: 20, top: 5),
+                        padding: EdgeInsets.only(right: 20, left: 20, top: 1),
                         child: Text(
                           'Rizzi Consulting Ⓡ 2000|2022 - Todos os Direitos Reservados.',
                           style: TextStyle(
@@ -167,7 +227,6 @@ class LoginHome extends StatelessWidget {
                           ),
                         ),
                       ),
-
                     ),
                   ],
                 ),

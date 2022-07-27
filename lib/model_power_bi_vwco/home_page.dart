@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Expanded(
-                  child: Text('Bem Vindo ao Portal'),
+                  child: Text(''),
 
               ),
 
