@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -9,7 +10,7 @@ class LoginHome extends StatelessWidget {
   final TextEditingController _controladorSenha = TextEditingController();
 
   //final _formKey = GlobalKey<FormState>();
- // final _scaffoldKey = GlobalKey<ScaffoldState>();
+  // final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   Future<void> newlogin(BuildContext context) async {
     try {
@@ -72,7 +73,7 @@ class LoginHome extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 130, right:130),
+            padding: const EdgeInsets.only(left: 130, right: 130),
             child: Container(
               alignment: Alignment.center,
               child: SingleChildScrollView(
@@ -142,7 +143,7 @@ class LoginHome extends StatelessWidget {
                       height: 25,
                       width: 100,
                       child: ElevatedButton(
-                          child: Text('Entrar'),
+                          child: AutoSizeText('Entrar',style: TextStyle(fontSize: 10)),
                           style: ElevatedButton.styleFrom(
                             primary: const Color(0xff041e42),
                             elevation: 15,
@@ -157,7 +158,7 @@ class LoginHome extends StatelessWidget {
                     ),
                     SizedBox(
                         height: 25,
-                        width: 600,
+                        width: 800,
                         child: Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(right: 20, left: 20, top: 1),
@@ -166,18 +167,19 @@ class LoginHome extends StatelessWidget {
                               children: [
                                 WidgetSpan(
                                   child: Icon(Icons.whatsapp_outlined,
-                                      size: 25, color: const Color(0xff007a33)),
+                                      size: 15, color: const Color(0xff007a33)),
                                 ),
                                 TextSpan(
-                                  text: "+ 55 (19) 3465-2318.",
-                                ),
+                                    text: " + 55 (19) 3465-2318.",
+                                    style: TextStyle(fontSize: 10)),
                               ],
                             ),
+                            maxLines: 2,
                           ),
                         )),
                     SizedBox(
                         height: 25,
-                        width: 600,
+                        width: 800,
                         child: Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(right: 20, left: 20, top: 1),
@@ -186,18 +188,19 @@ class LoginHome extends StatelessWidget {
                               children: [
                                 WidgetSpan(
                                   child: Icon(Icons.email,
-                                      size: 25, color: const Color(0xff007a33)),
+                                      size: 15, color: const Color(0xff007a33)),
                                 ),
                                 TextSpan(
-                                  text: "contato@rizziconsulting.com.br",
-                                ),
+                                    text: " contato@rizziconsulting.com.br",
+                                    style: TextStyle(fontSize: 10)),
                               ],
                             ),
+                            maxLines: 2,
                           ),
                         )),
                     SizedBox(
                         height: 25,
-                        width: 600,
+                        width: 800,
                         child: Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(right: 20, left: 20, top: 1),
@@ -206,30 +209,39 @@ class LoginHome extends StatelessWidget {
                               children: [
                                 WidgetSpan(
                                   child: Icon(Icons.location_on_outlined,
-                                      size: 25, color: const Color(0xff007a33)),
+                                      size: 15, color: const Color(0xff007a33)),
                                 ),
                                 TextSpan(
-                                  text:
-                                      "Rua José Ferreira Aranha, 251 - Americana - SP",
-                                ),
+                                    text:
+                                        " Rua José Ferreira Aranha, 251 - Americana - SP",
+                                    style: TextStyle(fontSize: 10)),
                               ],
                             ),
+                            maxLines: 2,
                           ),
                         )),
                     SizedBox(
-                      height: 25,
-                      width: 600,
-                      child: Container(
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(right: 20, left: 20, top: 1),
-                        child: Text(
-                          'Rizzi Consulting Ⓡ 2000|2022 - Todos os Direitos Reservados.',
-                          style: TextStyle(
-                            color: Colors.black,
+                        height: 25,
+                        width: 800,
+                        child: Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(right: 20, left: 20, top: 1),
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                WidgetSpan(
+                                  child: Icon(Icons.gite_outlined,
+                                      size: 15, color: const Color(0xff007a33)),
+                                ),
+                                TextSpan(
+                                    text:
+                                        " Rizzi Consulting Ⓡ 2000|2022 - Todos os Direitos Reservados.",
+                                    style: TextStyle(fontSize: 10)),
+                              ],
+                            ),
+                            maxLines: 2,
                           ),
-                        ),
-                      ),
-                    ),
+                        )),
                   ],
                 ),
               ),

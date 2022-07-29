@@ -7,14 +7,12 @@ class HomePage extends StatelessWidget {
     return MyScaffold(
       route: '/homeoardPage',
       body: Container(
-        color: const Color(0xFF041e42),
-        child: SizedBox(
-          width: double.infinity,
-          height: 695,
-          child: Image(
-              image: AssetImage("assets/images/image3.png.png"),
-              fit: BoxFit.cover),
-        ),
+        height: 695,
+        color: const Color(0xFFFFFFFF),
+        alignment: Alignment.center,
+        child: Image(
+            image: AssetImage("assets/images/image3.png.png"),
+            fit: BoxFit.fill),
       ),
     );
   }
