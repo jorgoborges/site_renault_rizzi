@@ -11,7 +11,7 @@ class oneLevelItem1Page extends StatelessWidget {
     return MyScaffold(
       route: '/oneLevelItem1',
       body: Container(
-        height: 732,
+        height: 695,
         color: const Color(0xFFFFD54F),
         alignment: Alignment.center,
         padding: EdgeInsets.only(left: 20, top: 50),

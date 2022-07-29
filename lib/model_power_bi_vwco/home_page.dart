@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
-
 import 'package:site_renault_rizzi/interface/admin_scaffold.dart.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,19 +7,15 @@ class HomePage extends StatelessWidget {
     return MyScaffold(
       route: '/homeoardPage',
       body: Container(
-          height: 600,
-          width: 600,
-          padding: EdgeInsets.only(left: 300, top: 200),
-          alignment: Alignment.center,
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                  child: Text(''),
-
-              ),
-
-            ],
-          )),
+        color: const Color(0xFF041e42),
+        child: SizedBox(
+          width: double.infinity,
+          height: 695,
+          child: Image(
+              image: AssetImage("assets/images/image3.png.png"),
+              fit: BoxFit.cover),
+        ),
+      ),
     );
   }
 }

@@ -121,7 +121,8 @@ class MyScaffold extends StatelessWidget {
               icon: Icons.subdirectory_arrow_right,
             ),
             AdminMenuItem(
-              title: 'Excesso de Marcha Lenta + Excesso de Marcha Lenta com A/C',
+              title:
+                  'Excesso de Marcha Lenta + Excesso de Marcha Lenta com A/C',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
@@ -189,13 +190,11 @@ class MyScaffold extends StatelessWidget {
           route: '/',
           icon: Icons.subscriptions_outlined,
           children: [
-
             AdminMenuItem(
               title: 'Monitoramento da Saúde dos Ativos',
               route: '/',
               icon: Icons.subdirectory_arrow_right,
             ),
-
             AdminMenuItem(
               title: 'Planejamento das Manutenções',
               route: '/',
@@ -597,20 +596,20 @@ class MyScaffold extends StatelessWidget {
   ];
 
   //final List<AdminMenuItem> _adminMenuItems = const [
-   // AdminMenuItem(
-   //   title: 'User Profile',
+  // AdminMenuItem(
+  //   title: 'User Profile',
   //    icon: Icons.account_circle,
- //     route: '/',
- //   ),
- //   AdminMenuItem(
- //     title: 'Settings',
- //     icon: Icons.settings,
- //     route: '/',
+  //     route: '/',
+  //   ),
+  //   AdminMenuItem(
+  //     title: 'Settings',
+  //     icon: Icons.settings,
+  //     route: '/',
 //    ),
 //    AdminMenuItem(
   //    title: 'Logout',
- //     icon: Icons.logout,
- //     route: '/',
+  //     icon: Icons.logout,
+  //     route: '/',
 //    ),
 //  ];
 
@@ -652,13 +651,12 @@ class MyScaffold extends StatelessWidget {
           //       ),
 
           IconButton(
-            tooltip: 'Sair',
-            iconSize: 25,
-            icon: const Icon(Icons.exit_to_app_outlined),
-            color: Colors.white,
+              tooltip: 'Sair',
+              iconSize: 25,
+              icon: const Icon(Icons.exit_to_app_outlined),
+              color: Colors.white,
               onPressed: () => Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => LoginHome()))
-          ),
+                  MaterialPageRoute(builder: (_) => LoginHome()))),
           IconButton(
             tooltip: 'Rizzi Academy',
             iconSize: 25,
@@ -666,8 +664,7 @@ class MyScaffold extends StatelessWidget {
             color: Colors.white,
             onPressed: () {
               html.window.open(
-                  'https://www.rizziacademy.com.br/login/index.php/',
-                  "_blank");
+                  'https://www.rizziacademy.com.br/login/index.php/', "_blank");
             },
           ),
           IconButton(
@@ -676,8 +673,7 @@ class MyScaffold extends StatelessWidget {
             icon: const Icon(Icons.home_outlined),
             color: Colors.white,
             onPressed: () {
-              html.window.open(
-                  'https://rizziconsulting.com.br/', "_blank");
+              html.window.open('https://rizziconsulting.com.br/', "_blank");
             },
           ),
 

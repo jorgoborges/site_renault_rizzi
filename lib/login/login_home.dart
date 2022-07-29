@@ -8,8 +8,8 @@ class LoginHome extends StatelessWidget {
   final TextEditingController _controladorEmail = TextEditingController();
   final TextEditingController _controladorSenha = TextEditingController();
 
-  final _formKey = GlobalKey<FormState>();
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  //final _formKey = GlobalKey<FormState>();
+ // final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   Future<void> newlogin(BuildContext context) async {
     try {
@@ -21,12 +21,14 @@ class LoginHome extends StatelessWidget {
       );
     } catch (FirebaseAuthException) {
       const snackBar = SnackBar(
-        content: Text('Autenticação inválida.'),
+        content: Text('Autenticação Inválida.'),
         backgroundColor: const Color(0xFFB71C1C),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
+
+  bool isHiddenPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +62,7 @@ class LoginHome extends StatelessWidget {
           Container(
             alignment: Alignment.topCenter,
             padding: EdgeInsets.only(
-              top: 5,
+              top: 3,
             ),
             child: Image(
               image: AssetImage("assets/images/image2.png.png"),
@@ -70,7 +72,7 @@ class LoginHome extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 100, right: 100),
+            padding: const EdgeInsets.only(left: 130, right:130),
             child: Container(
               alignment: Alignment.center,
               child: SingleChildScrollView(
@@ -110,6 +112,7 @@ class LoginHome extends StatelessWidget {
                       padding: EdgeInsets.only(top: 20),
                     ),
                     TextFormField(
+                      obscureText: isHiddenPassword,
                       style: TextStyle(color: Colors.black),
                       controller: _controladorSenha,
                       decoration: InputDecoration(
@@ -131,7 +134,6 @@ class LoginHome extends StatelessWidget {
                         ),
                       ),
                       keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 5, top: 15),
@@ -151,7 +153,7 @@ class LoginHome extends StatelessWidget {
                           onPressed: () => {newlogin(context)}),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 10,
                     ),
                     SizedBox(
                         height: 25,
