@@ -7,9 +7,10 @@ class HomePage extends StatelessWidget {
     return MyScaffold(
       route: '/homeoardPage',
       body: Container(
-        height: 695,
-        color: const Color(0xFFFFFFFF),
-        alignment: Alignment.center,
+        height: 600,
+        alignment: Alignment.bottomCenter,
+        padding: EdgeInsets.only(left: 20,right: 20, top: 155, ),
+
         child: Image(
             image: AssetImage("assets/images/image3.png.png"),
             fit: BoxFit.fill),

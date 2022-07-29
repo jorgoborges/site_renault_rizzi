@@ -616,7 +616,6 @@ class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdminScaffold(
-      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         backgroundColor: Color(0xFF041e42),
         actions: [

@@ -11,9 +11,8 @@ class oneLevelItem1Page extends StatelessWidget {
     return MyScaffold(
       route: '/oneLevelItem1',
       body: Container(
-        height: 695,
-        color: const Color(0xFFFFD54F),
-        alignment: Alignment.center,
+        height: 600,
+        alignment: Alignment.bottomCenter,
         padding: EdgeInsets.only(left: 20, top: 50),
         child: IconButton(
           tooltip: 'Power Bi',
