@@ -57,7 +57,7 @@ class LoginHome extends StatelessWidget {
             ),
           ],
           backgroundColor: const Color(0xff041e42),
-          title: const Text('RMS - RIZZI MANAGEMENT SYSTEM'),
+          title: const Text('RMS  -  RIZZI MANAGEMENT SYSTEM'),
         ),
         body: Stack(children: [
           Container(
