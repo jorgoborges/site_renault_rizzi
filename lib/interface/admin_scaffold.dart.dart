@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:site_renault_rizzi/login/login_home.dart';
@@ -49,7 +48,7 @@ class _SamplePagePortalState extends State<SamplePagePortal> {
         primaryTextTheme: Theme.of(context).textTheme.apply(
               bodyColor: themeTextPrimary,
             ),
-        primaryIconTheme: IconThemeData(
+        primaryIconTheme: const IconThemeData(
           color: themeTextPrimary,
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -617,7 +616,9 @@ class MyScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdminScaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF041e42),
+        title: Text('Menu'),
+
+        backgroundColor: const Color(0xFF041e42),
         actions: [
           // PopupMenuButton<AdminMenuItem>(
           //    child: const Icon(Icons.account_circle),
@@ -683,14 +684,12 @@ class MyScaffold extends StatelessWidget {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Container(
-                  child: Image(
-                    image: AssetImage("assets/images/image1.png.png"),
-                    fit: BoxFit.fill,
-                    height: 100,
-                    width: 100,
-                  ),
+              children: const <Widget>[
+                Image(
+                  image: AssetImage("assets/images/image1.png.png"),
+                  fit: BoxFit.fill,
+                  height: 100,
+                  width: 100,
                 ),
               ],
             ),

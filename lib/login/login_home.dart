@@ -23,7 +23,7 @@ class LoginHome extends StatelessWidget {
     } catch (FirebaseAuthException) {
       const snackBar = SnackBar(
         content: Text('Autenticação Inválida.'),
-        backgroundColor: const Color(0xFFB71C1C),
+        backgroundColor: Color(0xFFB71C1C),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
@@ -143,7 +143,8 @@ class LoginHome extends StatelessWidget {
                       height: 25,
                       width: 100,
                       child: ElevatedButton(
-                          child: AutoSizeText('Entrar',style: TextStyle(fontSize: 10)),
+                          child: AutoSizeText('Entrar',
+                              style: TextStyle(fontSize: 10)),
                           style: ElevatedButton.styleFrom(
                             primary: const Color(0xff041e42),
                             elevation: 15,

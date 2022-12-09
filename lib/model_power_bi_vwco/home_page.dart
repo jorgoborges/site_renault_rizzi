@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
 
         child: Image(
             image: AssetImage("assets/images/image3.png.png"),
-            fit: BoxFit.fill),
+            fit: BoxFit.contain),
       ),
     );
   }

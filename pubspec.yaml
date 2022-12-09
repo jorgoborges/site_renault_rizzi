@@ -38,19 +38,15 @@ dependencies:
   auto_size_text: ^3.0.0
   simple_grid: ^0.1.1
   responsive_grid: ^2.1.0
-  flutter_admin_scaffold: ^1.1.1
+  flutter_admin_scaffold: ^1.1.2
   passwordfield: ^0.1.0
-  tabbed_view: ^1.13.0+1
-  brasil_fields: ^1.4.5
-  http: ^0.13.4
-  json_table: ^2.0.1
+  brasil_fields: ^1.8.0
+  http: ^0.13.5
   webview_flutter: ^3.0.4
-  email_validator: ^2.0.1
-  provider:
   flutterfire: ^0.0.1
-  firebase_core: ^1.19.2
-  firebase_auth: ^3.4.2
-  cloud_firestore: ^3.3.0
+  firebase_core: ^2.4.0
+  firebase_auth: ^4.2.0
+  cloud_firestore: ^4.2.0
 
 
 
@@ -129,6 +125,7 @@ flutter:
     - assets/images/image1.png.png
     - assets/images/image2.png.png
     - assets/images/image3.png.png
+
 
 
 
